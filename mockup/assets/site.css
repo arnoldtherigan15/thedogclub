@@ -1,0 +1,27 @@
+body {
+    background-color: #F9F6F0;
+    color: #1A2E26;
+    font-family: 'Inter', sans-serif;
+}
+.font-editorial {
+    font-family: 'Playfair Display', serif;
+}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F9F6F0; }
+::-webkit-scrollbar-thumb { background: #D8D2C5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #B8B0A0; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* FAQ accordion (native <details>) */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(180deg); }
+
+/* Long-form text (blog & legal) */
+.prose-club h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 2.25rem 0 0.75rem; color: #1A2E26; }
+.prose-club p { margin: 0 0 1rem; line-height: 1.8; color: rgba(26, 46, 38, 0.85); }
+.prose-club ul { margin: 0 0 1rem 1.25rem; list-style: disc; color: rgba(26, 46, 38, 0.85); }
+.prose-club li { margin-bottom: 0.4rem; line-height: 1.7; }
+.prose-club a { text-decoration: underline; }

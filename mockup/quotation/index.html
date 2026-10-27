@@ -20,6 +20,25 @@
             .shadow-xl, .shadow-lg { box-shadow: none !important; }
         }
         table td, table th { vertical-align: top; }
+
+        /* Selectable package cards */
+        .pkg { background: #F9F6F0; color: #1A2E26; border: 2px solid #E4DDD0; transition: all .2s; cursor: pointer; }
+        .pkg:hover { border-color: #E4B047; }
+        .pkg:focus-visible { outline: 3px solid #E4B047; outline-offset: 3px; }
+        .pkg .pkg-label, .pkg .pkg-muted { color: #707070; }
+        .pkg .pkg-text { color: rgba(26, 46, 38, .8); }
+        .pkg .pkg-off { color: rgba(26, 46, 38, .4); }
+        .pkg .pkg-highlight { color: #1A2E26; }
+        .pkg.is-selected { background: #1A2E26; color: #F9F6F0; border-color: #E4B047; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .15); }
+        .pkg.is-selected .pkg-label, .pkg.is-selected .pkg-price, .pkg.is-selected .pkg-highlight { color: #E4B047; }
+        .pkg.is-selected .pkg-muted { color: rgba(249, 246, 240, .6); }
+        .pkg.is-selected .pkg-text { color: rgba(249, 246, 240, .9); }
+        .pkg.is-selected .pkg-off { color: rgba(249, 246, 240, .4); }
+        .pkg-cta { display: block; text-align: center; font-size: .875rem; font-weight: 600; padding: .65rem 1rem; border-radius: 9999px; border: 2px solid #1A2E26; }
+        .pkg-cta::before { content: "Pilih paket ini"; }
+        .pkg.is-selected .pkg-cta { background: #E4B047; border-color: #E4B047; color: #1A2E26; }
+        .pkg.is-selected .pkg-cta::before { content: "\2713  Paket dipilih"; }
+        @media print { .pkg:not(.is-selected) { opacity: .5; } }
     </style>
 </head>
 <body class="antialiased">
@@ -50,17 +69,17 @@
         <!-- Summary -->
         <section class="py-10 border-b border-beigeDark">
             <p class="text-lg sm:text-xl text-forest leading-relaxed">
-                Website thedogclub.id dibangun ulang dari nol dengan desain clean dan minimalis, lengkap dengan admin dashboard agar tim The Dog Club bisa mengubah konten sendiri.
-                Estimasi pengerjaan <strong>5 minggu</strong>, investasi <strong>Rp 15.000.000</strong>.
+                Website thedogclub.id dibangun ulang dari nol dengan desain clean dan minimalis, <span data-bind="desc">lengkap dengan admin dashboard agar tim The Dog Club bisa mengubah konten sendiri</span>.
+                Paket <strong data-bind="name">Recommended</strong>: estimasi pengerjaan <strong><span data-bind="weeks">5</span> minggu</strong>, investasi <strong data-bind="total">Rp 15.000.000</strong>.
             </p>
             <div class="grid sm:grid-cols-3 gap-4 mt-8">
                 <div class="bg-beige/50 rounded-2xl p-5">
                     <p class="text-xs text-softGray uppercase tracking-wider font-semibold">Investasi</p>
-                    <p class="font-editorial text-3xl font-bold text-forest mt-1">Rp 15 jt</p>
+                    <p class="font-editorial text-3xl font-bold text-forest mt-1" data-bind="short">Rp 15 jt</p>
                 </div>
                 <div class="bg-beige/50 rounded-2xl p-5">
                     <p class="text-xs text-softGray uppercase tracking-wider font-semibold">Durasi</p>
-                    <p class="font-editorial text-3xl font-bold text-forest mt-1">5 minggu</p>
+                    <p class="font-editorial text-3xl font-bold text-forest mt-1"><span data-bind="weeks">5</span> minggu</p>
                 </div>
                 <div class="bg-beige/50 rounded-2xl p-5">
                     <p class="text-xs text-softGray uppercase tracking-wider font-semibold">Halaman</p>
@@ -140,59 +159,56 @@
         <!-- Pricing -->
         <section class="py-10 border-b border-beigeDark">
             <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Pilihan paket</h2>
-            <p class="text-forest/70 mb-8">Paket Recommended mencakup seluruh ruang lingkup di atas.</p>
+            <p class="text-forest/70 mb-8"><span class="no-print">Klik salah satu paket untuk melihat rincian biaya dan termin pembayarannya.</span> Paket Recommended mencakup seluruh ruang lingkup di atas.</p>
 
-            <div class="grid md:grid-cols-3 gap-5">
-                <div class="bg-cream border border-beigeDark rounded-2xl p-6 flex flex-col">
-                    <p class="text-xs font-bold uppercase tracking-wider text-softGray">Essential</p>
-                    <p class="font-editorial text-3xl font-bold text-forest mt-2">Rp 11 jt</p>
-                    <p class="text-xs text-softGray mb-4">4 minggu</p>
-                    <ul class="text-sm text-forest/80 space-y-2 flex-1">
+            <div class="grid md:grid-cols-3 gap-5" role="radiogroup" aria-label="Pilihan paket">
+                <button type="button" data-pkg="essential" role="radio" aria-checked="false" class="pkg rounded-2xl p-6 flex flex-col text-left relative">
+                    <p class="pkg-label text-xs font-bold uppercase tracking-wider">Essential</p>
+                    <p class="pkg-price font-editorial text-3xl font-bold mt-2">Rp 7,5 jt</p>
+                    <p class="pkg-muted text-xs mb-4">3 minggu &middot; website statis</p>
+                    <ul class="pkg-text text-sm space-y-2 flex-1">
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>27 halaman sesuai mockup</li>
-                        <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Admin edit teks, foto &amp; harga</li>
-                        <li><i class="fa-solid fa-xmark text-softGray/60 mr-2"></i><span class="text-forest/50">Atur urutan section</span></li>
+                        <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Super cepat, hosting gratis</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>SEO dasar &amp; launch</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Garansi bug 30 hari</li>
+                        <li class="pkg-off"><i class="fa-solid fa-xmark mr-2"></i>Admin dashboard: perubahan konten lewat developer</li>
                     </ul>
-                </div>
-                <div class="bg-forest text-cream border-2 border-sunshine rounded-2xl p-6 flex flex-col relative shadow-xl">
+                    <span class="pkg-cta no-print mt-6"></span>
+                </button>
+                <button type="button" data-pkg="recommended" role="radio" aria-checked="true" class="pkg is-selected rounded-2xl p-6 flex flex-col text-left relative">
                     <span class="absolute -top-3 right-5 bg-sunshine text-forest text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Rekomendasi</span>
-                    <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Recommended</p>
-                    <p class="font-editorial text-3xl font-bold text-sunshine mt-2">Rp 15 jt</p>
-                    <p class="text-xs text-cream/60 mb-4">5 minggu</p>
-                    <ul class="text-sm text-cream/90 space-y-2 flex-1">
+                    <p class="pkg-label text-xs font-bold uppercase tracking-wider">Recommended</p>
+                    <p class="pkg-price font-editorial text-3xl font-bold mt-2">Rp 15 jt</p>
+                    <p class="pkg-muted text-xs mb-4">5 minggu</p>
+                    <ul class="pkg-text text-sm space-y-2 flex-1">
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Semua di Essential</li>
+                        <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Admin dashboard: edit teks, foto, harga sendiri</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Page builder drag &amp; drop</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Live preview &amp; draft</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>GA4, Meta Pixel, redirect URL lama</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Training + video panduan</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Garansi bug 30 hari</li>
-                        <li><i class="fa-solid fa-gift text-sunshine mr-2"></i><strong class="text-sunshine">Gratis maintenance 1 bulan</strong></li>
+                        <li><i class="fa-solid fa-gift text-sunshine mr-2"></i><strong class="pkg-highlight">Gratis maintenance 1 bulan</strong></li>
                     </ul>
-                </div>
-                <div class="bg-cream border border-beigeDark rounded-2xl p-6 flex flex-col">
-                    <p class="text-xs font-bold uppercase tracking-wider text-softGray">Premium</p>
-                    <p class="font-editorial text-3xl font-bold text-forest mt-2">Rp 20 jt</p>
-                    <p class="text-xs text-softGray mb-4">6 minggu</p>
-                    <ul class="text-sm text-forest/80 space-y-2 flex-1">
+                    <span class="pkg-cta no-print mt-6"></span>
+                </button>
+                <button type="button" data-pkg="premium" role="radio" aria-checked="false" class="pkg rounded-2xl p-6 flex flex-col text-left relative">
+                    <p class="pkg-label text-xs font-bold uppercase tracking-wider">Premium</p>
+                    <p class="pkg-price font-editorial text-3xl font-bold mt-2">Rp 20 jt</p>
+                    <p class="pkg-muted text-xs mb-4">6 minggu</p>
+                    <ul class="pkg-text text-sm space-y-2 flex-1">
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Semua di Recommended</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Website 2 bahasa (EN/ID)</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Maintenance 3 bulan</li>
                     </ul>
-                </div>
+                    <span class="pkg-cta no-print mt-6"></span>
+                </button>
             </div>
 
-            <h3 class="font-bold text-forest mt-10 mb-3">Rincian paket Recommended</h3>
+            <h3 class="font-bold text-forest mt-10 mb-3">Rincian paket <span data-bind="name">Recommended</span></h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
-                    <tbody class="text-forest/85">
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Desain UI/UX (desktop + mobile)</td><td class="py-3 text-right whitespace-nowrap">Rp 3.000.000</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Development 27 halaman</td><td class="py-3 text-right whitespace-nowrap">Rp 5.000.000</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Admin dashboard &amp; page builder</td><td class="py-3 text-right whitespace-nowrap">Rp 4.500.000</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">SEO, analytics, migrasi konten &amp; redirect</td><td class="py-3 text-right whitespace-nowrap">Rp 1.250.000</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Deployment, QA &amp; training</td><td class="py-3 text-right whitespace-nowrap">Rp 1.250.000</td></tr>
-                        <tr class="font-bold text-forest"><td class="py-3 pr-4">Total</td><td class="py-3 text-right whitespace-nowrap font-editorial text-lg">Rp 15.000.000</td></tr>
-                    </tbody>
+                    <tbody id="breakdown" class="text-forest/85"></tbody>
                 </table>
             </div>
 
@@ -203,7 +219,8 @@
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Website 2 bahasa (EN/ID)</td><td class="py-3 text-right whitespace-nowrap">Rp 3.000.000</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Halaman tambahan</td><td class="py-3 text-right whitespace-nowrap">Rp 750.000 / halaman</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Copywriting (EN atau ID)</td><td class="py-3 text-right whitespace-nowrap">Rp 300.000 / halaman</td></tr>
-                        <tr><td class="py-3 pr-4">Maintenance &amp; support</td><td class="py-3 text-right whitespace-nowrap">Rp 1.000.000 / bulan</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Maintenance &amp; support</td><td class="py-3 text-right whitespace-nowrap">Rp 1.000.000 / bulan</td></tr>
+                        <tr><td class="py-3 pr-4">Update konten paket Essential (teks, foto, harga)</td><td class="py-3 text-right whitespace-nowrap">Rp 150.000 / permintaan</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -215,6 +232,16 @@
                     <p class="font-bold text-forest text-sm">Harga masih bisa didiskusikan</p>
                     <p class="text-sm text-forest/75 mt-1">Paket, ruang lingkup, maupun skema pembayaran bisa disesuaikan dengan kebutuhan dan budget The Dog Club. Silakan sampaikan saja, kita cari opsi yang paling pas.</p>
                 </div>
+            </div>
+
+            <div id="choose-cta" class="no-print hidden mt-6 bg-forest text-cream rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-wider text-sunshine font-bold">Paket dipilih</p>
+                    <p class="font-editorial text-2xl font-bold"><span data-bind="name">Recommended</span> &middot; <span data-bind="total">Rp 15.000.000</span></p>
+                </div>
+                <a id="choose-link" href="#" target="_blank" rel="noopener noreferrer" class="bg-sunshine hover:bg-sunshineHover text-forest px-6 py-3 rounded-full font-bold inline-flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Konfirmasi via WhatsApp
+                </a>
             </div>
         </section>
 
@@ -246,6 +273,7 @@
                     </tbody>
                 </table>
             </div>
+            <p class="text-xs text-softGray mt-4">Paket Essential (statis) tidak memakai admin dashboard dan database: website di-hosting gratis di Cloudflare Pages, jadi biaya operasionalnya hanya domain.</p>
         </section>
 
         <!-- Terms -->
@@ -255,9 +283,10 @@
                 <table class="w-full text-sm">
                     <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">Termin</th><th class="py-2 pr-4">Saat</th><th class="py-2 pr-4">Porsi</th><th class="py-2 text-right">Nominal</th></tr></thead>
                     <tbody class="text-forest/85">
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">1. Down payment</td><td class="py-3 pr-4">Quotation disetujui</td><td class="py-3 pr-4">50%</td><td class="py-3 text-right whitespace-nowrap">Rp 7.500.000</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">2. Progress</td><td class="py-3 pr-4">Desain disetujui</td><td class="py-3 pr-4">30%</td><td class="py-3 text-right whitespace-nowrap">Rp 4.500.000</td></tr>
-                        <tr><td class="py-3 pr-4">3. Pelunasan</td><td class="py-3 pr-4">Sebelum website live</td><td class="py-3 pr-4">20%</td><td class="py-3 text-right whitespace-nowrap">Rp 3.000.000</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">1. Down payment</td><td class="py-3 pr-4">Quotation disetujui</td><td class="py-3 pr-4">50%</td><td class="py-3 text-right whitespace-nowrap" data-bind="t1">Rp 7.500.000</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">2. Progress</td><td class="py-3 pr-4">Desain disetujui</td><td class="py-3 pr-4">30%</td><td class="py-3 text-right whitespace-nowrap" data-bind="t2">Rp 4.500.000</td></tr>
+                        <tr><td class="py-3 pr-4">3. Pelunasan</td><td class="py-3 pr-4">Sebelum website live</td><td class="py-3 pr-4">20%</td><td class="py-3 text-right whitespace-nowrap" data-bind="t3">Rp 3.000.000</td></tr>
+                        <tr><td colspan="4" class="pt-1 text-xs text-softGray">Untuk paket <span data-bind="name">Recommended</span>.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -292,5 +321,85 @@
         </section>
 
     </main>
+
+    <script>
+        // Your WhatsApp number (international format, no + or spaces), e.g. '6281234567890'.
+        // Leave empty to hide the "Konfirmasi via WhatsApp" button.
+        const DEV_WHATSAPP = '';
+
+        const PACKAGES = {
+            essential: {
+                name: 'Essential', short: 'Rp 7,5 jt', weeks: 3,
+                desc: 'sebagai website statis yang cepat dan ringan (tanpa admin dashboard)',
+                items: [
+                    ['Desain UI/UX (desktop + mobile)', 2500000],
+                    ['Development 27 halaman (statis)', 4000000],
+                    ['SEO dasar, deployment &amp; QA', 1000000],
+                ],
+            },
+            recommended: {
+                name: 'Recommended', short: 'Rp 15 jt', weeks: 5,
+                desc: 'lengkap dengan admin dashboard agar tim The Dog Club bisa mengubah konten sendiri',
+                items: [
+                    ['Desain UI/UX (desktop + mobile)', 3000000],
+                    ['Development 27 halaman', 5000000],
+                    ['Admin dashboard &amp; page builder', 4500000],
+                    ['SEO, analytics, migrasi konten &amp; redirect', 1250000],
+                    ['Deployment, QA &amp; training', 1250000],
+                    ['Maintenance bulan pertama', 0],
+                ],
+            },
+            premium: {
+                name: 'Premium', short: 'Rp 20 jt', weeks: 6,
+                desc: 'dua bahasa (EN/ID), lengkap dengan admin dashboard agar tim The Dog Club bisa mengubah konten sendiri',
+                items: [
+                    ['Seluruh paket Recommended', 15000000],
+                    ['Website 2 bahasa (EN/ID)', 3000000],
+                    ['Maintenance bulan ke-2 &amp; ke-3', 2000000],
+                ],
+            },
+        };
+
+        const rupiah = n => n === 0 ? 'Gratis' : 'Rp ' + n.toLocaleString('id-ID');
+
+        function selectPackage(key) {
+            const pkg = PACKAGES[key];
+            const total = pkg.items.reduce((sum, [, price]) => sum + price, 0);
+
+            document.querySelectorAll('[data-pkg]').forEach(card => {
+                const active = card.dataset.pkg === key;
+                card.classList.toggle('is-selected', active);
+                card.setAttribute('aria-checked', String(active));
+            });
+
+            const values = {
+                name: pkg.name, short: pkg.short, weeks: pkg.weeks, desc: pkg.desc, total: rupiah(total),
+                t1: rupiah(total * 0.5), t2: rupiah(total * 0.3), t3: rupiah(total * 0.2),
+            };
+            document.querySelectorAll('[data-bind]').forEach(el => {
+                el.textContent = values[el.dataset.bind];
+            });
+
+            document.getElementById('breakdown').innerHTML = pkg.items.map(([label, price]) =>
+                `<tr class="border-b border-beigeDark"><td class="py-3 pr-4">${label}</td><td class="py-3 text-right whitespace-nowrap">${rupiah(price)}</td></tr>`
+            ).join('') + `<tr class="font-bold text-forest"><td class="py-3 pr-4">Total</td><td class="py-3 text-right whitespace-nowrap font-editorial text-lg">${rupiah(total)}</td></tr>`;
+
+            if (DEV_WHATSAPP) {
+                const message = `Halo Arnold, kami dari The Dog Club memilih paket ${pkg.name} (${rupiah(total)}) untuk redesign website.`;
+                document.getElementById('choose-link').href = `https://wa.me/${DEV_WHATSAPP}?text=${encodeURIComponent(message)}`;
+                document.getElementById('choose-cta').classList.remove('hidden');
+            }
+
+            history.replaceState(null, '', '#' + key);
+        }
+
+        document.querySelectorAll('[data-pkg]').forEach(card => {
+            card.addEventListener('click', () => selectPackage(card.dataset.pkg));
+        });
+
+        // A shared link like .../quotation/#premium opens with that package selected
+        const initial = location.hash.slice(1);
+        selectPackage(PACKAGES[initial] ? initial : 'recommended');
+    </script>
 </body>
 </html>

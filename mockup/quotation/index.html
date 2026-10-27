@@ -69,8 +69,8 @@
         <!-- Summary -->
         <section class="py-10 border-b border-beigeDark">
             <p class="text-lg sm:text-xl text-forest leading-relaxed">
-                A complete rebuild of thedogclub.id with a clean, minimalist design, <span data-bind="desc">with an admin dashboard so the team can update the content themselves</span>.
-                <strong data-bind="name">Recommended</strong> package: estimated <strong><span data-bind="weeks">5</span> weeks</strong>, investment of <strong data-bind="total">IDR 15,000,000</strong>.
+                A complete rebuild of thedogclub.id with a clean, minimalist design, <span data-bind="desc">in English and Indonesian, with an admin dashboard so the team can update the content themselves</span>.
+                <strong data-bind="name">Recommended</strong> package: estimated <strong><span data-bind="weeks">4</span> weeks</strong>, investment of <strong data-bind="total">IDR 15,000,000</strong>.
             </p>
             <div class="grid sm:grid-cols-3 gap-4 mt-8">
                 <div class="bg-beige/50 rounded-2xl p-5">
@@ -79,7 +79,7 @@
                 </div>
                 <div class="bg-beige/50 rounded-2xl p-5">
                     <p class="text-xs text-softGray uppercase tracking-wider font-semibold">Timeline</p>
-                    <p class="font-editorial text-3xl font-bold text-forest mt-1"><span data-bind="weeks">5</span> weeks</p>
+                    <p class="font-editorial text-3xl font-bold text-forest mt-1"><span data-bind="weeks">4</span> weeks</p>
                 </div>
                 <div class="bg-beige/50 rounded-2xl p-5">
                     <p class="text-xs text-softGray uppercase tracking-wider font-semibold">Pages</p>
@@ -140,6 +140,7 @@
                         <li>Pricing, Schedule, Join the Club, About, FAQ</li>
                         <li>Umalas location, Franchise (with form)</li>
                         <li>Blog + 4 articles, 4 legal pages, 404 page</li>
+                        <li>English &amp; Indonesian versions (Recommended &amp; Premium)</li>
                     </ul>
                 </div>
                 <div class="bg-cream border border-beigeDark rounded-2xl p-6">
@@ -166,7 +167,7 @@
 
             <div class="mt-6 bg-beige/40 rounded-2xl p-6">
                 <h3 class="font-bold text-forest mb-2 text-sm">Not included</h3>
-                <p class="text-sm text-forest/75">A custom booking/payment system (Pawsi stays), photo/video production, new copywriting, domain &amp; hosting fees, a bilingual website (available as an add-on).</p>
+                <p class="text-sm text-forest/75">A custom booking/payment system (Pawsi stays), photo/video production, new copywriting, domain &amp; hosting fees.</p>
             </div>
         </section>
 
@@ -192,10 +193,12 @@
                 <button type="button" data-pkg="recommended" role="radio" aria-checked="true" class="pkg is-selected rounded-2xl p-6 flex flex-col text-left relative">
                     <span class="absolute -top-3 right-5 bg-sunshine text-forest text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best value</span>
                     <p class="pkg-label text-xs font-bold uppercase tracking-wider">Recommended</p>
-                    <p class="pkg-price font-editorial text-3xl font-bold mt-2">IDR 15M</p>
-                    <p class="pkg-muted text-xs mb-4">5 weeks</p>
+                    <p class="pkg-muted text-xs mt-2"><span class="line-through">IDR 18M</span> &middot; special price</p>
+                    <p class="pkg-price font-editorial text-3xl font-bold">IDR 15M</p>
+                    <p class="pkg-muted text-xs mb-4">4 weeks</p>
                     <ul class="pkg-text text-sm space-y-2 flex-1">
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Everything in Essential</li>
+                        <li><i class="fa-solid fa-check text-sunshine mr-2"></i><strong class="pkg-highlight">Bilingual website (EN/ID)</strong></li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Admin dashboard: edit text, photos and prices yourself</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Drag &amp; drop page builder</li>
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Live preview &amp; drafts</li>
@@ -208,12 +211,12 @@
                 </button>
                 <button type="button" data-pkg="premium" role="radio" aria-checked="false" class="pkg rounded-2xl p-6 flex flex-col text-left relative">
                     <p class="pkg-label text-xs font-bold uppercase tracking-wider">Premium</p>
-                    <p class="pkg-price font-editorial text-3xl font-bold mt-2">IDR 20M</p>
-                    <p class="pkg-muted text-xs mb-4">6 weeks</p>
+                    <p class="pkg-price font-editorial text-3xl font-bold mt-2">IDR 17M</p>
+                    <p class="pkg-muted text-xs mb-4">2 weeks &middot; express</p>
                     <ul class="pkg-text text-sm space-y-2 flex-1">
                         <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Everything in Recommended</li>
-                        <li><i class="fa-solid fa-check text-sunshine mr-2"></i>Bilingual website (EN/ID)</li>
-                        <li><i class="fa-solid fa-check text-sunshine mr-2"></i>3 months of maintenance</li>
+                        <li><i class="fa-solid fa-bolt text-sunshine mr-2"></i><strong class="pkg-highlight">Express delivery in 2 weeks</strong></li>
+                        <li><i class="fa-solid fa-gift text-sunshine mr-2"></i><strong class="pkg-highlight">3 months of maintenance</strong> instead of 1</li>
                     </ul>
                     <span class="pkg-cta no-print mt-6"></span>
                 </button>
@@ -230,7 +233,7 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <tbody class="text-forest/85">
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Bilingual website (EN/ID)</td><td class="py-3 text-right whitespace-nowrap">IDR 3,000,000</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Bilingual website (EN/ID) for the Essential package</td><td class="py-3 text-right whitespace-nowrap">IDR 3,000,000</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Additional page</td><td class="py-3 text-right whitespace-nowrap">IDR 750,000 / page</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Copywriting (EN or ID)</td><td class="py-3 text-right whitespace-nowrap">IDR 300,000 / page</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Maintenance &amp; support</td><td class="py-3 text-right whitespace-nowrap">IDR 1,000,000 / month</td></tr>
@@ -262,12 +265,12 @@
         <!-- Timeline -->
         <section class="py-10 border-b border-beigeDark">
             <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Timeline</h2>
-            <p class="text-forest/70 mb-8">5 weeks from receipt of the down payment (Recommended package).</p>
+            <p class="text-forest/70 mb-8">4 weeks from receipt of the down payment (Recommended package). The Premium package follows the same steps on an express 2-week schedule.</p>
             <ol class="space-y-3">
-                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 1</span><div class="bg-beige/50 rounded-xl px-4 py-3 text-sm text-forest/85">Finalise the design from the mockup, revisions &amp; approval <span class="text-softGray">→ payment 2</span></div></li>
-                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Weeks 2–3</span><div class="bg-beige/50 rounded-xl px-4 py-3 text-sm text-forest/85">Build the pages &amp; admin dashboard</div></li>
-                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 4</span><div class="bg-beige/50 rounded-xl px-4 py-3 text-sm text-forest/85">Content entry, SEO, analytics, QA on all devices</div></li>
-                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 5</span><div class="bg-forest text-cream rounded-xl px-4 py-3 text-sm">Launch, domain switch, admin training <span class="text-sunshine">→ website live</span></div></li>
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 1</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Finalise the design from the mockup, revisions &amp; approval <span class="text-softGray">→ payment 2</span></div></li>
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 2</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Build the pages &amp; admin dashboard</div></li>
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 3</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Content entry in English &amp; Indonesian, translation review, SEO &amp; analytics</div></li>
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 4</span><div class="bg-forest text-cream rounded-xl px-4 py-3 text-sm">QA on all devices, launch, domain switch, admin training <span class="text-sunshine">→ website live</span></div></li>
             </ol>
         </section>
 
@@ -309,6 +312,7 @@
                 <li><strong>Free maintenance:</strong> 1 month (Recommended) or 3 months (Premium) after launch, covering minor content updates, security updates, monitoring and technical support. After that, maintenance is available at IDR 1,000,000 / month.</li>
                 <li><strong>Ownership:</strong> the source code, design and admin access belong fully to the client after the final payment.</li>
                 <li>Changes outside the approved design are charged as additional work.</li>
+                <li>Translations (English &harr; Indonesian) are prepared by the developer and reviewed by The Dog Club team.</li>
                 <li>Content (photos, latest prices, schedule, birthday packages) is to be provided by the client by week 2 at the latest. Late content will shift the timeline.</li>
                 <li>Client feedback within 3 working days per stage.</li>
                 <li>This quotation is valid for 14 days from its date.</li>
@@ -352,29 +356,30 @@
                 ],
             },
             recommended: {
-                name: 'Recommended', short: 'IDR 15M', weeks: 5,
-                desc: 'with an admin dashboard so the team can update the content themselves',
+                name: 'Recommended', short: 'IDR 15M', weeks: 4,
+                desc: 'in English and Indonesian, with an admin dashboard so the team can update the content themselves',
                 items: [
                     ['UI/UX design (desktop + mobile)', 3000000],
                     ['Development of 27 pages', 5000000],
                     ['Admin dashboard &amp; page builder', 4500000],
+                    ['Bilingual website (EN/ID)', 3000000],
                     ['SEO, analytics, content migration &amp; redirects', 1250000],
                     ['Deployment, QA &amp; training', 1250000],
                     ['First month of maintenance', 0],
+                    ['Special price discount', -3000000],
                 ],
             },
             premium: {
-                name: 'Premium', short: 'IDR 20M', weeks: 6,
-                desc: 'in two languages (EN/ID), with an admin dashboard so the team can update the content themselves',
+                name: 'Premium', short: 'IDR 17M', weeks: 2,
+                desc: 'in English and Indonesian, with an admin dashboard and 3 months of maintenance after launch',
                 items: [
-                    ['Full Recommended package', 15000000],
-                    ['Bilingual website (EN/ID)', 3000000],
+                    ['Full Recommended package (special price)', 15000000],
                     ['Maintenance, months 2 &amp; 3', 2000000],
                 ],
             },
         };
 
-        const idr = n => n === 0 ? 'Free' : 'IDR ' + n.toLocaleString('en-US');
+        const idr = n => n === 0 ? 'Free' : (n < 0 ? '− IDR ' : 'IDR ') + Math.abs(n).toLocaleString('en-US');
 
         function selectPackage(key) {
             const pkg = PACKAGES[key];

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracker — The Dog Club</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background: #F9F6F0; color: #1A2E26; }
+  .serif { font-family: 'Playfair Display', serif; }
+  code { background: #EFEAE1; padding: 1px 5px; border-radius: 4px; font-size: .85em; }
+  input[type=checkbox] { accent-color: #1A2E26; width: 1rem; height: 1rem; margin-top: .2rem; flex-shrink: 0; cursor: pointer; }
+  .item-done span { text-decoration: line-through; color: #9a9a9a; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(90deg); }
+</style>
+</head>
+<body>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+  <header class="mb-8">
+    <p class="text-xs font-bold uppercase tracking-widest text-[#E4B047]">Tracker proyek</p>
+    <h1 class="serif text-4xl font-bold mt-1">The Dog Club — Essential</h1>
+    <p class="text-sm text-[#707070] mt-2">Centang tersimpan otomatis di browser ini. Sumber: <code>docs/TICKETS.md</code></p>
+  </header>
+
+  <section class="bg-white/60 border border-[#E4DDD0] rounded-2xl p-5 mb-6">
+    <div class="flex items-baseline justify-between mb-2">
+      <p class="font-semibold">Progres keseluruhan</p>
+      <p id="overall-text" class="text-sm text-[#707070]"></p>
+    </div>
+    <div class="h-3 bg-[#EFEAE1] rounded-full overflow-hidden"><div id="overall-bar" class="h-full bg-[#1A2E26] transition-all"></div></div>
+    <div id="phase-stats" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 text-sm"></div>
+  </section>
+
+  <div class="flex flex-wrap gap-2 mb-6 text-sm">
+    <button data-filter="all" class="filter px-4 py-2 rounded-full border border-[#1A2E26]">Semua</button>
+    <button data-filter="open" class="filter px-4 py-2 rounded-full border border-[#1A2E26]">Belum selesai</button>
+    <button data-filter="done" class="filter px-4 py-2 rounded-full border border-[#1A2E26]">Selesai</button>
+    <button id="expand" class="px-4 py-2 rounded-full border border-[#E4DDD0] ml-auto">Buka semua</button>
+    <button id="reset" class="px-4 py-2 rounded-full border border-[#E4DDD0] text-red-700">Reset</button>
+  </div>
+
+  <div id="phases" class="space-y-8"></div>
+
+  <section class="mt-10">
+    <h2 class="serif text-2xl font-bold mb-1">Temuan audit</h2>
+    <p class="text-sm text-[#707070] mb-4">Otomatis tercentang kalau semua tiket yang memperbaikinya selesai.</p>
+    <div id="audit" class="bg-white/60 border border-[#E4DDD0] rounded-2xl divide-y divide-[#E4DDD0]"></div>
+  </section>
+</main>
+
+<script>
+const DATA = {"phases": [{"title": "Fase 0 — Kickoff", "tickets": [{"id": "TDC-001", "name": "DP &amp; kickoff", "items": ["Kirim link invoice (<code>/invoice/</code>) + quotation <code>#essential</code>", "DP IDR 3.750.000 masuk ke BCA, bukti transfer disimpan", "Kirim pesan kickoff: timeline 3 minggu dimulai hari ini, daftar yang perlu disiapkan, siapa PIC", "Catat tanggal mulai, hitung tanggal target launch"], "done": "DP masuk, klien menunjuk 1 PIC, tanggal mulai dan target launch tercatat.", "notes": [], "estimate": "0,5 hari", "depends": "—"}, {"id": "TDC-002", "name": "Kumpulkan aset &amp; data dari klien", "items": ["Logo file asli (SVG/AI/PDF/PNG transparan)", "Brand guideline: kode warna, font, contoh desain yang mereka suka", "Foto asli: park, villa, pool, spa, tim, anjing (bukan screenshot)", "Price list terbaru (versi teks, bukan hanya gambar)", "Jadwal / jam buka terbaru", "3 paket birthday party (nama, isi, harga)", "Akses DomaiNesia", "Akses Google Search Console (opsional)", "Akses admin WordPress lama (opsional, untuk ambil foto asli)"], "done": "semua item wajib (5 pertama) diterima. Kalau lewat 2 hari kerja, kabari klien secara tertulis bahwa timeline bergeser.", "notes": [], "estimate": "1–2 hari", "depends": "001"}, {"id": "TDC-003", "name": "Klarifikasi konten yang belum pasti", "items": ["Ungasan: alamat, jam buka, layanan apa saja, perlu halaman sendiri? (kalau ya = +1 halaman tambahan)", "Seseh: kapan buka, tampil sebagai \"Coming soon\"?", "The Dog Hotel Berawa: tetap link ke thedoghotel.id?", "Gingr: masih dipakai untuk daftar member, atau semua sudah lewat Pawsi?", "Refund &amp; Shipping Policy: masih perlu? (toko online sudah tidak ada)", "Terms of Service: punya versi baru, atau kita rapikan dari template lama?", "Nama di invoice: The Dog Club Bali atau PT PMA The Dog Paradise?"], "done": "semua pertanyaan terjawab tertulis. Perubahan jumlah halaman dicatat sebagai CR.", "notes": ["Tanyakan ke klien, catat jawabannya tertulis:"], "estimate": "0,5 hari", "depends": "001"}, {"id": "TDC-004", "name": "Setup repo, Next.js &amp; Netlify", "items": ["Buat branch <code>develop</code> dari <code>main</code>", "Inisialisasi Next.js dengan <code>output: 'export'</code> (static) + Tailwind", "Hubungkan repo ke Netlify: production = <code>main</code>, branch deploy = <code>develop</code>, Deploy Preview untuk PR", "Staging diberi <code>noindex</code>", "Cek halaman pricing Netlify: paket gratis boleh untuk website bisnis", "Simpan link staging di WORKFLOW.md"], "done": "push ke <code>develop</code> otomatis tampil di link staging, dan staging tidak terindeks Google.", "notes": [], "estimate": "0,5 hari", "depends": "001"}]}, {"title": "Fase 1 — Desain", "tickets": [{"id": "TDC-005", "name": "Brand alignment", "items": ["Ganti warna mockup dengan warna brand klien", "Ganti font sesuai brand guideline (atau usulkan pasangan font)", "Pasang logo asli (header, footer, favicon)", "Pilih foto asli untuk hero dan setiap layanan"], "done": "tampilan memakai identitas brand klien, tidak ada lagi logo/ikon pengganti.", "notes": [], "estimate": "1 hari", "depends": "002"}, {"id": "TDC-006", "name": "Desain homepage + 1 halaman layanan", "items": ["Homepage versi desktop &amp; mobile", "Halaman Dog Daycare versi desktop &amp; mobile (contoh pola untuk semua layanan)", "Kirim link ke klien + minta <strong>satu daftar feedback gabungan</strong> dalam 3 hari kerja"], "done": "link desain terkirim ke klien.", "notes": [], "estimate": "2 hari", "depends": "005"}, {"id": "TDC-007", "name": "Revisi &amp; approval desain", "items": ["Revisi putaran 1", "Revisi putaran 2 (maksimal; lebih dari ini = CR)", "Klien menulis \"Design approved\" (WA/email), screenshot disimpan", "Tagih termin 2: IDR 2.250.000"], "done": "approval tertulis diterima dan termin 2 ditagih. Desain dikunci mulai titik ini.", "notes": [], "estimate": "1–2 hari", "depends": "006"}]}, {"title": "Fase 2 — Build", "tickets": [{"id": "TDC-008", "name": "Komponen &amp; layout dasar", "items": ["Header + menu (desktop &amp; mobile), footer, tombol, kartu, tabel harga, FAQ accordion", "Data bisnis (alamat, WA, email, harga) di satu file data, bukan diketik ulang per halaman", "<strong>Hanya 1 H1 per halaman</strong> di template (temuan #7)", "Copyright tahun otomatis (temuan #12)"], "done": "semua komponen dipakai ulang, tidak ada data bisnis yang ditulis ganda.", "notes": [], "estimate": "1 hari", "depends": "007, 004"}, {"id": "TDC-009", "name": "Homepage", "items": ["Hero, filosofi, layanan, inside the club, harga populer, cara daftar, lokasi &amp; peta, testimoni, FAQ", "Teks lengkap, bukan hanya gambar (temuan #4)", "Tidak ada section kosong / slider kosong (temuan #14)"], "done": "semua section berisi konten asli, sesuai desain yang di-approve.", "notes": [], "estimate": "1 hari", "depends": "008"}, {"id": "TDC-010", "name": "Section &amp; halaman lokasi", "items": ["Section \"Our locations\": Umalas, Ungasan, Berawa, Seseh (temuan #2)", "Setiap kartu bisa diklik ke tujuan yang benar", "Halaman Umalas: alamat, jam buka, peta, kontak", "Halaman Ungasan (hanya kalau disetujui di TDC-003)", "Menu \"Home\" dan logo mengarah ke halaman yang sama"], "done": "semua lokasi bisa dibuka dalam 1 klik dari homepage.", "notes": [], "estimate": "0,5 hari", "depends": "008, 003"}, {"id": "TDC-011", "name": "8 halaman layanan + Services", "items": ["Services (overview)", "Dog Daycare", "Luxury Dog Hotel", "Dog Spa, Massage &amp; Grooming", "Dog Training", "Dog Walking", "Dog Birthday Party (3 paket dari TDC-002)", "Pet Taxi", "In-house Vet"], "done": "setiap halaman punya deskripsi, harga (teks), jam/syarat, CTA, sesuai data terbaru klien.", "notes": [], "estimate": "1,5 hari", "depends": "008"}, {"id": "TDC-012", "name": "Pricing &amp; Schedule", "items": ["Semua harga sebagai teks/tabel, bukan gambar (temuan #3)", "Harga dicocokkan 1 per 1 dengan price list terbaru klien", "Jadwal / jam buka &amp; rutinitas harian sebagai teks"], "done": "tidak ada satu pun harga/jadwal yang berupa gambar, dan semua angka sudah dicek dengan klien.", "notes": [], "estimate": "0,5 hari", "depends": "008, 002"}, {"id": "TDC-013", "name": "Join the Club, About, FAQ, Franchise", "items": ["Join the Club: langkah daftar sesuai jawaban Gingr/Pawsi di TDC-003", "About Us", "FAQ: <strong>satu versi gabungan</strong>, tanpa duplikat (temuan #12)", "Own a Franchise + form (kirim ke email franchise@thedogclub.id, misalnya via Netlify Forms)", "Perbaiki typo \"Kapubaten\" dan typo lain (temuan #12)"], "done": "form franchise benar-benar terkirim ke email (sudah dites).", "notes": [], "estimate": "1 hari", "depends": "008"}, {"id": "TDC-014", "name": "Blog + 4 artikel", "items": ["Halaman daftar blog", "4 artikel dipindahkan", "Penulis = \"The Dog Club team\", tanpa email pribadi (temuan #13)", "Post \"Hello world!\" <strong>tidak</strong> dibawa (temuan #12)"], "done": "4 artikel tampil rapi, tidak ada email pribadi di mana pun.", "notes": [], "estimate": "0,5 hari", "depends": "008"}, {"id": "TDC-015", "name": "Halaman legal + 404", "items": ["Privacy Policy", "Terms of Service: hapus teks Shopify, email kontak = woof@thedogclub.id (temuan #12)", "Refund &amp; Shipping Policy (hanya kalau masih perlu, lihat TDC-003)", "Halaman 404"], "done": "tidak ada lagi kata \"Shopify\" atau email <code>nrshopify347@gmail.com</code>.", "notes": [], "estimate": "0,5 hari", "depends": "008, 003"}, {"id": "TDC-016", "name": "Link booking &amp; WhatsApp", "items": ["Semua tombol \"Book\" / \"Sign up\" ke Pawsi (temuan #1)", "Layanan by-request (taxi, vet, training, birthday) ke WhatsApp dengan pesan otomatis", "Tombol \"Join the Club\" sesuai keputusan Gingr/Pawsi di TDC-003", "Cari ulang di kode: tidak ada lagi <code>gingrapp</code> kecuali memang disetujui"], "done": "setiap tombol booking sudah diklik manual dan sampai ke tujuan yang benar.", "notes": [], "estimate": "0,5 hari", "depends": "009–013"}]}, {"title": "Fase 3 — SEO & performa", "tickets": [{"id": "TDC-017", "name": "SEO on-page", "items": ["Meta description unik di setiap halaman (temuan #5)", "Title berisi kata kunci, misalnya \"Dog Hotel Bali\", \"Dog Daycare Umalas\" (temuan #6)", "Cek ulang: tepat 1 H1 per halaman (temuan #7)", "Heading H2/H3 berurutan", "Canonical URL &amp; <code>lang</code> benar"], "done": "Lighthouse SEO ≥ 90 di homepage dan 1 halaman layanan.", "notes": [], "estimate": "1 hari", "depends": "009–015"}, {"id": "TDC-018", "name": "Structured data &amp; link preview", "items": ["JSON-LD LocalBusiness: nama, alamat, jam buka, telepon (temuan #8)", "JSON-LD FAQPage di halaman FAQ (temuan #8)", "Open Graph + gambar share untuk setiap halaman (temuan #11)", "Tes: Google Rich Results Test tanpa error", "Tes: kirim link ke WhatsApp sendiri, preview muncul"], "done": "kedua tes di atas lolos.", "notes": [], "estimate": "0,5 hari", "depends": "017"}, {"id": "TDC-019", "name": "Optimasi gambar &amp; performa", "items": ["Semua gambar dikompres (WebP/AVIF) dan diberi ukuran yang pas (temuan #9)", "Nama file deskriptif, misalnya <code>dog-daycare-umalas-pool.webp</code> (temuan #10)", "Alt text di setiap gambar (temuan #10)", "Font dimuat seperlunya saja (maksimal 2 keluarga font, hanya ketebalan yang dipakai)", "Tanpa plugin / script yang tidak dipakai"], "done": "Lighthouse Performance mobile ≥ 90.", "notes": [], "estimate": "0,5 hari", "depends": "009–015"}, {"id": "TDC-020", "name": "Redirect URL lama &amp; sitemap", "items": ["File <code>_redirects</code> Netlify: semua URL lama → URL baru (lihat tabel di <code>mockup/README.md</code>)", "Termasuk 4 URL artikel blog <code>/2024/11/29/...</code>", "<code>/2023/11/01/hello-world/</code> → <code>/blog</code> (temuan #12)", "<code>sitemap.xml</code> dan <code>robots.txt</code>"], "done": "setiap URL lama dibuka satu per satu dan sampai ke halaman yang benar (bukan 404).", "notes": [], "estimate": "0,5 hari", "depends": "009–015"}]}, {"title": "Fase 4 — QA & review", "tickets": [{"id": "TDC-021", "name": "QA internal", "items": ["Semua halaman terbuka, tidak ada link mati", "Tampilan benar di iPhone, Android, laptop", "Harga, jam buka, alamat sama persis dengan data klien", "Form franchise &amp; newsletter berfungsi", "Tabel \"Pemetaan temuan audit\" di atas: 14 dari 14 sudah dicentang", "Rekam skor PageSpeed/Lighthouse staging (untuk laporan)"], "done": "semua poin dicentang.", "notes": [], "estimate": "1 hari", "depends": "016–020"}, {"id": "TDC-022", "name": "Review klien di staging", "items": ["Kirim link staging + minta <strong>satu daftar koreksi</strong> dalam 3 hari kerja", "Perbaiki semua koreksi", "Klien konfirmasi tertulis \"siap launch\""], "done": "konfirmasi tertulis diterima. Koreksi di luar desain yang di-approve = CR.", "notes": [], "estimate": "2–3 hari", "depends": "021"}, {"id": "TDC-023", "name": "Pelunasan", "items": ["Tagih pelunasan IDR 1.500.000", "Pembayaran masuk"], "done": "lunas. <strong>Jangan launch sebelum tiket ini Done.</strong>", "notes": [], "estimate": "—", "depends": "022"}]}, {"title": "Fase 5 — Launch", "tickets": [{"id": "TDC-024", "name": "Launch &amp; pindah domain", "items": ["Merge <code>develop</code> → <code>main</code>, cek URL production Netlify", "Tambah domain <code>thedogclub.id</code> &amp; <code>www.thedogclub.id</code> di Netlify", "DomaiNesia: ganti <strong>hanya</strong> A record &amp; CNAME <code>www</code>", "⚠️ <strong>Jangan sentuh</strong> MX (email Google) dan TXT google-site-verification", "SSL aktif di kedua alamat", "Kirim email test ke woof@thedogclub.id, pastikan masuk", "Kabari klien: website live"], "done": "website baru terbuka di thedogclub.id dengan HTTPS, dan email klien tetap berfungsi.", "notes": ["Kerjakan di hari kerja, pagi hari, jangan Jumat sore."], "estimate": "0,5 hari", "depends": "023"}, {"id": "TDC-025", "name": "Search Console &amp; laporan launch", "items": ["Submit <code>sitemap.xml</code> di Search Console", "Cek tidak ada error crawl", "Kirim laporan launch ke klien: skor PageSpeed/Lighthouse sebelum vs sesudah, 14 temuan audit sudah diperbaiki", "Ingatkan klien: jangan matikan hosting WordPress lama sebelum 1 minggu stabil"], "done": "laporan terkirim ke klien.", "notes": [], "estimate": "0,5 hari", "depends": "024"}]}, {"title": "Fase 6 — Garansi", "tickets": [{"id": "TDC-026", "name": "Garansi 30 hari &amp; penutupan", "items": ["Hari +7: cek website &amp; Search Console, kabari klien hosting lama boleh dihentikan", "Perbaiki bug dari pekerjaan sendiri (gratis)", "Permintaan baru di luar bug → tawarkan update konten (IDR 150.000/permintaan), maintenance (IDR 1.000.000/bulan), atau upgrade ke Recommended", "Hari +30: laporan singkat (halaman terindeks, impressions &amp; klik pertama)", "Serahkan semua akses (Netlify, GitHub, Search Console) atas nama klien", "Pesan penutup + tawaran maintenance"], "done": "semua akses sudah diserahkan dan laporan +30 hari terkirim.", "notes": [], "estimate": "30 hari", "depends": "024"}]}], "audit": [{"num": 1, "finding": "Tombol Sign up ke Gingr, tidak ada link ke Pawsi", "tickets": "TDC-016"}, {"num": 2, "finding": "Lokasi (Ungasan, Seseh, dll.) tidak bisa diklik", "tickets": "TDC-010"}, {"num": 3, "finding": "Harga &amp; jadwal berupa gambar", "tickets": "TDC-012"}, {"num": 4, "finding": "Homepage hampir tanpa teks", "tickets": "TDC-009"}, {"num": 5, "finding": "Tidak ada meta description", "tickets": "TDC-017"}, {"num": 6, "finding": "Judul halaman lemah", "tickets": "TDC-017"}, {"num": 7, "finding": "2–4 H1 per halaman", "tickets": "TDC-008, TDC-017"}, {"num": 8, "finding": "Tidak ada structured data", "tickets": "TDC-018"}, {"num": 9, "finding": "Website berat &amp; lambat", "tickets": "TDC-019"}, {"num": 10, "finding": "Gambar tanpa alt text &amp; nama file", "tickets": "TDC-019"}, {"num": 11, "finding": "Tidak ada preview saat dibagikan", "tickets": "TDC-018"}, {"num": 12, "finding": "Konten usang: © 2024, typo, Terms Shopify, Hello world, FAQ ganda", "tickets": "TDC-013, TDC-015, TDC-020"}, {"num": 13, "finding": "Email pribadi penulis di blog", "tickets": "TDC-014"}, {"num": 14, "finding": "Slider kosong di homepage", "tickets": "TDC-009"}]};
+const KEY = 'tdc-tracker-v1';
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+const itemKey = (t, i) => t.id + '::' + i;
+let filter = 'all';
+
+const ticketProgress = t => {
+  const n = t.items.length, d = t.items.filter((_, i) => state[itemKey(t, i)]).length;
+  return { n, d, complete: n > 0 && d === n };
+};
+const statusOf = p => p.complete ? ['DONE', 'bg-[#1A2E26] text-white'] : p.d > 0 ? ['DOING', 'bg-[#E4B047] text-[#1A2E26]'] : ['TODO', 'bg-[#EFEAE1] text-[#707070]'];
+const byId = {};
+DATA.phases.forEach(ph => ph.tickets.forEach(t => byId[t.id] = t));
+
+function render() {
+  const root = document.getElementById('phases');
+  const open = new Set([...root.querySelectorAll('details[open]')].map(d => d.dataset.id));
+  root.innerHTML = '';
+  let all = 0, allDone = 0;
+  const stats = [];
+
+  DATA.phases.forEach(ph => {
+    let pn = 0, pd = 0;
+    const wrap = document.createElement('section');
+    const list = ph.tickets.map(t => {
+      const p = ticketProgress(t); pn += p.n; pd += p.d;
+      if (filter === 'open' && p.complete) return '';
+      if (filter === 'done' && !p.complete) return '';
+      const [label, cls] = statusOf(p);
+      const items = t.items.map((it, i) => `
+        <label class="flex gap-3 py-1.5 ${state[itemKey(t, i)] ? 'item-done' : ''}">
+          <input type="checkbox" data-key="${itemKey(t, i)}" ${state[itemKey(t, i)] ? 'checked' : ''}>
+          <span class="text-sm leading-relaxed">${it}</span>
+        </label>`).join('');
+      const notes = t.notes.map(n => `<p class="text-sm text-[#707070] mb-2">${n}</p>`).join('');
+      return `
+        <details data-id="${t.id}" class="bg-white/60 border border-[#E4DDD0] rounded-2xl" ${open.has(t.id) ? 'open' : ''}>
+          <summary class="p-4 sm:p-5 flex items-center gap-3">
+            <span class="chev text-[#707070] transition-transform">&#9656;</span>
+            <span class="font-mono text-xs text-[#707070] w-16 shrink-0">${t.id}</span>
+            <span class="font-semibold flex-1">${t.name}</span>
+            <span class="hidden sm:inline text-xs text-[#707070]">${t.estimate}</span>
+            <span class="text-xs text-[#707070] w-10 text-right">${p.d}/${p.n}</span>
+            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full ${cls}">${label}</span>
+          </summary>
+          <div class="px-5 pb-5 sm:pl-14">
+            ${t.depends && t.depends !== '—' ? `<p class="text-xs text-[#707070] mb-3">Bergantung pada: ${t.depends}</p>` : ''}
+            ${notes}
+            ${items}
+            ${t.done ? `<p class="mt-3 text-sm bg-[#E4B047]/15 rounded-lg px-3 py-2"><strong>Done kalau:</strong> ${t.done}</p>` : ''}
+          </div>
+        </details>`;
+    }).join('');
+    all += pn; allDone += pd;
+    stats.push([ph.title, pd, pn]);
+    if (!list.trim()) return;
+    wrap.innerHTML = `<h2 class="serif text-2xl font-bold mb-3">${ph.title}</h2><div class="space-y-3">${list}</div>`;
+    root.appendChild(wrap);
+  });
+
+  const pct = all ? Math.round(allDone / all * 100) : 0;
+  document.getElementById('overall-bar').style.width = pct + '%';
+  document.getElementById('overall-text').textContent = `${allDone}/${all} tugas · ${pct}%`;
+  document.getElementById('phase-stats').innerHTML = stats.map(([t, d, n]) => `
+    <div><p class="text-xs text-[#707070] truncate">${t}</p>
+    <div class="h-1.5 bg-[#EFEAE1] rounded-full mt-1 overflow-hidden"><div class="h-full bg-[#E4B047]" style="width:${n ? d / n * 100 : 0}%"></div></div>
+    <p class="text-xs mt-1">${d}/${n}</p></div>`).join('');
+
+  document.getElementById('audit').innerHTML = DATA.audit.map(a => {
+    const ids = a.tickets.match(/TDC-\d+/g) || [];
+    const ok = ids.length && ids.every(id => byId[id] && ticketProgress(byId[id]).complete);
+    return `<div class="flex items-start gap-3 p-4 text-sm">
+      <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${ok ? 'bg-[#1A2E26] text-white' : 'bg-[#EFEAE1] text-[#707070]'}">${ok ? '&#10003;' : a.num}</span>
+      <span class="flex-1 ${ok ? 'line-through text-[#9a9a9a]' : ''}">${a.finding}</span>
+      <span class="font-mono text-xs text-[#707070]">${a.tickets}</span></div>`;
+  }).join('');
+
+  document.querySelectorAll('.filter').forEach(b => {
+    const on = b.dataset.filter === filter;
+    b.classList.toggle('bg-[#1A2E26]', on); b.classList.toggle('text-white', on);
+  });
+}
+
+document.addEventListener('change', e => {
+  if (!e.target.matches('input[data-key]')) return;
+  state[e.target.dataset.key] = e.target.checked; save(); render();
+});
+document.querySelectorAll('.filter').forEach(b => b.addEventListener('click', () => { filter = b.dataset.filter; render(); }));
+document.getElementById('expand').addEventListener('click', e => {
+  const ds = document.querySelectorAll('#phases details');
+  const openAll = [...ds].some(d => !d.open);
+  ds.forEach(d => d.open = openAll);
+  e.target.textContent = openAll ? 'Tutup semua' : 'Buka semua';
+});
+document.getElementById('reset').addEventListener('click', () => {
+  if (confirm('Hapus semua centang?')) { state = {}; save(); render(); }
+});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Persiapan Proyek — Website The Dog Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/tailwind-config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site.css">
+    <style>
+        @media print { .no-print { display: none !important; } body { background: #fff; } section { break-inside: avoid; } }
+        .step { counter-increment: step; }
+        ol:has(> .step) { counter-reset: step; }
+        .step::before { content: counter(step) !important; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="no-print bg-forest text-cream text-xs sm:text-sm py-2 px-4 text-center">
+        <a href="../index.html" class="underline hover:text-sunshine">Lihat mockup website &rarr;</a>
+        <span class="mx-2 text-cream/40">|</span>
+        <button onclick="window.print()" class="underline hover:text-sunshine">Simpan sebagai PDF</button>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+
+        <header class="pb-8 border-b border-beigeDark">
+            <span class="text-xs font-bold uppercase tracking-widest text-sunshine">Panduan untuk tim The Dog Club</span>
+            <h1 class="font-editorial text-4xl sm:text-5xl font-bold text-forest leading-tight mt-2">Persiapan proyek website</h1>
+            <p class="text-forest/75 mt-4 leading-relaxed">Halaman ini berisi semua yang perlu disiapkan dari tim The Dog Club, lengkap dengan langkah-langkahnya. Tidak perlu pengetahuan teknis. Kalau ada yang bingung, tanyakan saja ke Arnold via WhatsApp.</p>
+        </header>
+
+        <!-- Overview -->
+        <section class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-6">Ringkasan</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">#</th><th class="py-2 pr-4">Yang disiapkan</th><th class="py-2 pr-4">Kapan</th><th class="py-2">Waktu</th></tr></thead>
+                    <tbody class="text-forest/85">
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-bold">1</td><td class="py-3 pr-4"><a href="#drive" class="underline">Folder Google Drive</a> berisi logo, foto, harga</td><td class="py-3 pr-4"><span class="bg-sunshine/20 text-forest font-semibold px-2 py-0.5 rounded">Sekarang</span></td><td class="py-3">± 30 menit</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-bold">2</td><td class="py-3 pr-4"><a href="#info" class="underline">Jawaban beberapa pertanyaan</a> soal lokasi &amp; layanan</td><td class="py-3 pr-4"><span class="bg-sunshine/20 text-forest font-semibold px-2 py-0.5 rounded">Sekarang</span></td><td class="py-3">± 10 menit</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-bold">3</td><td class="py-3 pr-4"><a href="#github" class="underline">Akun GitHub</a> (tempat menyimpan kode website)</td><td class="py-3 pr-4">Minggu 1</td><td class="py-3">± 10 menit</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-bold">4</td><td class="py-3 pr-4"><a href="#search-console" class="underline">Akses Google Search Console</a> (opsional)</td><td class="py-3 pr-4">Minggu 1</td><td class="py-3">± 5 menit</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-bold">5</td><td class="py-3 pr-4"><a href="#netlify" class="underline">Akun Netlify</a> (hosting website, gratis)</td><td class="py-3 pr-4">Sebelum launch</td><td class="py-3">± 5 menit</td></tr>
+                        <tr><td class="py-3 pr-4 font-bold">6</td><td class="py-3 pr-4"><a href="#domain" class="underline">Akses domain di DomaiNesia</a></td><td class="py-3 pr-4">Hari launch</td><td class="py-3">± 15 menit</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-6 flex gap-4 bg-beige/50 border border-beigeDark rounded-2xl p-5 text-sm text-forest/80">
+                <i class="fa-solid fa-shield-halved text-sunshine text-lg mt-0.5"></i>
+                <p><strong class="text-forest">Semua akun dibuat atas nama The Dog Club</strong>, memakai email <strong>woof@thedogclub.id</strong>. Jadi website, kode, dan hosting sepenuhnya milik The Dog Club, bukan milik developer. Mohon <strong>jangan kirim password lewat WhatsApp</strong>; untuk akses, kita pakai fitur undangan atau sesi video call singkat.</p>
+            </div>
+        </section>
+
+        <!-- 1 Drive -->
+        <section id="drive" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Langkah 1 · Sekarang</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Folder Google Drive</h2>
+            <p class="text-forest/75 mb-6">Satu folder untuk mengumpulkan semua bahan website, supaya tidak tercecer di chat.</p>
+            <ol class="space-y-4 [counter-reset:step]">
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Buka <a class="underline" href="https://drive.google.com" target="_blank" rel="noopener">drive.google.com</a> dengan akun <strong>woof@thedogclub.id</strong>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Klik <strong>+ New → New folder</strong>, beri nama <code class="bg-beige px-1.5 rounded">Website The Dog Club</code>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Di dalamnya, buat 4 folder: <code class="bg-beige px-1.5 rounded">1 Logo &amp; Brand</code>, <code class="bg-beige px-1.5 rounded">2 Foto</code>, <code class="bg-beige px-1.5 rounded">3 Harga &amp; Jadwal</code>, <code class="bg-beige px-1.5 rounded">4 Lainnya</code>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Klik kanan folder utama → <strong>Share</strong> → masukkan email Arnold (dikirim lewat WhatsApp) → pilih <strong>Editor</strong> → <strong>Send</strong>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Isi foldernya sesuai daftar di bawah. Tidak harus sekaligus.</li>
+            </ol>
+
+            <div class="mt-8 grid sm:grid-cols-2 gap-4 text-sm">
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-bold text-forest mb-2"><i class="fa-solid fa-pen-nib text-sunshine mr-2"></i>1 Logo &amp; Brand</p>
+                    <ul class="list-disc ml-5 space-y-1 text-forest/80">
+                        <li>Logo file asli (SVG, AI, PDF, atau PNG besar dengan latar transparan)</li>
+                        <li>Kode warna &amp; font brand, kalau ada</li>
+                        <li>Contoh desain yang disukai (feed Instagram, brosur, dll.)</li>
+                    </ul>
+                </div>
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-bold text-forest mb-2"><i class="fa-solid fa-camera text-sunshine mr-2"></i>2 Foto</p>
+                    <ul class="list-disc ml-5 space-y-1 text-forest/80">
+                        <li>Park, pool, villa, spa, grooming, training, pet taxi</li>
+                        <li>Tim &amp; anjing-anjing yang sedang bermain</li>
+                        <li>Foto asli dari kamera/HP, <strong>bukan screenshot</strong></li>
+                        <li>Semakin banyak semakin baik; kami yang memilih</li>
+                    </ul>
+                </div>
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-bold text-forest mb-2"><i class="fa-solid fa-tags text-sunshine mr-2"></i>3 Harga &amp; Jadwal</p>
+                    <ul class="list-disc ml-5 space-y-1 text-forest/80">
+                        <li>Price list terbaru (file asli, Excel/Word lebih baik dari gambar)</li>
+                        <li>Jam buka setiap lokasi</li>
+                        <li>3 paket birthday party: nama, isi, harga</li>
+                    </ul>
+                </div>
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-bold text-forest mb-2"><i class="fa-solid fa-folder text-sunshine mr-2"></i>4 Lainnya</p>
+                    <ul class="list-disc ml-5 space-y-1 text-forest/80">
+                        <li>Testimoni / review pelanggan yang boleh ditampilkan</li>
+                        <li>Teks atau dokumen lain yang ingin dimasukkan</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2 Info -->
+        <section id="info" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Langkah 2 · Sekarang</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Beberapa pertanyaan</h2>
+            <p class="text-forest/75 mb-6">Cukup dijawab lewat WhatsApp. Jawaban ini menentukan isi dan jumlah halaman website.</p>
+            <ol class="list-decimal ml-5 space-y-3 text-sm text-forest/85">
+                <li><strong>The Dog Club Ungasan:</strong> alamat, jam buka, dan layanan apa saja yang tersedia? Perlu halaman sendiri di website?</li>
+                <li><strong>The Dog Club Seseh:</strong> kapan rencana buka? Ditampilkan sebagai "Coming soon"?</li>
+                <li><strong>The Dog Hotel Berawa:</strong> tetap diarahkan ke website thedoghotel.id?</li>
+                <li><strong>Pendaftaran member:</strong> masih lewat portal Gingr, atau semua sudah lewat Pawsi?</li>
+                <li><strong>Refund &amp; Shipping Policy:</strong> masih diperlukan? (toko online sepertinya sudah tidak aktif)</li>
+                <li><strong>Terms of Service:</strong> ada versi terbaru, atau kami rapikan dari versi yang ada?</li>
+                <li><strong>Nama di invoice:</strong> The Dog Club Bali, atau atas nama PT?</li>
+            </ol>
+        </section>
+
+        <!-- 3 GitHub -->
+        <section id="github" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Langkah 3 · Minggu 1</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Akun GitHub</h2>
+            <p class="text-forest/75 mb-2">GitHub adalah tempat menyimpan kode website. Gratis. Setelah proyek selesai dan lunas, kode website dipindahkan ke akun ini, sehingga sepenuhnya milik The Dog Club.</p>
+            <p class="text-sm text-softGray mb-6">Cukup dibuat sekali. Tidak perlu dibuka-buka lagi setelahnya.</p>
+            <ol class="space-y-4 [counter-reset:step]">
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Buka <a class="underline" href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Isi email <strong>woof@thedogclub.id</strong>, buat password yang kuat, dan pilih username, misalnya <code class="bg-beige px-1.5 rounded">thedogclub-bali</code>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Selesaikan verifikasi (puzzle), lalu masukkan kode yang dikirim ke email woof@thedogclub.id.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Kalau ditanya paket, pilih yang <strong>Free</strong>. Pertanyaan lain boleh di-skip.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Kalau GitHub meminta <strong>two-factor authentication (2FA)</strong>, ikuti langkahnya dengan aplikasi authenticator di HP. Simpan <strong>recovery codes</strong> di tempat aman; ini kunci cadangan akun.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Kirim <strong>username</strong>-nya ke Arnold lewat WhatsApp. Password tidak perlu dikirim.</li>
+            </ol>
+        </section>
+
+        <!-- 4 Search Console -->
+        <section id="search-console" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Langkah 4 · Minggu 1 · Opsional</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Akses Google Search Console</h2>
+            <p class="text-forest/75 mb-6">Search Console menunjukkan bagaimana website tampil di Google. Website The Dog Club sudah terdaftar di sana. Dengan akses ini, kami bisa memastikan ranking Google tetap aman saat pindah ke website baru, dan menyiapkan laporan sebelum/sesudah.</p>
+            <ol class="space-y-4 [counter-reset:step]">
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Buka <a class="underline" href="https://search.google.com/search-console" target="_blank" rel="noopener">search.google.com/search-console</a> dengan akun Google yang dulu dipakai mendaftarkan website.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Pilih properti <strong>thedogclub.id</strong> di kiri atas.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Klik <strong>Settings → Users and permissions → Add user</strong>.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Masukkan email Arnold, pilih izin <strong>Full</strong>, lalu <strong>Add</strong>.</li>
+            </ol>
+            <p class="text-sm text-softGray mt-6">Tidak tahu akun Google mana yang dipakai? Tidak apa-apa, kabari Arnold. Langkah ini bisa dilewati.</p>
+        </section>
+
+        <!-- 5 Netlify -->
+        <section id="netlify" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Langkah 5 · Sebelum launch</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Akun Netlify</h2>
+            <p class="text-forest/75 mb-2">Netlify adalah tempat website disimpan dan ditampilkan (hosting). Paket gratis sudah cukup, jadi <strong>tidak ada biaya bulanan</strong>.</p>
+            <p class="text-sm text-softGray mb-6">Selama pengerjaan, website dites di hosting Arnold. Akun ini baru dipakai menjelang launch.</p>
+            <ol class="space-y-4 [counter-reset:step]">
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Pastikan Langkah 3 (akun GitHub) sudah selesai.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Buka <a class="underline" href="https://app.netlify.com/signup" target="_blank" rel="noopener">app.netlify.com/signup</a> dan klik <strong>Sign up with GitHub</strong>, lalu login dengan akun GitHub The Dog Club.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Kalau ditanya paket, pilih yang <strong>gratis</strong>. Tidak perlu memasukkan kartu kredit.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Kabari Arnold. Menghubungkan website ke akun ini akan dilakukan bersama lewat video call singkat (± 15 menit).</li>
+            </ol>
+        </section>
+
+        <!-- 6 Domain -->
+        <section id="domain" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Langkah 6 · Hari launch</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Akses domain di DomaiNesia</h2>
+            <p class="text-forest/75 mb-6">Domain thedogclub.id terdaftar di DomaiNesia dan aktif sampai 2029. Pada hari launch, domain diarahkan ke website baru. <strong>Email @thedogclub.id tidak akan terganggu.</strong></p>
+            <ol class="space-y-4 [counter-reset:step]">
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Pastikan ada yang bisa login ke <a class="underline" href="https://my.domainesia.com" target="_blank" rel="noopener">my.domainesia.com</a> (akun yang dipakai membeli domain).</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Kami jadwalkan video call ± 15 menit di hari launch. Tim The Dog Club login dan membagikan layar, Arnold memandu perubahannya.</li>
+                <li class="step relative pl-12 before:absolute before:left-0 before:top-0 before:w-8 before:h-8 before:rounded-full before:bg-forest before:text-cream before:flex before:items-center before:justify-center before:text-sm before:font-bold">Yang diubah hanya 2 pengaturan website. Pengaturan email tidak disentuh.</li>
+            </ol>
+            <p class="text-sm text-softGray mt-6"><strong class="text-forest">Penting:</strong> mohon <strong>jangan hentikan hosting website lama</strong> sampai website baru berjalan stabil minimal 1 minggu. Arnold akan mengabari kapan aman untuk dihentikan.</p>
+        </section>
+
+        <!-- Done -->
+        <section class="py-10">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-4">Checklist</h2>
+            <ul class="space-y-2 text-sm text-forest/85">
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>Folder Google Drive dibuat &amp; dibagikan ke Arnold</li>
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>Logo, foto, price list, jam buka, paket birthday diunggah</li>
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>7 pertanyaan di Langkah 2 dijawab</li>
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>Akun GitHub dibuat, username dikirim ke Arnold</li>
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>Akses Search Console diberikan (opsional)</li>
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>Akun Netlify dibuat (menjelang launch)</li>
+                <li><i class="fa-regular fa-square text-sunshine mr-2"></i>Login DomaiNesia siap untuk hari launch</li>
+            </ul>
+            <a href="https://wa.me/6281214574782?text=Halo%20Arnold%2C%20ada%20pertanyaan%20soal%20persiapan%20website%20The%20Dog%20Club." target="_blank" rel="noopener noreferrer"
+               class="no-print mt-8 bg-forest hover:bg-forestLight text-cream px-6 py-3 rounded-full font-semibold inline-flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Tanya Arnold
+            </a>
+        </section>
+
+    </main>
+</body>
+</html>

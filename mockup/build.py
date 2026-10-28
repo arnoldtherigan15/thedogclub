@@ -53,6 +53,14 @@ IMG = {
     "puppy": "1561037404-61cd46aa615b",
 }
 
+# name, area, description, link, link label, external, badge
+LOCATIONS = [
+    ("The Dog Club", "Umalas", "Dog park, daycare, hotel, spa and training. Our flagship club.", "umalas.html", "Visit Umalas", False, ""),
+    ("The Dog Club", "Ungasan", "Our club in the south of Bali.", wa("Hi! I'd like to know more about The Dog Club Ungasan."), "Ask for directions", True, ""),
+    ("The Dog Hotel", "Berawa", "Our dedicated dog hotel in Berawa.", "https://thedoghotel.id/", "Visit thedoghotel.id", True, ""),
+    ("The Dog Club", "Seseh", "A new club is on its way.", "", "", False, "Coming soon"),
+]
+
 # Hours shared by daycare and spa
 HOURS_STANDARD = [("Monday", "9am – 4pm"), ("Tuesday – Sunday", "9am – 6pm")]
 
@@ -217,7 +225,7 @@ LOGO = """
                 </div>
                 <div class="flex flex-col">
                     <span class="font-editorial text-xl sm:text-2xl font-bold tracking-tight text-forest">THE DOG CLUB</span>
-                    <span class="text-[10px] tracking-widest uppercase font-semibold text-softGray -mt-1">Umalas &bull; Bali</span>
+                    <span class="text-[10px] tracking-widest uppercase font-semibold text-softGray -mt-1">Bali</span>
                 </div>
             </a>"""
 
@@ -575,6 +583,25 @@ def cta_light_buttons(primary_label, primary_href, secondary_label=None, seconda
     return primary + secondary
 
 
+def location_cards():
+    cards = []
+    for name, area, desc, href, label, external, badge in LOCATIONS:
+        ext = ' target="_blank" rel="noopener noreferrer"' if external else ""
+        link = (f'<a href="{href}"{ext} class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest hover:text-sunshine">{label} '
+                f'<i class="fa-solid {"fa-arrow-up-right-from-square" if external else "fa-arrow-right"} text-xs"></i></a>') if href else ""
+        tag = f'<span class="absolute top-4 right-4 text-[11px] font-bold uppercase tracking-wider bg-sunshine text-forest px-2.5 py-1 rounded-full">{badge}</span>' if badge else ""
+        cards.append(f"""
+                <div class="relative bg-cream rounded-3xl border border-beigeDark p-6 flex flex-col {'opacity-70' if badge else ''}">
+                    {tag}
+                    <div class="w-11 h-11 rounded-full bg-forest text-sunshine flex items-center justify-center mb-4"><i class="fa-solid fa-location-dot"></i></div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-softGray">{name}</p>
+                    <h3 class="font-editorial text-2xl font-bold text-forest">{area}</h3>
+                    <p class="text-sm text-forest/75 mt-2 flex-1">{desc}</p>
+                    {link}
+                </div>""")
+    return f'<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{"".join(cards)}</div>'
+
+
 def service_cards(exclude=None):
     cards = "".join(f"""
                 <a href="{slug}.html" class="group bg-cream rounded-3xl border border-beigeDark overflow-hidden hover:border-sunshine/60 hover:shadow-lg transition-all flex flex-col">
@@ -705,7 +732,7 @@ def build_home():
                 <div class="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
                     <div class="md:col-span-7 flex flex-col items-start">
                         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-beige border border-beigeDark text-forest text-xs font-semibold uppercase tracking-wider mb-6">
-                            <i class="fa-solid fa-location-dot text-sunshine"></i> Umalas, Bali
+                            <i class="fa-solid fa-location-dot text-sunshine"></i> Umalas &middot; Ungasan &middot; Berawa
                         </div>
                         <h1 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-bold text-forest leading-[1.15] mb-6">
                             Your furry friend's new <span class="italic font-normal text-sunshine">favorite</span> place.
@@ -739,6 +766,7 @@ def build_home():
             </div>
         </section>
 
+{section(section_heading("Our locations", "Find the club nearest to you", "Three places across Bali, with a fourth on the way.") + location_cards(), bg="bg-cream")}
         <section class="py-16 md:py-24 bg-beige/60 border-y border-beigeDark/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div class="rounded-3xl overflow-hidden h-80 md:h-[28rem] bg-beige shadow-lg">

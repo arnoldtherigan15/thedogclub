@@ -81,3 +81,5 @@ Tidak dibawa: `/my-account/` dan `/product-category/*` (sisa WooCommerce yang ti
 - [ ] Refund & shipping policy masih untuk toko online. Apakah toko online masih ada? Kalau tidak, dua halaman ini bisa dihapus.
 - [ ] Foto asli (semua gambar di mockup masih foto stok Unsplash).
 - [ ] Review Google asli untuk bagian testimoni.
+- [ ] **Lokasi lain:** alamat, jam buka, dan layanan The Dog Club Ungasan; apakah Ungasan perlu halaman sendiri (+1 halaman); kapan Seseh buka; apakah The Dog Hotel Berawa tetap di website terpisah (thedoghotel.id).
+- [ ] **Gingr:** apakah pendaftaran member masih lewat Gingr, atau semuanya sudah pindah ke Pawsi?

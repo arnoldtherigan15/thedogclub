@@ -20,6 +20,7 @@
             .shadow-xl, .shadow-lg { box-shadow: none !important; }
         }
         table td, table th { vertical-align: top; }
+        [data-pkgs][hidden] { display: none !important; }
 
         /* Selectable package cards */
         .pkg { background: #F9F6F0; color: #1A2E26; border: 2px solid #E4DDD0; transition: all .2s; cursor: pointer; }
@@ -62,7 +63,7 @@
                 <dt class="text-softGray">Date</dt><dd>27 October 2026</dd>
                 <dt class="text-softGray">Valid until</dt><dd>10 November 2026</dd>
                 <dt class="text-softGray">Prepared for</dt><dd>The Dog Club Bali</dd>
-                <dt class="text-softGray">Prepared by</dt><dd>Arnold</dd>
+                <dt class="text-softGray">Prepared by</dt><dd>Arnold Therigan</dd>
             </dl>
         </header>
 
@@ -140,10 +141,18 @@
                         <li>Pricing, Schedule, Join the Club, About, FAQ</li>
                         <li>Umalas location, Franchise (with form)</li>
                         <li>Blog + 4 articles, 4 legal pages, 404 page</li>
-                        <li>English &amp; Indonesian versions (Recommended &amp; Premium)</li>
+                        <li data-pkgs="recommended premium">English &amp; Indonesian versions</li>
                     </ul>
                 </div>
-                <div class="bg-cream border border-beigeDark rounded-2xl p-6">
+                <div data-pkgs="essential" class="bg-cream border border-beigeDark rounded-2xl p-6">
+                    <h3 class="font-bold text-forest mb-3"><span class="text-sunshine mr-2">3</span>Content updates after launch</h3>
+                    <ul class="text-sm text-forest/80 space-y-1.5 list-disc ml-5">
+                        <li>Static website: no admin dashboard</li>
+                        <li>Content changes are made by the developer: IDR 150,000 per request, or IDR 1,000,000 / month for maintenance</li>
+                        <li>Can be upgraded to the Recommended package (admin dashboard) at any time</li>
+                    </ul>
+                </div>
+                <div data-pkgs="recommended premium" class="bg-cream border border-beigeDark rounded-2xl p-6">
                     <h3 class="font-bold text-forest mb-3"><span class="text-sunshine mr-2">3</span>Admin dashboard</h3>
                     <ul class="text-sm text-forest/80 space-y-1.5 list-disc ml-5">
                         <li>Reorder page sections with drag &amp; drop</li>
@@ -157,10 +166,11 @@
                     <h3 class="font-bold text-forest mb-3"><span class="text-sunshine mr-2">4</span>Technical, SEO &amp; launch</h3>
                     <ul class="text-sm text-forest/80 space-y-1.5 list-disc ml-5">
                         <li>Fast (Lighthouse target &ge; 90) &amp; responsive</li>
-                        <li>Basic SEO, sitemap, redirects from old URLs</li>
-                        <li>Google Analytics 4 &amp; Meta Pixel (tracking Book Now clicks)</li>
+                        <li data-pkgs="essential">Basic SEO &amp; sitemap</li>
+                        <li data-pkgs="recommended premium">Basic SEO, sitemap, redirects from old URLs</li>
+                        <li data-pkgs="recommended premium">Google Analytics 4 &amp; Meta Pixel (tracking Book Now clicks)</li>
                         <li>Content migration, domain, SSL &amp; hosting setup</li>
-                        <li>Admin training</li>
+                        <li data-pkgs="recommended premium">Admin training</li>
                     </ul>
                 </div>
             </div>
@@ -243,7 +253,7 @@
         <!-- Pricing -->
         <section class="py-10 border-b border-beigeDark">
             <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Packages</h2>
-            <p class="text-forest/70 mb-8"><span class="no-print">Click a package to see its cost breakdown and payment schedule.</span> The Recommended package covers the full scope above.</p>
+            <p class="text-forest/70 mb-8"><span class="no-print">Click a package: the scope, cost breakdown, timeline and running costs on this page update to match it.</span></p>
 
             <div class="grid md:grid-cols-3 gap-5" role="radiogroup" aria-label="Packages">
                 <button type="button" data-pkg="essential" role="radio" aria-checked="false" class="pkg rounded-2xl p-6 flex flex-col text-left relative">
@@ -334,8 +344,14 @@
         <!-- Timeline -->
         <section class="py-10 border-b border-beigeDark">
             <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Timeline</h2>
-            <p class="text-forest/70 mb-8">4 weeks from receipt of the down payment (Recommended package). The Premium package follows the same steps on an express 2-week schedule.</p>
-            <ol class="space-y-3">
+            <p data-pkgs="essential" class="text-forest/70 mb-8">3 weeks from receipt of the down payment.</p>
+            <ol data-pkgs="essential" class="space-y-3">
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 1</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Brand alignment &amp; design: homepage + one service page, desktop &amp; mobile, revisions &amp; approval <span class='text-softGray'>→ payment 2</span></div></li>
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 2</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Build all 27 pages on a private preview link</div></li>
+                <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 3</span><div class="bg-forest text-cream rounded-xl px-4 py-3 text-sm">Content check, QA on all devices, launch &amp; domain switch <span class='text-sunshine'>→ website live</span></div></li>
+            </ol>
+            <p data-pkgs="recommended premium" class="text-forest/70 mb-8">4 weeks from receipt of the down payment (Recommended package). The Premium package follows the same steps on an express 2-week schedule.</p>
+            <ol data-pkgs="recommended premium" class="space-y-3">
                 <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 1</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Finalise the design from the mockup, revisions &amp; approval <span class="text-softGray">→ payment 2</span></div></li>
                 <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 2</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Build the pages &amp; admin dashboard</div></li>
                 <li class="grid grid-cols-[6rem_1fr] gap-4 items-start"><span class="text-sm font-bold text-forest">Week 3</span><div class="bg-beige/50 text-forest/85 rounded-xl px-4 py-3 text-sm">Content entry in English &amp; Indonesian, translation review, SEO &amp; analytics</div></li>
@@ -352,14 +368,15 @@
                     <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">Component</th><th class="py-2 pr-4">Technology</th><th class="py-2 text-right">Cost</th></tr></thead>
                     <tbody class="text-forest/85">
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Website</td><td class="py-3 pr-4">Next.js (React)</td><td class="py-3 text-right">—</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Admin dashboard</td><td class="py-3 pr-4">Payload CMS (open source)</td><td class="py-3 text-right">Free</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Hosting + photo storage</td><td class="py-3 pr-4">Vercel Pro (Singapore servers) + Vercel Blob</td><td class="py-3 text-right whitespace-nowrap">± US$20 / month</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4">Database</td><td class="py-3 pr-4">Neon PostgreSQL</td><td class="py-3 text-right">Free</td></tr>
+                        <tr data-pkgs="recommended premium" class="border-b border-beigeDark"><td class="py-3 pr-4">Admin dashboard</td><td class="py-3 pr-4">Payload CMS (open source)</td><td class="py-3 text-right">Free</td></tr>
+                        <tr data-pkgs="essential" class="border-b border-beigeDark"><td class="py-3 pr-4">Hosting</td><td class="py-3 pr-4">Netlify (static hosting, global CDN)</td><td class="py-3 text-right">Free</td></tr>
+                        <tr data-pkgs="recommended premium" class="border-b border-beigeDark"><td class="py-3 pr-4">Hosting + photo storage</td><td class="py-3 pr-4">Vercel Pro (Singapore servers) + Vercel Blob</td><td class="py-3 text-right whitespace-nowrap">± US$20 / month</td></tr>
+                        <tr data-pkgs="recommended premium" class="border-b border-beigeDark"><td class="py-3 pr-4">Database</td><td class="py-3 pr-4">Neon PostgreSQL</td><td class="py-3 text-right">Free</td></tr>
                         <tr><td class="py-3 pr-4">Domain thedogclub.id</td><td class="py-3 pr-4">Renewal of the existing domain</td><td class="py-3 text-right whitespace-nowrap">± IDR 250,000 / year</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-xs text-softGray mt-4">The Essential package (static) uses no admin dashboard or database: the site is hosted for free on Netlify, so the only running cost is the domain. It is built on the same technology (Next.js), so it can be upgraded to the Recommended package later without starting over.</p>
+            <p data-pkgs="essential" class="text-xs text-softGray mt-4">The only running cost is the domain. The site is built on the same technology (Next.js), so it can be upgraded to the Recommended package later without starting over.</p>
         </section>
 
         <!-- Terms -->
@@ -378,10 +395,10 @@
             </div>
             <ul class="text-sm text-forest/80 space-y-2 list-disc ml-5">
                 <li><strong>Bug warranty:</strong> 30 days after the website goes live, free of charge (all packages).</li>
-                <li><strong>Free maintenance:</strong> 1 month (Recommended) or 3 months (Premium) after launch, covering minor content updates, security updates, monitoring and technical support. After that, maintenance is available at IDR 1,000,000 / month.</li>
-                <li><strong>Ownership:</strong> the source code, design and admin access belong fully to the client after the final payment.</li>
+                <li data-pkgs="recommended premium"><strong>Free maintenance:</strong> 1 month (Recommended) or 3 months (Premium) after launch, covering minor content updates, security updates, monitoring and technical support. After that, maintenance is available at IDR 1,000,000 / month.</li>
+                <li><strong>Ownership:</strong> the source code, design and all account access belong fully to the client after the final payment.</li>
                 <li>Changes outside the approved design are charged as additional work.</li>
-                <li>Translations (English &harr; Indonesian) are prepared by the developer and reviewed by The Dog Club team.</li>
+                <li data-pkgs="recommended premium">Translations (English &harr; Indonesian) are prepared by the developer and reviewed by The Dog Club team.</li>
                 <li>Content (photos, latest prices, schedule, birthday packages) is to be provided by the client by week 2 at the latest. Late content will shift the timeline.</li>
                 <li>Client feedback within 3 working days per stage.</li>
                 <li>This quotation is valid for 14 days from its date.</li>
@@ -400,7 +417,7 @@
                 </div>
                 <div class="border border-beigeDark rounded-2xl p-6">
                     <p class="text-xs uppercase tracking-wider text-softGray font-semibold">Developer</p>
-                    <p class="font-bold text-forest mt-1">Arnold</p>
+                    <p class="font-bold text-forest mt-1">Arnold Therigan</p>
                     <div class="h-20 border-b border-dashed border-beigeDark mt-4"></div>
                     <p class="text-xs text-softGray mt-2">Date &amp; signature</p>
                 </div>
@@ -478,6 +495,11 @@
                 document.getElementById('choose-link').href = `https://wa.me/${DEV_WHATSAPP}?text=${encodeURIComponent(message)}`;
                 document.getElementById('choose-cta').classList.remove('hidden');
             }
+
+            // Show only the scope, timeline and costs that apply to this package
+            document.querySelectorAll('[data-pkgs]').forEach(el => {
+                el.hidden = !el.dataset.pkgs.split(' ').includes(key);
+            });
 
             history.replaceState(null, '', '#' + key);
         }

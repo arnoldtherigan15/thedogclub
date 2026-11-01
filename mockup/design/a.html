@@ -12,6 +12,16 @@
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .price-row{display:flex;justify-content:space-between;gap:16px;padding:18px 0}.price-row small{display:inline-block;margin-left:10px;opacity:.6}
 @media(max-width:820px){.links{display:none}.grid3,.grid4,.split{grid-template-columns:1fr}.split{gap:32px}}
+/* Motion: subtle reveal on scroll, hover states, slow hero zoom */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.ph{overflow:hidden;border-radius:inherit}.ph img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img,.rowc:hover .ph img{transform:scale(1.04)}
+.btn{transition:opacity .25s ease,transform .25s ease}.btn:hover{opacity:.85;transform:translateY(-1px)}
+.links a{transition:opacity .25s ease}.links a:hover{opacity:.55}
+.hero{overflow:hidden}.hero>img,.hero .zoom{animation:heroZoom 1.8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroZoom{from{transform:scale(1.05)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero>img,.hero .zoom{animation:none}.ph img,.btn{transition:none}}
 
 body{background:#FFFDFC;color:#0F120E;font-family:'Instrument Sans',sans-serif}
 h1,h2,h3{font-weight:500;letter-spacing:-.025em}
@@ -27,8 +37,25 @@ h1,h2,h3{font-weight:500;letter-spacing:-.025em}
 <div class="bar">Design sample A — Paper · <a href="index.html">Back to all options</a></div>
 <nav class="nav"><a href="#"><img src="img/logo.svg" alt="The Dog Club"></a><div class="links"><a href="#">Services</a><a href="#">Pricing</a><a href="#">Locations</a><a href="#">Join the Club</a></div><a class="btn" href="https://book.pawsi.id/thedogclubbali" target="_blank" rel="noopener noreferrer">Book now</a></nav><section class="hero"><div class="wrap"><h1>Your dog's new favorite place.</h1>
 <div class="row"><p>Cage-free daycare, a luxury dog hotel, spa and training across Bali.</p><a class="btn" href="https://book.pawsi.id/thedogclubbali" target="_blank" rel="noopener noreferrer">Book a visit</a></div>
-<img src="img/pool-dogs.jpg" alt="Two dogs in the pool at The Dog Club"></div></section>
-<section class="sec"><div class="wrap"><h2>What we do</h2><div class="grid3"><article class="card"><img src="img/golden-pool.jpg" alt="Dog Daycare" loading="lazy"><h3>Dog Daycare</h3><p>Cage-free play in a 700 sqm park with two bone-shaped pools.</p><small>From IDR 100.000</small></article><article class="card"><img src="img/pack.jpg" alt="Luxury Dog Hotel" loading="lazy"><h3>Luxury Dog Hotel</h3><p>Sleepovers at the Dog Villa, supervised by our team 24/7.</p><small>From IDR 160.000 a night</small></article><article class="card"><img src="img/spa.jpg" alt="Dog Spa" loading="lazy"><h3>Dog Spa</h3><p>Baths, cuts and brushing with natural products only.</p><small>From IDR 110.000</small></article></div></div></section>
+<div class="ph" style="border-radius:4px"><img class="zoom" src="img/pool-dogs.jpg" alt="Two dogs in the pool at The Dog Club"></div></div></section>
+<section class="sec"><div class="wrap"><h2>What we do</h2><div class="grid3"><article class="card"><div class="ph"><img src="img/golden-pool.jpg" alt="Dog Daycare" loading="lazy"></div><h3>Dog Daycare</h3><p>Cage-free play in a 700 sqm park with two bone-shaped pools.</p><small>From IDR 100.000</small></article><article class="card"><div class="ph"><img src="img/pack.jpg" alt="Luxury Dog Hotel" loading="lazy"></div><h3>Luxury Dog Hotel</h3><p>Sleepovers at the Dog Villa, supervised by our team 24/7.</p><small>From IDR 160.000 a night</small></article><article class="card"><div class="ph"><img src="img/spa.jpg" alt="Dog Spa" loading="lazy"></div><h3>Dog Spa</h3><p>Baths, cuts and brushing with natural products only.</p><small>From IDR 110.000</small></article></div></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><h2>Popular services</h2><div class="price-row"><span>Half daycare<small>4 hours</small></span><span>IDR 100.000</span></div><div class="price-row"><span>Full daycare<small>All day</small></span><span>IDR 120.000</span></div><div class="price-row"><span>Deluxe boarding<small>Weekday night</small></span><span>IDR 160.000</span></div><div class="price-row"><span>Essential bath & brush<small>Small, short hair</small></span><span>IDR 110.000</span></div></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><h2>Visit us</h2><div class="grid3"><div class="loc"><p>The Dog Club</p><h3>Umalas</h3><p>+62 811-3940-055</p></div><div class="loc"><p>The Dog Club</p><h3>Ungasan</h3><p>+62 812-4645-3589</p></div><div class="loc"><p>The Dog Hotel</p><h3>Berawa</h3><p>+62 813-1155-109</p></div></div></div></section>
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var els = document.querySelectorAll('.hero h1,.hero p,.hero .btn,.sec h2,.story p,.story img,.card,.rowc,.price-row,.loc,.step');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.transitionDelay = (i % 4) * 80 + 'ms';
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();
+</script>
 </body></html>

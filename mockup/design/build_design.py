@@ -43,7 +43,36 @@ BASE = """
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .price-row{display:flex;justify-content:space-between;gap:16px;padding:18px 0}.price-row small{display:inline-block;margin-left:10px;opacity:.6}
 @media(max-width:820px){.links{display:none}.grid3,.grid4,.split{grid-template-columns:1fr}.split{gap:32px}}
+/* Motion: subtle reveal on scroll, hover states, slow hero zoom */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.ph{overflow:hidden;border-radius:inherit}.ph img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img,.rowc:hover .ph img{transform:scale(1.04)}
+.btn{transition:opacity .25s ease,transform .25s ease}.btn:hover{opacity:.85;transform:translateY(-1px)}
+.links a{transition:opacity .25s ease}.links a:hover{opacity:.55}
+.hero{overflow:hidden}.hero>img,.hero .zoom{animation:heroZoom 1.8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroZoom{from{transform:scale(1.05)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero>img,.hero .zoom{animation:none}.ph img,.btn{transition:none}}
 """
+
+# Hidden state is added by JS, so the page stays fully visible if scripts don't run.
+MOTION = """<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var els = document.querySelectorAll('.hero h1,.hero p,.hero .btn,.sec h2,.story p,.story img,.card,.rowc,.price-row,.loc,.step');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.transitionDelay = (i % 4) * 80 + 'ms';
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();
+</script>"""
 
 THEMES = {
 "a": {"name": "A — Paper", "fonts": "family=Instrument+Sans:wght@400;500;600", "css": """
@@ -67,10 +96,10 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:300;letter-spacing:-.02em}h1 e
 .hero .txt{position:absolute;z-index:1;left:0;right:0;bottom:48px}.hero h1{font-size:clamp(44px,7.6vw,100px);line-height:1;max-width:13ch;margin-bottom:24px}.hero h1 em{color:#fff}
 .sec{padding:96px 0}.sec h2{font-size:clamp(32px,4.4vw,56px);line-height:1.08;margin-bottom:20px}.sec p{line-height:1.65}
 .story img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.rowc{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:32px 0}.rowc img{width:100%;aspect-ratio:3/2;object-fit:cover}.rowc:nth-child(even) img{order:2}.rowc h3{font-size:34px;margin-bottom:8px}.rowc small{display:block;margin-top:12px;color:#A47E5C;font-size:15px}
+.rowc{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:32px 0}.rowc img{width:100%;aspect-ratio:3/2;object-fit:cover}.rowc:nth-child(even) .ph{order:2}.rowc h3{font-size:34px;margin-bottom:8px}.rowc small{display:block;margin-top:12px;color:#A47E5C;font-size:15px}
 .price-row{border-top:1px solid #cfccc4;font-size:18px}
 .loc h3{font-size:30px}.loc p{font-size:14px;opacity:.75}
-@media(max-width:820px){.rowc{grid-template-columns:1fr;gap:16px}.rowc:nth-child(even) img{order:0}}
+@media(max-width:820px){.rowc{grid-template-columns:1fr;gap:16px}.rowc:nth-child(even) .ph{order:0}}
 """},
 "c": {"name": "C — Soft", "fonts": "family=Figtree:wght@400;500;600", "css": """
 body{background:#fff;color:#3F443F;font-family:'Figtree',sans-serif}
@@ -93,7 +122,7 @@ def book(cls="btn"):
 
 
 def cards():
-    return "".join(f'<article class="card"><img src="img/{i}" alt="{n}" loading="lazy"><h3>{n}</h3><p>{d}</p><small>{p}</small></article>' for n, d, p, i in SERVICES)
+    return "".join(f'<article class="card"><div class="ph"><img src="img/{i}" alt="{n}" loading="lazy"></div><h3>{n}</h3><p>{d}</p><small>{p}</small></article>' for n, d, p, i in SERVICES)
 
 
 def rows():
@@ -107,14 +136,14 @@ def locs():
 def body_a():
     return f"""<section class="hero"><div class="wrap"><h1>Your dog's new favorite place.</h1>
 <div class="row"><p>Cage-free daycare, a luxury dog hotel, spa and training across Bali.</p>{book()}</div>
-<img src="img/pool-dogs.jpg" alt="Two dogs in the pool at The Dog Club"></div></section>
+<div class="ph" style="border-radius:4px"><img class="zoom" src="img/pool-dogs.jpg" alt="Two dogs in the pool at The Dog Club"></div></div></section>
 <section class="sec"><div class="wrap"><h2>What we do</h2><div class="grid3">{cards()}</div></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><h2>Popular services</h2>{rows()}</div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><h2>Visit us</h2><div class="grid3">{locs()}</div></div></section>"""
 
 
 def body_b():
-    items = "".join(f'<div class="rowc"><img src="img/{"husky-water.jpg" if i == "golden-pool.jpg" else i}" alt="{n}" loading="lazy"><div><h3>{n}</h3><p>{d}</p><small>{p}</small></div></div>' for n, d, p, i in SERVICES)
+    items = "".join(f'<div class="rowc"><div class="ph"><img src="img/{"husky-water.jpg" if i == "golden-pool.jpg" else i}" alt="{n}" loading="lazy"></div><div><h3>{n}</h3><p>{d}</p><small>{p}</small></div></div>' for n, d, p, i in SERVICES)
     return f"""<section class="hero"><img src="img/golden-pool.jpg" alt="Dogs in the pool at The Dog Club"><div class="txt"><div class="wrap"><h1>Your dog's <em>new favorite</em> place.</h1>{book()}</div></div></section>
 <section class="sec"><div class="wrap split story"><div><h2>Dogs should enjoy their holiday as much <em>as you do.</em></h2><p>Our dog-loving team combines home-like attention with supervised fun, whether your pup stays for a day, a week or several months.</p></div><img src="img/park-pool.jpg" alt="The park at The Dog Club" loading="lazy"></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">{items}</div></section>
@@ -125,7 +154,7 @@ def body_b():
 def body_c():
     steps = "".join(f'<div class="step"><b>{n}</b><h3>{t}</h3><p>{d}</p></div>' for n, t, d in DAY)
     return f"""<section class="hero"><div class="wrap"><h1>happy dog. <em>happy you.</em></h1><p>Cage-free daycare, a luxury dog hotel, spa and training across Bali.</p>{book()}
-<img src="img/beach.jpg" alt="Morning beach walk with The Dog Club"></div></section>
+<div class="ph" style="border-radius:16px;margin-top:48px"><img class="zoom" style="margin-top:0" src="img/beach.jpg" alt="Morning beach walk with The Dog Club"></div></div></section>
 <section class="sec tint"><div class="wrap"><h2>a day at the club</h2><div class="grid4">{steps}</div></div></section>
 <section class="sec"><div class="wrap"><h2>what we do</h2><div class="grid3">{cards()}</div></div></section>
 <section class="sec tint"><div class="wrap narrow"><h2>popular services</h2>{rows()}</div></section>
@@ -144,6 +173,7 @@ def page(key, t):
 <style>{BASE}{t['css']}</style></head><body>
 <div class="bar">Design sample {t['name']} · <a href="index.html">Back to all options</a></div>
 {nav}{BODIES[key]()}
+{MOTION}
 </body></html>
 """
     (ROOT / f"{key}.html").write_text(html)

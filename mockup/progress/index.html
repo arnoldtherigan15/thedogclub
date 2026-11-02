@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Project Progress — The Dog Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/tailwind-config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site.css">
+    <style>
+        @media print { .no-print { display: none !important; } body { background: #fff; } section { break-inside: avoid; } }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="no-print bg-forest text-cream text-xs sm:text-sm py-2 px-4 text-center">
+        <a href="../design/" class="underline hover:text-sunshine">Design options</a>
+        <span class="mx-2 text-cream/40">|</span>
+        <button onclick="window.print()" class="underline hover:text-sunshine">Save as PDF</button>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+
+        <header class="pb-8 border-b border-beigeDark">
+            <span class="text-xs font-bold uppercase tracking-widest text-sunshine">Project progress</span>
+            <h1 class="font-editorial text-4xl sm:text-5xl font-bold text-forest leading-tight mt-2">The Dog Club website</h1>
+            <p class="text-forest/70 mt-3">Essential package &middot; <span id="period"></span></p>
+
+            <div class="mt-8 bg-forest text-cream rounded-2xl p-6">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span id="health" class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-sunshine text-forest"></span>
+                    <span id="updated" class="text-xs text-cream/60"></span>
+                </div>
+                <p id="health-note" class="mt-3 leading-relaxed"></p>
+                <div class="mt-5 h-2 bg-cream/15 rounded-full overflow-hidden"><div id="bar" class="h-full bg-sunshine"></div></div>
+                <dl class="mt-5 grid grid-cols-3 gap-4 text-sm">
+                    <div><dt class="text-xs text-cream/60">Stages done</dt><dd id="stat-stages" class="font-editorial text-2xl font-bold mt-1"></dd></div>
+                    <div><dt class="text-xs text-cream/60">Pages built</dt><dd id="stat-pages" class="font-editorial text-2xl font-bold mt-1"></dd></div>
+                    <div><dt class="text-xs text-cream/60">Audit issues fixed</dt><dd id="stat-audit" class="font-editorial text-2xl font-bold mt-1"></dd></div>
+                </dl>
+            </div>
+        </header>
+
+        <section class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Needed from you next</h2>
+            <p class="text-forest/70 text-sm mb-6">The project moves forward as soon as these are in.</p>
+            <ul id="next-needs" class="space-y-3"></ul>
+        </section>
+
+        <section class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Timeline</h2>
+            <p id="timeline-note" class="text-forest/70 text-sm mb-8"></p>
+            <ol id="timeline"></ol>
+        </section>
+
+        <section class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-6">Updates</h2>
+            <div id="updates" class="space-y-6"></div>
+        </section>
+
+        <section class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Everything to prepare</h2>
+            <p class="text-forest/70 text-sm mb-6">The full list, in date order. All accounts are created in The Dog Club's name, so the website stays yours.</p>
+            <ul id="all-needs" class="divide-y divide-beigeDark"></ul>
+        </section>
+
+        <section class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-6">Payments</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">Payment</th><th class="py-2 pr-4">When</th><th class="py-2 pr-4">Amount</th><th class="py-2">Status</th></tr></thead>
+                    <tbody id="payments" class="text-forest/85"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="py-10">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-4">Project documents</h2>
+            <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+                <li><a class="underline text-forest" href="../quotation/#essential">Quotation</a></li>
+                <li><a class="underline text-forest" href="../invoice/">Invoice</a></li>
+                <li><a class="underline text-forest" href="../seo-audit/">Website audit</a></li>
+                <li><a class="underline text-forest" href="../onboarding/">Preparation guide (Indonesian)</a></li>
+            </ul>
+            <a href="https://wa.me/6281214574782?text=Hi%20Arnold%2C%20a%20question%20about%20the%20website%20project." target="_blank" rel="noopener noreferrer"
+               class="no-print mt-8 bg-forest hover:bg-forestLight text-cream px-6 py-3 rounded-full font-semibold inline-flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Ask Arnold
+            </a>
+        </section>
+
+    </main>
+
+    <script src="data.js"></script>
+    <script>
+        const P = window.PROJECT;
+        const toDate = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+        const fmt = (s, opt) => toDate(s).toLocaleDateString('en-GB', opt);
+        const short = s => fmt(s, { day: 'numeric', month: 'short' });
+        const day = s => fmt(s, { weekday: 'short', day: 'numeric', month: 'short' });
+        const long = s => fmt(s, { day: 'numeric', month: 'long', year: 'numeric' });
+        const range = (a, b) => a === b ? day(a) : `${short(a)} – ${short(b)}`;
+        const $ = id => document.getElementById(id);
+
+        const healthLabels = { 'on-track': 'On track', waiting: 'Waiting on you', delayed: 'Delayed' };
+        const stagesDone = P.phases.filter(p => p.status === 'done').length;
+
+        $('period').textContent = `Started ${long(P.start)}`;
+        $('health').textContent = healthLabels[P.health];
+        $('updated').textContent = `Last updated ${long(P.updated)}`;
+        $('health-note').textContent = P.healthNote;
+        $('bar').style.width = `${stagesDone / P.phases.length * 100}%`;
+        $('stat-stages').textContent = `${stagesDone}/${P.phases.length}`;
+        $('stat-pages').textContent = `${P.pagesBuilt}/${P.pagesTotal}`;
+        $('stat-audit').textContent = `${P.auditFixed}/${P.auditTotal}`;
+        $('timeline-note').textContent = `Target go-live: ${long(P.target)}. Earlier is possible if content and feedback arrive ahead of schedule. Delays in either shift the date by the same number of days.`;
+
+        const needLink = n => n.link ? `<a class="no-print underline whitespace-nowrap" href="${n.link}">${n.linkText}</a>` : '';
+        const needPoints = n => n.points ? `<ul class="list-disc ml-5 mt-2 space-y-1">${n.points.map(p => `<li>${p}</li>`).join('')}</ul>` : '';
+        const optional = n => n.optional ? ' <span class="text-xs font-normal text-softGray">Optional</span>' : '';
+
+        const open = P.needs.filter(n => n.status !== 'done' && !n.optional);
+        const nextDue = open.length ? open[0].due : null;
+        const upcoming = open.filter((n, i) => n.due === nextDue || i < 3);
+        $('next-needs').innerHTML = upcoming.map(n => `
+            <li class="bg-beige/50 border border-beigeDark rounded-2xl p-5">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <p class="font-bold text-forest">${n.title}</p>
+                    <p class="text-xs font-semibold text-forest whitespace-nowrap">By ${day(n.due)}</p>
+                </div>
+                <div class="text-sm text-forest/80 mt-1">${n.text} ${needLink(n)}${needPoints(n)}</div>
+            </li>`).join('') || '<li class="text-sm text-forest/80">Nothing right now. Thank you!</li>';
+
+        const dot = { done: 'bg-forest border-forest', active: 'bg-sunshine border-sunshine', todo: 'bg-cream border-beigeDark' };
+        $('timeline').innerHTML = P.phases.map((p, i) => `
+            <li class="grid grid-cols-[1.25rem_1fr] gap-4">
+                <div class="flex flex-col items-center">
+                    <span class="w-4 h-4 mt-1 rounded-full border-2 flex items-center justify-center shrink-0 ${dot[p.status]}">${p.status === 'done' ? '<i class="fa-solid fa-check text-[8px] text-cream"></i>' : ''}</span>
+                    ${i < P.phases.length - 1 ? '<span class="w-px flex-1 bg-beigeDark"></span>' : ''}
+                </div>
+                <div class="pb-7">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                        <p class="font-bold text-forest">${p.name}${p.status === 'active' ? ' <span class="ml-1 text-[11px] bg-sunshine text-forest px-2 py-0.5 rounded-full">Now</span>' : ''}</p>
+                        <p class="text-xs text-softGray whitespace-nowrap">${range(p.from, p.to)}</p>
+                    </div>
+                    <p class="text-sm text-forest/80 mt-1">${p.text}</p>
+                    ${p.gate ? `<p class="text-xs text-softGray mt-1">To move on: ${p.gate}</p>` : ''}
+                </div>
+            </li>`).join('');
+
+        const list = (label, items) => items && items.length ? `
+            <div><p class="text-xs font-bold uppercase tracking-wider text-softGray mb-1">${label}</p>
+            <ul class="list-disc ml-5 text-sm text-forest/85 space-y-1">${items.map(x => `<li>${x}</li>`).join('')}</ul></div>` : '';
+        $('updates').innerHTML = P.updates.map(u => `
+            <article class="bg-cream border border-beigeDark rounded-2xl p-5">
+                <p class="text-xs text-softGray">${long(u.date)}</p>
+                <h3 class="font-bold text-forest mt-1">${u.title}</h3>
+                <div class="grid sm:grid-cols-3 gap-4 mt-3">${list('Done', u.done)}${list('Next', u.next)}${list('Needed from you', u.need)}</div>
+            </article>`).join('');
+
+        $('all-needs').innerHTML = P.needs.map(n => `
+            <li class="py-4 flex gap-3">
+                <i class="${n.status === 'done' ? 'fa-solid fa-circle-check text-forest' : 'fa-regular fa-circle text-softGray'} mt-1"></i>
+                <div class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                        <p class="font-semibold text-forest ${n.status === 'done' ? 'line-through' : ''}">${n.title}${optional(n)}</p>
+                        <p class="text-xs text-softGray whitespace-nowrap">${day(n.due)}</p>
+                    </div>
+                    <div class="text-sm text-forest/75 mt-0.5">${n.text} ${needLink(n)}${needPoints(n)}</div>
+                </div>
+            </li>`).join('');
+
+        const pay = { paid: ['Received', 'bg-forest text-cream'], due: ['Due now', 'bg-sunshine text-forest'], upcoming: ['Upcoming', 'bg-beige text-forest'] };
+        $('payments').innerHTML = P.payments.map(p => `
+            <tr class="border-b border-beigeDark last:border-0">
+                <td class="py-3 pr-4 font-semibold text-forest">${p.name}</td><td class="py-3 pr-4">${p.when}</td>
+                <td class="py-3 pr-4 whitespace-nowrap">${p.amount}</td>
+                <td class="py-3"><span class="text-[11px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap ${pay[p.status][1]}">${pay[p.status][0]}</span></td>
+            </tr>`).join('');
+    </script>
+</body>
+</html>

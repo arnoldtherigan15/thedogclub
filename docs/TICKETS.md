@@ -15,10 +15,11 @@ Daftar tiket dari DP sampai garansi selesai. Kerjakan berurutan per fase. Satu t
 | TDC-001 | DP & kickoff | 0 Kickoff | 0,5 hari | — | TODO |
 | TDC-002 | Kumpulkan aset & data dari klien | 0 Kickoff | 1–2 hari | 001 | TODO |
 | TDC-003 | Klarifikasi konten yang belum pasti | 0 Kickoff | 0,5 hari | 001 | TODO |
-| TDC-004 | Setup repo, Next.js & Netlify | 0 Kickoff | 0,5 hari | 001 | TODO |
-| TDC-005 | Brand alignment: warna, font, logo | 1 Desain | 1 hari | 002 | TODO |
+| TDC-027 | Klien pilih arah desain | 1 Desain | 0,5 hari | 001 | TODO |
+| TDC-005 | Brand alignment: warna, font, logo | 1 Desain | 1 hari | 027, 002 | TODO |
 | TDC-006 | Desain homepage + 1 halaman layanan | 1 Desain | 2 hari | 005 | TODO |
 | TDC-007 | Revisi & approval desain | 1 Desain | 1–2 hari | 006 | TODO |
+| TDC-004 | Setup repo baru, Next.js & Netlify | 2 Build | 0,5 hari | 007 | TODO |
 | TDC-008 | Komponen & layout dasar | 2 Build | 1 hari | 007, 004 | TODO |
 | TDC-009 | Homepage | 2 Build | 1 hari | 008 | TODO |
 | TDC-010 | Section & halaman lokasi | 2 Build | 0,5 hari | 008, 003 | TODO |
@@ -39,7 +40,7 @@ Daftar tiket dari DP sampai garansi selesai. Kerjakan berurutan per fase. Satu t
 | TDC-025 | Search Console & laporan launch | 5 Launch | 0,5 hari | 024 | TODO |
 | TDC-026 | Garansi 30 hari & penutupan | 6 Garansi | 30 hari | 024 | TODO |
 
-**Total kerja aktif:** ± 15 hari kerja, dalam timeline 3 minggu.
+**Total kerja aktif:** ± 15 hari kerja, dalam timeline 3 minggu (mulai 2 Nov 2026, target live 23 Nov 2026). Jadwal per tanggal ada di tab Jadwal pada `tracker.html`.
 
 ## Pemetaan temuan audit → tiket
 
@@ -67,10 +68,10 @@ Setiap temuan di [laporan audit](../mockup/seo-audit/index.html) harus tertutup 
 ## Fase 0 — Kickoff
 
 ### TDC-001 · DP & kickoff
-- [ ] Kirim link invoice (`/invoice/`) + quotation `#essential`
-- [ ] DP IDR 3.750.000 masuk ke BCA, bukti transfer disimpan
+- [x] Kirim link invoice (`/invoice/`) + quotation `#essential`
+- [x] DP IDR 3.750.000 masuk ke BCA, bukti transfer disimpan
 - [ ] Kirim pesan kickoff: timeline 3 minggu dimulai hari ini, daftar yang perlu disiapkan, siapa PIC
-- [ ] Catat tanggal mulai, hitung tanggal target launch
+- [x] Catat tanggal mulai, hitung tanggal target launch (mulai 2 Nov, target 23 Nov 2026)
 
 **Done kalau:** DP masuk, klien menunjuk 1 PIC, tanggal mulai dan target launch tercatat.
 
@@ -99,20 +100,17 @@ Tanyakan ke klien, catat jawabannya tertulis:
 
 **Done kalau:** semua pertanyaan terjawab tertulis. Perubahan jumlah halaman dicatat sebagai CR.
 
-### TDC-004 · Setup repo, Next.js & Netlify
-- [ ] Buat branch `develop` dari `main`
-- [ ] Inisialisasi Next.js dengan `output: 'export'` (static) + Tailwind
-- [ ] Hubungkan repo ke Netlify: production = `main`, branch deploy = `develop`, Deploy Preview untuk PR
-- [ ] Staging diberi `noindex`
-- [ ] Cek halaman pricing Netlify: paket gratis boleh untuk website bisnis
-- [ ] Simpan link staging di WORKFLOW.md
-
-**Done kalau:** push ke `develop` otomatis tampil di link staging, dan staging tidak terindeks Google.
-
 ## Fase 1 — Desain
 
+### TDC-027 · Klien pilih arah desain
+- [ ] Klien pilih opsi A, B, C, atau D (tertulis)
+- [ ] Catat bagian opsi lain yang ingin digabung
+- [ ] Update `mockup/progress/data.js`: fase Kickoff selesai, fase Design jadi aktif
+
+**Done kalau:** satu arah desain terpilih dan tercatat tertulis.
+
 ### TDC-005 · Brand alignment
-- [ ] Ganti warna mockup dengan warna brand klien
+- [ ] Terapkan warna opsi terpilih, sesuaikan dengan warna brand klien
 - [ ] Ganti font sesuai brand guideline (atau usulkan pasangan font)
 - [ ] Pasang logo asli (header, footer, favicon)
 - [ ] Pilih foto asli untuk hero dan setiap layanan
@@ -122,7 +120,7 @@ Tanyakan ke klien, catat jawabannya tertulis:
 ### TDC-006 · Desain homepage + 1 halaman layanan
 - [ ] Homepage versi desktop & mobile
 - [ ] Halaman Dog Daycare versi desktop & mobile (contoh pola untuk semua layanan)
-- [ ] Kirim link ke klien + minta **satu daftar feedback gabungan** dalam 3 hari kerja
+- [ ] Kirim link ke klien + minta **satu daftar feedback gabungan**, target Kamis 5 Nov (batas kontrak: 3 hari kerja)
 
 **Done kalau:** link desain terkirim ke klien.
 
@@ -135,6 +133,16 @@ Tanyakan ke klien, catat jawabannya tertulis:
 **Done kalau:** approval tertulis diterima dan termin 2 ditagih. Desain dikunci mulai titik ini.
 
 ## Fase 2 — Build
+
+### TDC-004 · Setup repo baru, Next.js & Netlify
+- [ ] Buat repo baru private `thedogclub-website` + branch `develop` dari `main`
+- [ ] Inisialisasi Next.js dengan `output: 'export'` (static) + Tailwind
+- [ ] Hubungkan repo ke Netlify: production = `main`, branch deploy = `develop`, Deploy Preview untuk PR
+- [ ] Staging diberi `noindex`
+- [ ] Cek halaman pricing Netlify: paket gratis boleh untuk website bisnis
+- [ ] Simpan link staging di WORKFLOW.md
+
+**Done kalau:** push ke `develop` otomatis tampil di link staging, dan staging tidak terindeks Google.
 
 ### TDC-008 · Komponen & layout dasar
 - [ ] Header + menu (desktop & mobile), footer, tombol, kartu, tabel harga, FAQ accordion

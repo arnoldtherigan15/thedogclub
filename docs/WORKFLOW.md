@@ -2,6 +2,8 @@
 
 Panduan kerja dari DP sampai website live. Setiap fase punya **gerbang**: fase berikutnya baru mulai kalau syarat gerbangnya terpenuhi.
 
+Jadwal aktual: mulai 2 Nov 2026, target live 23 Nov 2026. Kerja harian lewat [tracker.html](tracker.html) (build: `python3 docs/build_tracker.py`). Update client lewat `mockup/progress/data.js`.
+
 ## Ringkasan
 
 | Fase | Durasi | Gerbang untuk lanjut | Pembayaran |

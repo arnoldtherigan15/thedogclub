@@ -18,7 +18,7 @@ SCHEDULE = [
      "tickets": ["TDC-001", "TDC-002", "TDC-003", "TDC-027"],
      "tasks": ["Kirim pesan Kickoff (tab Template)", "Sore: catat pilihan desain klien, update data.js"]},
     {"date": "2026-11-03", "focus": "Terapkan arah desain ke Homepage",
-     "tickets": ["TDC-005", "TDC-006"], "tasks": ["Pastikan klien sudah menunjuk 1 PIC"]},
+     "tickets": ["TDC-005", "TDC-006"], "tasks": []},
     {"date": "2026-11-04", "focus": "Selesaikan Dog Daycare, kirim desain v1",
      "tickets": ["TDC-002", "TDC-003", "TDC-006"],
      "tasks": ["Hari ini batas bahan & jawaban klien. Kalau belum ada, kirim Reminder", "Cek desktop dan HP sebelum kirim"]},
@@ -67,8 +67,7 @@ Timeline, progress, dan daftar yang perlu disiapkan ada di satu link ini:
 
 Yang paling dekat:
 1. Pilih arah desain
-2. Tunjuk 1 orang sebagai contact person
-3. Kirim logo, foto, konfirmasi harga, dan jawaban pertanyaan paling lambat Rabu 4 Nov
+2. Kirim logo, foto, konfirmasi harga, dan jawaban pertanyaan paling lambat Rabu 4 Nov
 
 Panduan langkah per langkahnya ada di sini:
 {GUIDE_URL}

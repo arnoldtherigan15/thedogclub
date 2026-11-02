@@ -70,10 +70,10 @@ Setiap temuan di [laporan audit](../mockup/seo-audit/index.html) harus tertutup 
 ### TDC-001 · DP & kickoff
 - [x] Kirim link invoice (`/invoice/`) + quotation `#essential`
 - [x] DP IDR 3.750.000 masuk ke BCA, bukti transfer disimpan
-- [ ] Kirim pesan kickoff: timeline 3 minggu dimulai hari ini, daftar yang perlu disiapkan, siapa PIC
+- [ ] Kirim pesan kickoff: timeline 3 minggu dimulai hari ini, daftar yang perlu disiapkan
 - [x] Catat tanggal mulai, hitung tanggal target launch (mulai 2 Nov, target 23 Nov 2026)
 
-**Done kalau:** DP masuk, klien menunjuk 1 PIC, tanggal mulai dan target launch tercatat.
+**Done kalau:** DP masuk, tanggal mulai dan target launch tercatat.
 
 ### TDC-002 · Kumpulkan aset & data dari klien
 - [ ] Logo file asli (SVG/AI/PDF/PNG transparan)

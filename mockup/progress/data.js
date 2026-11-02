@@ -42,8 +42,6 @@ window.PROJECT = {
   needs: [
     { title: 'Choose a design direction', due: '2026-11-02', status: 'todo', link: '../design/', linkText: 'View the options',
       text: 'Pick one of the four options, or tell us which parts you like from each.' },
-    { title: 'Name one contact person', due: '2026-11-03', status: 'todo',
-      text: 'One person who collects feedback from the team and gives approvals.' },
     { title: 'Share a Google Drive folder with your logo and brand files', due: '2026-11-04', status: 'todo', link: '../onboarding/#drive', linkText: 'How to set it up',
       text: 'The original logo file (SVG, AI, PDF or large PNG), plus colour codes and fonts if you have them.' },
     { title: 'Upload original photos', due: '2026-11-04', status: 'todo', link: '../onboarding/#drive', linkText: 'What to include',

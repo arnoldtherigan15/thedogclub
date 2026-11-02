@@ -1,7 +1,7 @@
 """Generate the design direction samples (a, b, c) and the chooser page.
 
 Run:  python3 mockup/design/build_design.py
-All three are clean and minimalist, inspired by the client's references (Blank Street,
+d.html is written by hand, so this script does not touch it. All are clean and minimalist, inspired by the client's references (Blank Street,
 dogppl.co, lilluvdog.com). Same real content in each, so the client compares style only.
 Photos and prices come from the live thedogclub.id site.
 """
@@ -16,10 +16,11 @@ SERVICES = [
     ("Dog Spa", "Baths, cuts and brushing with natural products only.", "From IDR 110.000", "spa.jpg"),
 ]
 PRICES = [
-    ("Half daycare", "4 hours", "100.000"),
-    ("Full daycare", "All day", "120.000"),
-    ("Deluxe boarding", "Weekday night", "160.000"),
-    ("Essential bath & brush", "Small, short hair", "110.000"),
+    ("Half daycare", "4 hours play in park & pool", "100.000"),
+    ("Full daycare", "All day play & care", "120.000"),
+    ("Deluxe boarding", "Weekday night at the Dog Villa", "160.000"),
+    ("Prestige boarding", "+1 hour beach walk included", "200.000"),
+    ("Essential bath & brush", "Small dog, short hair", "110.000"),
 ]
 LOCATIONS = [
     ("Umalas", "The Dog Club", "+62 811-3940-055"),
@@ -59,7 +60,7 @@ BASE = """
 MOTION = """<script>
 (function () {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-  var els = document.querySelectorAll('.hero h1,.hero p,.hero .btn,.sec h2,.story p,.story img,.card,.rowc,.price-row,.loc,.step');
+  var els = document.querySelectorAll('.hero h1,.hero p,.hero .btn,.hero .btn-ghost,.sec h2,.sec-title,.story p,.story-box p,.story img,.card,.rowc,.price-row,.loc,.loc-card,.step,.step-card');
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
@@ -184,6 +185,7 @@ def chooser():
         "a": ("Paper", "Putih bersih, hitam, huruf sederhana, garis tipis. Terinspirasi Blank Street.", "pool-dogs.jpg"),
         "b": ("Olive", "Hijau olive dan warna batu, judul serif dengan huruf miring, foto besar. Terinspirasi dogppl.", "golden-pool.jpg"),
         "c": ("Soft", "Huruf kecil, nuansa sage yang lembut, langkah bernomor. Terinspirasi lilluvdog.", "beach.jpg"),
+        "d": ("Sanctuary", "Judul serif editorial, kartu rapi, dan rutinitas harian. Gabungan dari ketiga referensi.", "pack.jpg"),
     }
     items = "".join(f"""
       <a href="{k}.html" class="o"><img src="img/{i}" alt=""><div><p class="k">Opsi {k.upper()}</p><h2>{n}</h2><p>{d}</p><span>Lihat sample &rarr;</span></div></a>""" for k, (n, d, i) in desc.items())
@@ -194,13 +196,13 @@ def chooser():
 <style>{BASE}
 body{{background:#FFFDFC;color:#0F120E;font-family:'Instrument Sans',sans-serif;line-height:1.5}}
 main{{max-width:1100px;margin:0 auto;padding:48px 24px}}header img{{height:72px;margin-bottom:24px}}h1{{font-size:clamp(30px,5vw,44px);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}}
-header p{{color:#73736E;max-width:60ch}}.opts{{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:36px 0}}
+header p{{color:#73736E;max-width:60ch}}.opts{{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:36px 0}}
 .o{{border:1px solid #E2E2E2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column}}.o:hover{{border-color:#0F120E}}.o img{{width:100%;aspect-ratio:4/3;object-fit:cover}}.o div{{padding:18px}}
 .o .k{{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#73736E}}.o h2{{font-size:24px;font-weight:500;margin:2px 0 6px}}.o p{{font-size:14px;color:#73736E}}.o span{{display:block;margin-top:12px;font-weight:500;font-size:14px}}
 .note{{background:#F5F4F1;border-radius:6px;padding:22px}}.note h3{{font-weight:600;margin-bottom:8px}}.note li{{margin:4px 0 4px 18px;font-size:14px}}
 @media(max-width:820px){{.opts{{grid-template-columns:1fr}}}}
 </style></head><body><main>
-<header><img src="img/logo.svg" alt="The Dog Club"><h1>Pilih arah desain website</h1><p>Ketiganya bergaya clean dan minimalis, sesuai referensi. Ini contoh gaya, bukan website final. Isinya sama supaya mudah dibandingkan. Silakan dibuka di HP juga.</p></header>
+<header><img src="img/logo.svg" alt="The Dog Club"><h1>Pilih arah desain website</h1><p>Keempatnya bergaya clean dan minimalis, sesuai referensi. Ini contoh gaya, bukan website final. Isinya sama supaya mudah dibandingkan. Silakan dibuka di HP juga.</p></header>
 <div class="opts">{items}</div>
 <div class="note"><h3>Yang kami butuhkan dari tim The Dog Club</h3><ul>
 <li>Pilih 1 opsi. Boleh juga gabungan, misalnya "warna B dengan layout A".</li>

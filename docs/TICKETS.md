@@ -96,7 +96,6 @@ Tanyakan ke klien, catat jawabannya tertulis:
 - [ ] Gingr: masih dipakai untuk daftar member, atau semua sudah lewat Pawsi?
 - [ ] Refund & Shipping Policy: masih perlu? (toko online sudah tidak ada)
 - [ ] Terms of Service: punya versi baru, atau kita rapikan dari template lama?
-- [ ] Nama di invoice: The Dog Club Bali atau PT PMA The Dog Paradise?
 
 **Done kalau:** semua pertanyaan terjawab tertulis. Perubahan jumlah halaman dicatat sebagai CR.
 

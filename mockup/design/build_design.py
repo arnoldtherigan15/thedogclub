@@ -182,16 +182,16 @@ def page(key, t):
 
 def chooser():
     desc = {
-        "a": ("Paper", "Putih bersih, hitam, huruf sederhana, garis tipis. Terinspirasi Blank Street.", "pool-dogs.jpg"),
-        "b": ("Olive", "Hijau olive dan warna batu, judul serif dengan huruf miring, foto besar. Terinspirasi dogppl.", "golden-pool.jpg"),
-        "c": ("Soft", "Huruf kecil, nuansa sage yang lembut, langkah bernomor. Terinspirasi lilluvdog.", "beach.jpg"),
-        "d": ("Sanctuary", "Judul serif editorial, kartu rapi, dan rutinitas harian. Gabungan dari ketiga referensi.", "pack.jpg"),
+        "a": ("Paper", "Clean white and black, simple type, thin lines. Inspired by Blank Street.", "pool-dogs.jpg"),
+        "b": ("Olive", "Olive green and stone tones, serif headlines with italics, large photos. Inspired by dogppl.", "golden-pool.jpg"),
+        "c": ("Soft", "Lowercase type, soft sage tones, numbered steps. Inspired by Lil Luv Dog.", "beach.jpg"),
+        "d": ("Sanctuary", "Editorial serif headlines, tidy cards and a daily routine. A blend of all three references.", "pack.jpg"),
     }
     items = "".join(f"""
-      <a href="{k}.html" class="o"><img src="img/{i}" alt=""><div><p class="k">Opsi {k.upper()}</p><h2>{n}</h2><p>{d}</p><span>Lihat sample &rarr;</span></div></a>""" for k, (n, d, i) in desc.items())
+      <a href="{k}.html" class="o"><img src="img/{i}" alt=""><div><p class="k">Option {k.upper()}</p><h2>{n}</h2><p>{d}</p><span>View sample &rarr;</span></div></a>""" for k, (n, d, i) in desc.items())
     html = f"""<!DOCTYPE html>
-<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow"><title>Pilihan Desain — The Dog Club</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><title>Design Options — The Dog Club</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>{BASE}
 body{{background:#FFFDFC;color:#0F120E;font-family:'Instrument Sans',sans-serif;line-height:1.5}}
@@ -202,12 +202,12 @@ header p{{color:#73736E;max-width:60ch}}.opts{{display:grid;grid-template-column
 .note{{background:#F5F4F1;border-radius:6px;padding:22px}}.note h3{{font-weight:600;margin-bottom:8px}}.note li{{margin:4px 0 4px 18px;font-size:14px}}
 @media(max-width:820px){{.opts{{grid-template-columns:1fr}}}}
 </style></head><body><main>
-<header><img src="img/logo.svg" alt="The Dog Club"><h1>Pilih arah desain website</h1><p>Keempatnya bergaya clean dan minimalis, sesuai referensi. Ini contoh gaya, bukan website final. Isinya sama supaya mudah dibandingkan. Silakan dibuka di HP juga.</p></header>
+<header><img src="img/logo.svg" alt="The Dog Club"><h1>Choose a design direction</h1><p>All four options are clean and minimalist, based on your references. These are style samples, not the final website. Please open them on your phone too.</p></header>
 <div class="opts">{items}</div>
-<div class="note"><h3>Yang kami butuhkan dari tim The Dog Club</h3><ul>
-<li>Pilih 1 opsi. Boleh juga gabungan, misalnya "warna B dengan layout A".</li>
-<li>Foto di sini diambil dari website yang sekarang. Foto yang lebih baru dan beresolusi tinggi akan membuat hasilnya jauh lebih bagus.</li>
-<li>Setelah dipilih, kami kembangkan menjadi 2 halaman contoh (Homepage + Dog Daycare) untuk disetujui, baru diterapkan ke semua halaman.</li>
+<div class="note"><h3>What we need from The Dog Club team</h3><ul>
+<li>Choose one option. You can also combine them, for example "the colors of B with the layout of A".</li>
+<li>The photos here come from your current website. Newer, high-resolution photos will make the result look much better.</li>
+<li>Once you choose, we will develop it into 2 sample pages (Homepage and Dog Daycare) for your approval, then apply it to all pages.</li>
 </ul></div></main></body></html>
 """
     (ROOT / "index.html").write_text(html)

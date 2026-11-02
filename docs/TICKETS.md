@@ -128,9 +128,8 @@ Tanyakan ke klien, catat jawabannya tertulis:
 - [ ] Revisi putaran 1
 - [ ] Revisi putaran 2 (maksimal; lebih dari ini = CR)
 - [ ] Klien menulis "Design approved" (WA/email), screenshot disimpan
-- [ ] Tagih termin 2: IDR 2.250.000
 
-**Done kalau:** approval tertulis diterima dan termin 2 ditagih. Desain dikunci mulai titik ini.
+**Done kalau:** approval tertulis diterima. Desain dikunci mulai titik ini.
 
 ## Fase 2 — Build
 
@@ -218,8 +217,9 @@ Tanyakan ke klien, catat jawabannya tertulis:
 - [ ] Layanan by-request (taxi, vet, training, birthday) ke WhatsApp dengan pesan otomatis
 - [ ] Tombol "Join the Club" sesuai keputusan Gingr/Pawsi di TDC-003
 - [ ] Cari ulang di kode: tidak ada lagi `gingrapp` kecuali memang disetujui
+- [ ] Semua halaman selesai: tagih termin 2 IDR 2.250.000 (invoice INV-TDC-2026-002)
 
-**Done kalau:** setiap tombol booking sudah diklik manual dan sampai ke tujuan yang benar.
+**Done kalau:** setiap tombol booking sudah diklik manual dan sampai ke tujuan yang benar, dan termin 2 sudah ditagih. SEO & testing mulai setelah termin 2 masuk.
 
 ## Fase 3 — SEO & performa
 

@@ -9,8 +9,8 @@ Jadwal aktual: mulai 2 Nov 2026, target live 23 Nov 2026. Kerja harian lewat [tr
 | Fase | Durasi | Gerbang untuk lanjut | Pembayaran |
 | --- | --- | --- | --- |
 | 0. Kickoff | 1–2 hari | DP masuk + brand kit diterima | DP 50% — IDR 3.750.000 |
-| 1. Desain | Minggu 1 | Klien tulis "Design approved" | Termin 2 30% — IDR 2.250.000 |
-| 2. Build | Minggu 2 | Semua halaman ada di staging | — |
+| 1. Desain | Minggu 1 | Klien tulis "Design approved" | — |
+| 2. Build | Minggu 2 | Semua halaman ada di staging + termin 2 masuk | Termin 2 30% — IDR 2.250.000 |
 | 3. Review & QA | Minggu 3 | Daftar revisi selesai + termin 3 masuk | Pelunasan 20% — IDR 1.500.000 |
 | 4. Launch | 1 hari | Website live di thedogclub.id | — |
 | 5. Garansi | 30 hari | — | — |
@@ -89,7 +89,6 @@ Tujuan: menyesuaikan mockup dengan brand mereka, lalu **mengunci desain** sebelu
 - [ ] Semua foto stok sudah diganti foto asli (atau disepakati placeholder mana yang tetap)
 - [ ] Teks utama (judul, tagline, tombol) sudah disetujui
 - [ ] Klien sudah kirim approval tertulis
-- [ ] Termin 2 sudah ditagih
 
 **Setelah approve:** desain terkunci. Perubahan desain setelah ini = *change request*: kasih penawaran harga dulu, kerjakan setelah klien setuju.
 

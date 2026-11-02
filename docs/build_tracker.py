@@ -25,7 +25,7 @@ SCHEDULE = [
     {"date": "2026-11-05", "focus": "Terima feedback, revisi putaran 1", "tickets": ["TDC-007"], "tasks": []},
     {"date": "2026-11-06", "focus": "Kirim revisi, minta approval desain",
      "tickets": ["TDC-007"],
-     "tasks": ["Buat invoice termin 2 (INV-TDC-2026-002)", "Jumat: update data.js & kirim update ke klien"],
+     "tasks": ["Jumat: update data.js & kirim update ke klien"],
      "gate": "Build baru mulai setelah klien tulis \"Design approved\". Batas aman: Senin 9 Nov pagi."},
     {"date": "2026-11-09", "focus": "Repo baru, Netlify, komponen dasar",
      "tickets": ["TDC-004", "TDC-008"], "tasks": ["Cek akun GitHub klien sudah dibuat"]},
@@ -36,7 +36,9 @@ SCHEDULE = [
      "tickets": ["TDC-012", "TDC-013", "TDC-014"], "tasks": []},
     {"date": "2026-11-13", "focus": "Legal, 404, semua link booking & WhatsApp",
      "tickets": ["TDC-015", "TDC-016"],
-     "tasks": ["Jumat: update data.js & kirim update ke klien", "Sabtu 14 Nov dipakai sebagai cadangan kalau build telat"]},
+     "tasks": ["Buat invoice termin 2 (INV-TDC-2026-002), kirim template Semua halaman selesai",
+               "Jumat: update data.js & kirim update ke klien", "Sabtu 14 Nov dipakai sebagai cadangan kalau build telat"],
+     "gate": "SEO & testing mulai setelah termin 2 masuk."},
     {"date": "2026-11-16", "focus": "SEO, performa, redirect",
      "tickets": ["TDC-017", "TDC-018", "TDC-019", "TDC-020"], "tasks": []},
     {"date": "2026-11-17", "focus": "QA pagi, kirim preview ke klien sore",
@@ -83,11 +85,13 @@ Terima kasih!"""),
 Mohon kirim semua masukan tim dalam satu daftar paling lambat [tanggal], supaya tidak ada yang terlewat. Harga sudah termasuk 2 putaran revisi besar.
 
 Kalau sudah cocok, cukup balas "Design approved" dan saya lanjut ke tahap build."""),
-    ("Design approved + termin 2", f"""Terima kasih Kak Erry, approval desain sudah saya catat. Mulai sekarang desain dikunci dan saya lanjut build.
-
-Invoice termin 2 (IDR 2.250.000): [link invoice]
+    ("Design approved", f"""Terima kasih Kak Erry, approval desain sudah saya catat. Mulai sekarang desain dikunci dan saya lanjut build.
 
 Satu lagi, mohon dibuatkan akun GitHub ya, ± 10 menit. Panduannya ada di sini: {GUIDE_URL}#github"""),
+    ("Semua halaman selesai + termin 2", """Halo Kak Erry, semua halaman sudah selesai dibangun. Sebelum lanjut ke SEO dan testing, mohon termin 2 sebesar IDR 2.250.000 ditransfer sesuai invoice ini:
+[link invoice]
+
+Terima kasih!"""),
     ("Update Jumat", f"""Halo Kak Erry, update minggu ini:
 
 Selesai:
@@ -126,6 +130,7 @@ RULES = [
     ]),
     ("Gerbang: jangan dilewati", [
         "Tidak mulai build sebelum ada tulisan \"Design approved\".",
+        "Tidak mulai SEO & testing sebelum termin 2 masuk.",
         "Tidak kirim preview sebelum 14 temuan audit tercentang.",
         "Tidak ubah DNS sebelum pelunasan masuk dan klien konfirmasi tertulis.",
         "Kode pindah ke GitHub klien setelah lunas.",

@@ -12,7 +12,7 @@ Dasar: desain Canva dari klien (`design/WEBSITE MOCKUP.pdf`, 12 layar) dan aset 
 | --- | --- | --- | --- | --- |
 | 1 | Home | `/` | 1, 2 | Hero foto penuh "Happiness Center for Doggies" + tombol Join the Club + daftar layanan. Galeri 4 foto bertumpuk. |
 | 2 | Services | section di Home `/#services` | 3 | **Bukan halaman sendiri** (keputusan 4 Nov): section di bawah galeri Home, menu Service scroll ke sini. Judul + 6 kartu (Boarding, Daycare, Walking, Pet Taxi, Grooming, Dog's Birthday). **Usulan:** tambah daftar harga dari pricelist sebagai teks. |
-| 3 | Facility | `/facility/` | 4, 5 | Hero foto + teks pembuka. 3 kolom: Mansion, 700 sqm park, Bone-Shaped Pools, masing-masing 2 foto bertumpuk. |
+| 3 | Facility | section di Home `/#facility` | 4, 5 | **Section di Home** (4 Nov), di bawah Services. Foto penuh + judul & teks kanan, lalu Mansion, 700 sqm park, Bone-Shaped Pools dengan foto bertumpuk. |
 | 4 | Locations | `/locations/` | 6, 7 | Hero drone dengan 4 label lokasi. 4 kartu: foto, nama, alamat, tombol kontak. |
 | 5 | House Rules | `/house-rules/` | 8 | Latar foto blur + kartu kertas berisi 5 aturan (teks, bukan gambar) + section singkat Booking & refunds. |
 | 6 | Book a Visit | `/book-a-visit/` | 9 + `Contact Admin.pdf` | Foto + "Schedule your visit" + tombol yang membuka pilihan 4 admin cabang (WhatsApp). |

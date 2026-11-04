@@ -3,7 +3,7 @@
 Run:  python3 docs/build_tracker.py
 Checkbox state is saved in the browser (localStorage), so rebuilding keeps your progress
 as long as the order of checklist items inside a ticket doesn't change.
-Client dates and needs come from mockup/progress/data.js, the same file the client page reads.
+Client dates and needs come from client/progress/data.js, the same file the client page reads.
 """
 import json
 import re
@@ -14,46 +14,46 @@ md = (ROOT / "TICKETS.md").read_text()
 
 # Day-by-day plan. A ticket that spans several days is listed on each of them.
 SCHEDULE = [
-    {"date": "2026-11-02", "focus": "Kickoff, kirim link progress, tunggu pilihan desain",
-     "tickets": ["TDC-001", "TDC-002", "TDC-003", "TDC-027"],
-     "tasks": ["Kirim pesan Kickoff (tab Template)", "Sore: catat pilihan desain klien, update data.js"]},
-    {"date": "2026-11-03", "focus": "Terapkan arah desain ke Homepage",
-     "tickets": ["TDC-005", "TDC-006"], "tasks": []},
-    {"date": "2026-11-04", "focus": "Selesaikan Dog Daycare, kirim desain v1",
-     "tickets": ["TDC-002", "TDC-003", "TDC-006"],
-     "tasks": ["Hari ini batas bahan & jawaban klien. Kalau belum ada, kirim Reminder", "Cek desktop dan HP sebelum kirim"]},
-    {"date": "2026-11-05", "focus": "Terima feedback, revisi putaran 1", "tickets": ["TDC-007"], "tasks": []},
-    {"date": "2026-11-06", "focus": "Kirim revisi, minta approval desain",
-     "tickets": ["TDC-007"],
+    {"date": "2026-11-02", "focus": "Kickoff, kirim link progress", "tickets": ["TDC-001"],
+     "tasks": ["Kirim pesan Kickoff (tab Template)"]},
+    {"date": "2026-11-04", "focus": "Desain Canva masuk: rencana, pertanyaan ke klien, run-through",
+     "tickets": ["TDC-002", "TDC-003", "TDC-004"],
+     "tasks": ["Baca docs/PLAN.md", "Kirim template Pertanyaan desain", "Update data.js & push"]},
+    {"date": "2026-11-05", "focus": "Repo, Netlify, layout dasar, data cabang, aset",
+     "tickets": ["TDC-007", "TDC-008", "TDC-009", "TDC-010"],
+     "tasks": ["Commit kecil per langkah, format di PLAN.md bagian 5"]},
+    {"date": "2026-11-06", "focus": "Home + header/footer desktop & mobile, kirim untuk approval",
+     "tickets": ["TDC-005", "TDC-011", "TDC-006"],
+     "tasks": ["Kirim template Desain siap review", "Jumat: update data.js & kirim update ke klien"]},
+    {"date": "2026-11-09", "focus": "Services & Facility", "tickets": ["TDC-012", "TDC-013"],
+     "tasks": ["Cek jawaban pertanyaan klien sudah masuk"],
+     "gate": "Halaman lain boleh jalan, tapi perubahan dari approval Home harus diterapkan ke semua."},
+    {"date": "2026-11-10", "focus": "Locations, House Rules, Book a Visit",
+     "tickets": ["TDC-014", "TDC-015", "TDC-016"], "tasks": []},
+    {"date": "2026-11-11", "focus": "Partnership, Loyalty Program, About Us",
+     "tickets": ["TDC-017", "TDC-018", "TDC-019"], "tasks": []},
+    {"date": "2026-11-12", "focus": "FAQ, Privacy, 404, cek semua tombol, tagih termin 2",
+     "tickets": ["TDC-020", "TDC-021", "TDC-022"],
+     "tasks": ["Buat invoice termin 2 (INV-TDC-2026-002), kirim template Semua halaman selesai"]},
+    {"date": "2026-11-13", "focus": "SEO, structured data, redirect",
+     "tickets": ["TDC-023", "TDC-024", "TDC-026"],
      "tasks": ["Jumat: update data.js & kirim update ke klien"],
-     "gate": "Build baru mulai setelah klien tulis \"Design approved\". Batas aman: Senin 9 Nov pagi."},
-    {"date": "2026-11-09", "focus": "Repo baru, Netlify, komponen dasar",
-     "tickets": ["TDC-004", "TDC-008"], "tasks": ["Cek akun GitHub klien sudah dibuat"]},
-    {"date": "2026-11-10", "focus": "Homepage & lokasi", "tickets": ["TDC-009", "TDC-010"],
-     "tasks": ["Isi title & meta description sekalian tiap halaman"]},
-    {"date": "2026-11-11", "focus": "8 halaman layanan + Services", "tickets": ["TDC-011"], "tasks": []},
-    {"date": "2026-11-12", "focus": "Pricing, Schedule, Join, About, FAQ, Franchise, Blog",
-     "tickets": ["TDC-012", "TDC-013", "TDC-014"], "tasks": []},
-    {"date": "2026-11-13", "focus": "Legal, 404, semua link booking & WhatsApp",
-     "tickets": ["TDC-015", "TDC-016"],
-     "tasks": ["Buat invoice termin 2 (INV-TDC-2026-002), kirim template Semua halaman selesai",
-               "Jumat: update data.js & kirim update ke klien", "Sabtu 14 Nov dipakai sebagai cadangan kalau build telat"],
      "gate": "SEO & testing mulai setelah termin 2 masuk."},
-    {"date": "2026-11-16", "focus": "SEO, performa, redirect",
-     "tickets": ["TDC-017", "TDC-018", "TDC-019", "TDC-020"], "tasks": []},
-    {"date": "2026-11-17", "focus": "QA pagi, kirim preview ke klien sore",
-     "tickets": ["TDC-021", "TDC-022"], "tasks": ["14 temuan audit harus tercentang sebelum kirim preview"]},
-    {"date": "2026-11-18", "focus": "Klien review. Pakai untuk bug dari tab Bug & CR", "tickets": ["TDC-022"], "tasks": []},
-    {"date": "2026-11-19", "focus": "Batas daftar koreksi klien", "tickets": ["TDC-022"],
+    {"date": "2026-11-16", "focus": "Performa & QA internal", "tickets": ["TDC-025", "TDC-027"],
+     "tasks": ["14 temuan audit harus tercentang sebelum kirim preview"]},
+    {"date": "2026-11-17", "focus": "Kirim preview ke klien", "tickets": ["TDC-028"],
+     "tasks": ["Kirim template Preview siap"]},
+    {"date": "2026-11-18", "focus": "Klien review. Catat koreksi di tab Bug & CR", "tickets": ["TDC-028"], "tasks": []},
+    {"date": "2026-11-19", "focus": "Batas daftar koreksi klien", "tickets": ["TDC-028"],
      "tasks": ["Mulai kerjakan koreksi begitu daftar masuk"]},
     {"date": "2026-11-20", "focus": "Selesaikan koreksi, tagih pelunasan",
-     "tickets": ["TDC-022", "TDC-023"],
+     "tickets": ["TDC-028", "TDC-029"],
      "tasks": ["Jumat: update data.js & kirim update ke klien", "Jangan ubah DNS hari ini"],
      "gate": "Website tidak live sebelum pelunasan masuk dan klien konfirmasi tertulis."},
-    {"date": "2026-11-23", "focus": "Go live pagi hari", "tickets": ["TDC-024", "TDC-025"],
+    {"date": "2026-11-23", "focus": "Go live pagi hari", "tickets": ["TDC-030", "TDC-031"],
      "tasks": ["Video call DomaiNesia ± 15 menit", "Jangan sentuh MX dan TXT google-site-verification"]},
-    {"date": "2026-11-30", "focus": "Cek +7 hari, kabari hosting lama boleh dihentikan", "tickets": ["TDC-026"], "tasks": []},
-    {"date": "2026-12-23", "focus": "Laporan +30 hari, serahkan akses, tawarkan maintenance", "tickets": ["TDC-026"], "tasks": []},
+    {"date": "2026-11-30", "focus": "Cek +7 hari, kabari hosting lama boleh dihentikan", "tickets": ["TDC-032"], "tasks": []},
+    {"date": "2026-12-23", "focus": "Laporan +30 hari, serahkan akses, tawarkan maintenance", "tickets": ["TDC-032"], "tasks": []},
 ]
 
 PROGRESS_URL = "https://arnoldtherigan15.github.io/thedogclub/progress/"
@@ -65,14 +65,26 @@ TEMPLATES = [
 Timeline, progress, dan daftar yang perlu disiapkan ada di satu link ini:
 {PROGRESS_URL}
 
-Yang paling dekat:
-1. Pilih arah desain
-2. Kirim logo, foto, konfirmasi harga, dan jawaban pertanyaan paling lambat Rabu 4 Nov
-
 Panduan langkah per langkahnya ada di sini:
 {GUIDE_URL}
 
 Update berikutnya saya kirim Jumat ini."""),
+    ("Pertanyaan desain", f"""Halo Kak Erry, terima kasih untuk desain dan semua filenya, sudah lengkap saya terima. Saya mulai mengerjakan versi website-nya.
+
+Ada beberapa hal yang perlu dikonfirmasi supaya isinya tepat:
+1. Jam buka Senin: 9am–6pm, atau 10am–4pm?
+2. Nomor WhatsApp Berawa: +62 812-3781-6931 atau +62 813-1155-109?
+3. Nomor WhatsApp Ungasan: +62 812-4645-3589 atau +62 813-3834-459?
+4. Referral: IDR 100K, atau 50K untuk teman / 200K untuk yang mengajak?
+5. Alamat + link Google Maps untuk 4 lokasi
+6. Tombol Join the Club & Book a Visit diarahkan ke WhatsApp cabang, Pawsi, atau Gingr?
+7. Retail, Training, Homecare ada di daftar layanan tapi belum ada kartunya. Mau ditambah, atau dihapus dari daftar?
+8. Partnership: kontaknya lewat WhatsApp atau email apa?
+9. Harga boleh ditampilkan di website (sebagai teks)?
+10. 4 artikel blog lama tidak ada di desain. Boleh dihapus?
+11. Video TDC Story: diunggah ke YouTube/Vimeo, atau cukup foto?
+
+Daftar ini juga ada di {PROGRESS_URL}"""),
     ("Reminder bahan", f"""Halo Kak Erry, sekadar mengingatkan, yang masih saya tunggu:
 - [isi item yang belum]
 
@@ -270,7 +282,7 @@ html = """<!DOCTYPE html>
   </div>
 
   <div data-panel="client">
-    <p class="text-sm text-[#707070] mb-4">Status diambil dari <code>mockup/progress/data.js</code>. Ganti <code>status: 'done'</code> di file itu supaya halaman client ikut berubah.</p>
+    <p class="text-sm text-[#707070] mb-4">Status diambil dari <code>client/progress/data.js</code>. Ganti <code>status: 'done'</code> di file itu supaya halaman client ikut berubah.</p>
     <div id="client" class="bg-white/60 border border-[#E4DDD0] rounded-2xl divide-y divide-[#E4DDD0]"></div>
     <h2 class="serif text-2xl font-bold mt-10 mb-3">Angka untuk data.js</h2>
     <div id="numbers" class="text-sm bg-white/60 border border-[#E4DDD0] rounded-2xl p-5"></div>
@@ -289,11 +301,11 @@ html = """<!DOCTYPE html>
   </div>
 </main>
 
-<script src="../mockup/progress/data.js"></script>
+<script src="../client/progress/data.js"></script>
 <script>
 const DATA = __DATA__;
 const P = window.PROJECT;
-const KEY = 'tdc-tracker-v1';
+const KEY = 'tdc-tracker-v2';
 const LOG_KEY = 'tdc-log-v1';
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } };
 const store = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };

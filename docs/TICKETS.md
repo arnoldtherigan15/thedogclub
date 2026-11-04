@@ -1,67 +1,72 @@
 # Tiket Kerja — The Dog Club (Paket Essential)
 
-Daftar tiket dari DP sampai garansi selesai. Kerjakan berurutan per fase. Satu tiket = satu branch `feature/TDC-xxx-nama` = satu Pull Request ke `develop`.
+Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien. Rencana lengkap (halaman, teknologi, aturan commit): [PLAN.md](PLAN.md).
 
 **Cara pakai**
-- Centang `[x]` checklist saat selesai. Tiket dianggap **Done** hanya kalau semua poin "Done kalau" terpenuhi.
-- Status: `TODO` → `DOING` → `REVIEW` (menunggu klien) → `DONE`.
-- Kalau ada pekerjaan baru di luar daftar ini, buat tiket baru dengan label **CR (change request)** dan beri harga dulu ke klien sebelum dikerjakan.
-- Panduan alur kerja dan environment: [WORKFLOW.md](WORKFLOW.md).
+- Satu tiket = satu branch `feature/TDC-0xx-nama` = satu Pull Request ke `develop`.
+- Centang `[x]` saat selesai. Tiket **Done** hanya kalau "Done kalau" terpenuhi.
+- Setiap halaman juga harus lolos Definition of Done di PLAN.md bagian 4.
+- Pekerjaan baru di luar daftar ini = tiket **CR (change request)**, kasih harga dulu.
 
 ## Ringkasan
 
 | ID | Tiket | Fase | Estimasi | Bergantung pada | Status |
 | --- | --- | --- | --- | --- | --- |
-| TDC-001 | DP & kickoff | 0 Kickoff | 0,5 hari | — | TODO |
-| TDC-002 | Kumpulkan aset & data dari klien | 0 Kickoff | 1–2 hari | 001 | TODO |
-| TDC-003 | Klarifikasi konten yang belum pasti | 0 Kickoff | 0,5 hari | 001 | TODO |
-| TDC-027 | Klien pilih arah desain | 1 Desain | 0,5 hari | 001 | TODO |
-| TDC-005 | Brand alignment: warna, font, logo | 1 Desain | 1 hari | 027, 002 | TODO |
-| TDC-006 | Desain homepage + 1 halaman layanan | 1 Desain | 2 hari | 005 | TODO |
-| TDC-007 | Revisi & approval desain | 1 Desain | 1–2 hari | 006 | TODO |
-| TDC-004 | Setup repo baru, Next.js & Netlify | 2 Build | 0,5 hari | 007 | TODO |
-| TDC-008 | Komponen & layout dasar | 2 Build | 1 hari | 007, 004 | TODO |
-| TDC-009 | Homepage | 2 Build | 1 hari | 008 | TODO |
-| TDC-010 | Section & halaman lokasi | 2 Build | 0,5 hari | 008, 003 | TODO |
-| TDC-011 | 8 halaman layanan + Services | 2 Build | 1,5 hari | 008 | TODO |
-| TDC-012 | Pricing & Schedule (teks, bukan gambar) | 2 Build | 0,5 hari | 008, 002 | TODO |
-| TDC-013 | Join the Club, About, FAQ, Franchise | 2 Build | 1 hari | 008 | TODO |
-| TDC-014 | Blog + 4 artikel | 2 Build | 0,5 hari | 008 | TODO |
-| TDC-015 | Halaman legal + 404 | 2 Build | 0,5 hari | 008, 003 | TODO |
-| TDC-016 | Link booking & WhatsApp | 2 Build | 0,5 hari | 009–013 | TODO |
-| TDC-017 | SEO on-page | 3 SEO | 1 hari | 009–015 | TODO |
-| TDC-018 | Structured data & link preview | 3 SEO | 0,5 hari | 017 | TODO |
-| TDC-019 | Optimasi gambar & performa | 3 SEO | 0,5 hari | 009–015 | TODO |
-| TDC-020 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 009–015 | TODO |
-| TDC-021 | QA internal | 4 QA | 1 hari | 016–020 | TODO |
-| TDC-022 | Review klien di staging | 4 QA | 2–3 hari | 021 | TODO |
-| TDC-023 | Pelunasan | 4 QA | — | 022 | TODO |
-| TDC-024 | Launch & pindah domain | 5 Launch | 0,5 hari | 023 | TODO |
-| TDC-025 | Search Console & laporan launch | 5 Launch | 0,5 hari | 024 | TODO |
-| TDC-026 | Garansi 30 hari & penutupan | 6 Garansi | 30 hari | 024 | TODO |
+| TDC-001 | DP & kickoff | 0 Kickoff | 0,5 hari | — | DOING |
+| TDC-002 | Terima desain & aset dari klien | 0 Kickoff | — | 001 | DOING |
+| TDC-003 | Klarifikasi konten | 0 Kickoff | 0,5 hari | 002 | TODO |
+| TDC-004 | Run-through desain per halaman | 1 Desain | 0,5 hari | 002 | TODO |
+| TDC-005 | Versi mobile & komponen global | 1 Desain | 0,5 hari | 004 | TODO |
+| TDC-006 | Approval desain | 1 Desain | 1–2 hari | 011 | TODO |
+| TDC-007 | Setup repo, Next.js & Netlify | 2 Build | 0,5 hari | 004 | TODO |
+| TDC-008 | Design tokens & layout | 2 Build | 0,5 hari | 007 | TODO |
+| TDC-009 | Pipeline gambar & video | 2 Build | 0,5 hari | 007 | TODO |
+| TDC-010 | Data bisnis di satu tempat | 2 Build | 0,5 jam | 007, 003 | TODO |
+| TDC-011 | Home | 2 Build | 0,5 hari | 008, 009 | TODO |
+| TDC-012 | Services + harga | 2 Build | 0,5 hari | 008, 010 | TODO |
+| TDC-013 | Facility | 2 Build | 0,5 hari | 008 | TODO |
+| TDC-014 | Locations | 2 Build | 0,5 hari | 008, 010 | TODO |
+| TDC-015 | House Rules | 2 Build | 0,25 hari | 008 | TODO |
+| TDC-016 | Book a Visit | 2 Build | 0,25 hari | 008, 010 | TODO |
+| TDC-017 | Partnership | 2 Build | 0,25 hari | 008 | TODO |
+| TDC-018 | Loyalty Program | 2 Build | 0,25 hari | 008, 003 | TODO |
+| TDC-019 | About Us | 2 Build | 0,25 hari | 008, 009 | TODO |
+| TDC-020 | FAQ | 2 Build | 0,5 hari | 008 | TODO |
+| TDC-021 | Privacy Policy & 404 | 2 Build | 0,25 hari | 008 | TODO |
+| TDC-022 | Semua halaman selesai + termin 2 | 2 Build | 0,25 hari | 011–021 | TODO |
+| TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | TODO |
+| TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | TODO |
+| TDC-025 | Performa & gambar | 3 SEO | 0,5 hari | 022 | TODO |
+| TDC-026 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 022 | TODO |
+| TDC-027 | QA internal | 4 QA | 0,5 hari | 023–026 | TODO |
+| TDC-028 | Review klien di staging | 4 QA | 3 hari | 027 | TODO |
+| TDC-029 | Pelunasan | 4 QA | — | 028 | TODO |
+| TDC-030 | Launch & pindah domain | 5 Launch | 0,5 hari | 029 | TODO |
+| TDC-031 | Search Console & laporan launch | 5 Launch | 0,5 hari | 030 | TODO |
+| TDC-032 | Garansi 30 hari & penutupan | 6 Garansi | 30 hari | 030 | TODO |
 
-**Total kerja aktif:** ± 15 hari kerja, dalam timeline 3 minggu (mulai 2 Nov 2026, target live 23 Nov 2026). Jadwal per tanggal ada di tab Jadwal pada `tracker.html`.
+**Total kerja aktif:** ± 9 hari kerja. Mulai 2 Nov 2026, target live 23 Nov 2026. Jadwal per tanggal ada di tab Jadwal pada `tracker.html`.
 
 ## Pemetaan temuan audit → tiket
 
-Setiap temuan di [laporan audit](../mockup/seo-audit/index.html) harus tertutup oleh satu tiket. Cek tabel ini sebelum launch.
+Setiap temuan di [laporan audit](../client/seo-audit/index.html) harus tertutup oleh satu tiket. Cek tabel ini sebelum kirim preview ke klien.
 
 | # | Temuan audit | Diperbaiki di | Cek |
 | --- | --- | --- | --- |
-| 1 | Tombol Sign up ke Gingr, tidak ada link ke Pawsi | TDC-016 | [ ] |
-| 2 | Lokasi (Ungasan, Seseh, dll.) tidak bisa diklik | TDC-010 | [ ] |
+| 1 | Tombol Sign up ke Gingr, tidak ada link ke Pawsi | TDC-016, TDC-022 | [ ] |
+| 2 | Lokasi (Ungasan, Seseh, dll.) tidak bisa diklik | TDC-014 | [ ] |
 | 3 | Harga & jadwal berupa gambar | TDC-012 | [ ] |
-| 4 | Homepage hampir tanpa teks | TDC-009 | [ ] |
-| 5 | Tidak ada meta description | TDC-017 | [ ] |
-| 6 | Judul halaman lemah | TDC-017 | [ ] |
-| 7 | 2–4 H1 per halaman | TDC-008, TDC-017 | [ ] |
-| 8 | Tidak ada structured data | TDC-018 | [ ] |
-| 9 | Website berat & lambat | TDC-019 | [ ] |
-| 10 | Gambar tanpa alt text & nama file | TDC-019 | [ ] |
-| 11 | Tidak ada preview saat dibagikan | TDC-018 | [ ] |
-| 12 | Konten usang: © 2024, typo, Terms Shopify, Hello world, FAQ ganda | TDC-013, TDC-015, TDC-020 | [ ] |
-| 13 | Email pribadi penulis di blog | TDC-014 | [ ] |
-| 14 | Slider kosong di homepage | TDC-009 | [ ] |
+| 4 | Homepage hampir tanpa teks | TDC-011, TDC-023 | [ ] |
+| 5 | Tidak ada meta description | TDC-023 | [ ] |
+| 6 | Judul halaman lemah | TDC-023 | [ ] |
+| 7 | 2–4 H1 per halaman | TDC-008, TDC-023 | [ ] |
+| 8 | Tidak ada structured data | TDC-024 | [ ] |
+| 9 | Website berat & lambat | TDC-025 | [ ] |
+| 10 | Gambar tanpa alt text & nama file | TDC-025 | [ ] |
+| 11 | Tidak ada preview saat dibagikan | TDC-024 | [ ] |
+| 12 | Konten usang: © 2024, typo, Terms Shopify, Hello world, FAQ ganda | TDC-020, TDC-021, TDC-026 | [ ] |
+| 13 | Email pribadi penulis di blog | TDC-026 | [ ] |
+| 14 | Slider kosong di homepage | TDC-011 | [ ] |
 
 ---
 
@@ -70,213 +75,247 @@ Setiap temuan di [laporan audit](../mockup/seo-audit/index.html) harus tertutup 
 ### TDC-001 · DP & kickoff
 - [x] Kirim link invoice (`/invoice/`) + quotation `#essential`
 - [x] DP IDR 3.750.000 masuk ke BCA, bukti transfer disimpan
-- [ ] Kirim pesan kickoff: timeline 3 minggu dimulai hari ini, daftar yang perlu disiapkan
-- [x] Catat tanggal mulai, hitung tanggal target launch (mulai 2 Nov, target 23 Nov 2026)
+- [ ] Kirim link progress (`/progress/`) ke klien
+- [x] Catat tanggal mulai dan target launch (mulai 2 Nov, target 23 Nov 2026)
 
-**Done kalau:** DP masuk, tanggal mulai dan target launch tercatat.
+**Done kalau:** DP masuk, klien sudah pegang link progress.
 
-### TDC-002 · Kumpulkan aset & data dari klien
-- [ ] Logo file asli (SVG/AI/PDF/PNG transparan)
-- [ ] Brand guideline: kode warna, font, contoh desain yang mereka suka
-- [ ] Foto asli: park, villa, pool, spa, tim, anjing (bukan screenshot)
-- [ ] Price list terbaru (versi teks, bukan hanya gambar)
-- [ ] Jadwal / jam buka terbaru
-- [ ] 3 paket birthday party (nama, isi, harga)
-- [ ] Akses DomaiNesia
-- [ ] Akses Google Search Console (opsional)
-- [ ] Akses admin WordPress lama (opsional, untuk ambil foto asli)
+### TDC-002 · Terima desain & aset dari klien
+- [x] Desain Canva 12 layar (`design/WEBSITE MOCKUP.pdf`)
+- [x] Logo hitam & putih, font & kode warna
+- [x] Foto per halaman (`design/assets/Photo/`)
+- [x] Price list, FAQ, House Rules, Loyalty, Contact Admin
+- [x] Video drone & TDC Story
+- [ ] Alamat + link Google Maps 4 lokasi
+- [ ] Logo dalam format SVG (yang ada PNG; kalau tidak ada, buat SVG dari PNG)
 
-**Done kalau:** semua item wajib (5 pertama) diterima. Kalau lewat 2 hari kerja, kabari klien secara tertulis bahwa timeline bergeser.
+**Done kalau:** semua bahan untuk 11 halaman sudah ada, tidak ada placeholder "Address".
 
-### TDC-003 · Klarifikasi konten yang belum pasti
-Tanyakan ke klien, catat jawabannya tertulis:
-- [ ] Ungasan: alamat, jam buka, layanan apa saja, perlu halaman sendiri? (kalau ya = +1 halaman tambahan)
-- [ ] Seseh: kapan buka, tampil sebagai "Coming soon"?
-- [ ] The Dog Hotel Berawa: tetap link ke thedoghotel.id?
-- [ ] Gingr: masih dipakai untuk daftar member, atau semua sudah lewat Pawsi?
-- [ ] Refund & Shipping Policy: masih perlu? (toko online sudah tidak ada)
-- [ ] Terms of Service: punya versi baru, atau kita rapikan dari template lama?
+### TDC-003 · Klarifikasi konten
+Pertanyaan lengkap ada di PLAN.md bagian 2. Kirim lewat template "Pertanyaan desain", catat jawaban tertulis.
+- [ ] Jam buka Senin
+- [ ] Nomor WhatsApp Berawa & Ungasan yang benar
+- [ ] Nominal referral (100K, atau 50K/200K)
+- [ ] Tujuan tombol Join the Club & Book a Visit (WhatsApp, Pawsi, Gingr)
+- [ ] Retail, Training, Homecare: tambah kartu atau hapus dari daftar
+- [ ] Kontak Partnership
+- [ ] Harga tampil di website atau tidak
+- [ ] Blog lama boleh dihapus
+- [ ] Video TDC Story: YouTube/Vimeo atau foto saja
+- [ ] Perbaikan teks kecil disetujui (Bone-Shaped Pools, dll.)
 
-**Done kalau:** semua pertanyaan terjawab tertulis. Perubahan jumlah halaman dicatat sebagai CR.
+**Done kalau:** semua terjawab tertulis dan `src/content/` bisa diisi tanpa tebakan.
 
 ## Fase 1 — Desain
 
-### TDC-027 · Klien pilih arah desain
-- [ ] Klien pilih opsi A, B, C, atau D (tertulis)
-- [ ] Catat bagian opsi lain yang ingin digabung
-- [ ] Update `mockup/progress/data.js`: fase Kickoff selesai, fase Design jadi aktif
+### TDC-004 · Run-through desain per halaman
+Buka layar Canva-nya satu per satu, sepakati section, teks, dan versi mobile. Catat keputusannya di tiket halaman tersebut.
+- [ ] Home (layar 1–2)
+- [ ] Services (3)
+- [ ] Facility (4–5)
+- [ ] Locations (6–7)
+- [ ] House Rules (8)
+- [ ] Book a Visit (9)
+- [ ] Partnership (10)
+- [ ] Loyalty Program (11)
+- [ ] About Us (12)
+- [ ] FAQ, Privacy, 404 (tanpa layar Canva)
 
-**Done kalau:** satu arah desain terpilih dan tercatat tertulis.
+**Done kalau:** setiap halaman punya daftar section yang disepakati.
 
-### TDC-005 · Brand alignment
-- [ ] Terapkan warna opsi terpilih, sesuaikan dengan warna brand klien
-- [ ] Ganti font sesuai brand guideline (atau usulkan pasangan font)
-- [ ] Pasang logo asli (header, footer, favicon)
-- [ ] Pilih foto asli untuk hero dan setiap layanan
+### TDC-005 · Versi mobile & komponen global
+- [ ] Header desktop: versi transparan & versi putih
+- [ ] Header mobile + menu layar penuh
+- [ ] Footer (belum ada di Canva)
+- [ ] Aturan umum mobile: kolom jadi 1, foto bertumpuk jadi berurutan, ukuran judul
 
-**Done kalau:** tampilan memakai identitas brand klien, tidak ada lagi logo/ikon pengganti.
+**Done kalau:** semua keputusan tercatat dan terlihat di preview Home.
 
-### TDC-006 · Desain homepage + 1 halaman layanan
-- [ ] Homepage versi desktop & mobile
-- [ ] Halaman Dog Daycare versi desktop & mobile (contoh pola untuk semua layanan)
-- [ ] Kirim link ke klien + minta **satu daftar feedback gabungan**, target Kamis 5 Nov (batas kontrak: 3 hari kerja)
-
-**Done kalau:** link desain terkirim ke klien.
-
-### TDC-007 · Revisi & approval desain
+### TDC-006 · Approval desain
+Yang direview: Home + header + footer, desktop & mobile, di link preview.
+- [ ] Kirim link preview + template "Desain siap review"
 - [ ] Revisi putaran 1
 - [ ] Revisi putaran 2 (maksimal; lebih dari ini = CR)
-- [ ] Klien menulis "Design approved" (WA/email), screenshot disimpan
+- [ ] Klien menulis "Design approved", screenshot disimpan
 
-**Done kalau:** approval tertulis diterima. Desain dikunci mulai titik ini.
+**Done kalau:** approval tertulis diterima. Gaya halaman lain mengikuti Home dan Canva.
 
 ## Fase 2 — Build
 
-### TDC-004 · Setup repo baru, Next.js & Netlify
-- [ ] Buat repo baru private `thedogclub-website` + branch `develop` dari `main`
-- [ ] Inisialisasi Next.js dengan `output: 'export'` (static) + Tailwind
-- [ ] Hubungkan repo ke Netlify: production = `main`, branch deploy = `develop`, Deploy Preview untuk PR
-- [ ] Staging diberi `noindex`
-- [ ] Cek halaman pricing Netlify: paket gratis boleh untuk website bisnis
-- [ ] Simpan link staging di WORKFLOW.md
+### TDC-007 · Setup repo, Next.js & Netlify
+- [ ] Repo baru private `thedogclub-website`, branch `main` & `develop`
+- [ ] `npx create-next-app@latest` dengan TypeScript, Tailwind, App Router, folder `src/`
+- [ ] `next.config`: `output: 'export'`, `trailingSlash: true`, `images.unoptimized: true`
+- [ ] README: cara jalan lokal, aturan branch & commit (salin dari PLAN.md bagian 5)
+- [ ] Template Pull Request `.github/pull_request_template.md`
+- [ ] Netlify: production = `main`, branch deploy = `develop`, Deploy Preview untuk PR
+- [ ] Staging & preview diberi `noindex`
 
-**Done kalau:** push ke `develop` otomatis tampil di link staging, dan staging tidak terindeks Google.
+**Done kalau:** PR pertama menghasilkan Deploy Preview, push ke `develop` tampil di link staging.
 
-### TDC-008 · Komponen & layout dasar
-- [ ] Header + menu (desktop & mobile), footer, tombol, kartu, tabel harga, FAQ accordion
-- [ ] Data bisnis (alamat, WA, email, harga) di satu file data, bukan diketik ulang per halaman
-- [ ] **Hanya 1 H1 per halaman** di template (temuan #7)
-- [ ] Copyright tahun otomatis (temuan #12)
+### TDC-008 · Design tokens & layout
+- [ ] Open Sans 400/500/600 lewat `next/font`
+- [ ] Warna brand & huruf renggang sebagai token Tailwind
+- [ ] `Header` desktop (transparan & putih) dan mobile
+- [ ] `Footer` dengan © tahun otomatis
+- [ ] Layout dasar: `Container`, jarak antar section konsisten
+- [ ] Hanya 1 H1 per halaman di template
 
-**Done kalau:** semua komponen dipakai ulang, tidak ada data bisnis yang ditulis ganda.
+**Done kalau:** halaman kosong dengan header & footer tampil benar di desktop dan HP.
 
-### TDC-009 · Homepage
-- [ ] Hero, filosofi, layanan, inside the club, harga populer, cara daftar, lokasi & peta, testimoni, FAQ
-- [ ] Teks lengkap, bukan hanya gambar (temuan #4)
-- [ ] Tidak ada section kosong / slider kosong (temuan #14)
+### TDC-009 · Pipeline gambar & video
+- [ ] `scripts/optimize-images.mjs` (sharp): WebP, lebar 2400/1200/800, nama file deskriptif
+- [ ] Ekspor foto yang dipakai dari `design/assets/Photo/` ke `public/images/`
+- [ ] Drone: ffmpeg → MP4 720p tanpa suara, < 5 MB + poster
+- [ ] Video About: ikuti jawaban TDC-003
+- [ ] Logo SVG/PNG putih & hitam + favicon
 
-**Done kalau:** semua section berisi konten asli, sesuai desain yang di-approve.
+**Done kalau:** tidak ada file mentah > 1 MB di repo.
 
-### TDC-010 · Section & halaman lokasi
-- [ ] Section "Our locations": Umalas, Ungasan, Berawa, Seseh (temuan #2)
-- [ ] Setiap kartu bisa diklik ke tujuan yang benar
-- [ ] Halaman Umalas: alamat, jam buka, peta, kontak
-- [ ] Halaman Ungasan (hanya kalau disetujui di TDC-003)
-- [ ] Menu "Home" dan logo mengarah ke halaman yang sama
+### TDC-010 · Data bisnis di satu tempat
+- [ ] `src/content/site.ts`: 4 cabang (nama, alamat, Maps, WhatsApp), jam buka, Instagram
+- [ ] Helper link WhatsApp dengan pesan otomatis per cabang
 
-**Done kalau:** semua lokasi bisa dibuka dalam 1 klik dari homepage.
+**Done kalau:** tidak ada nomor telepon atau alamat yang diketik langsung di komponen.
 
-### TDC-011 · 8 halaman layanan + Services
-- [ ] Services (overview)
-- [ ] Dog Daycare
-- [ ] Luxury Dog Hotel
-- [ ] Dog Spa, Massage & Grooming
-- [ ] Dog Training
-- [ ] Dog Walking
-- [ ] Dog Birthday Party (3 paket dari TDC-002)
-- [ ] Pet Taxi
-- [ ] In-house Vet
+### TDC-011 · Home
+- [ ] Hero foto penuh + "Happiness Center for Doggies" (H1) + tombol Join the Club
+- [ ] Daftar layanan di bawah hero
+- [ ] Galeri 4 foto bertumpuk
+- [ ] Usulan paragraf pembuka singkat (kalau disetujui)
+- [ ] Versi mobile
 
-**Done kalau:** setiap halaman punya deskripsi, harga (teks), jam/syarat, CTA, sesuai data terbaru klien.
+**Done kalau:** lolos Definition of Done, tidak ada section kosong atau slider kosong.
 
-### TDC-012 · Pricing & Schedule
-- [ ] Semua harga sebagai teks/tabel, bukan gambar (temuan #3)
-- [ ] Harga dicocokkan 1 per 1 dengan price list terbaru klien
-- [ ] Jadwal / jam buka & rutinitas harian sebagai teks
+### TDC-012 · Services + harga
+- [ ] Judul + 6 kartu layanan (foto, nama, 1 kalimat)
+- [ ] Kartu tambahan Retail/Training/Homecare kalau disetujui di TDC-003
+- [ ] Daftar harga sebagai teks dari pricelist (`#prices`), dicek 1 per 1
+- [ ] Catatan "11% tax and service not included"
 
-**Done kalau:** tidak ada satu pun harga/jadwal yang berupa gambar, dan semua angka sudah dicek dengan klien.
+**Done kalau:** tidak ada harga berupa gambar, semua angka sama dengan pricelist.
 
-### TDC-013 · Join the Club, About, FAQ, Franchise
-- [ ] Join the Club: langkah daftar sesuai jawaban Gingr/Pawsi di TDC-003
-- [ ] About Us
-- [ ] FAQ: **satu versi gabungan**, tanpa duplikat (temuan #12)
-- [ ] Own a Franchise + form (kirim ke email franchise@thedogclub.id, misalnya via Netlify Forms)
-- [ ] Perbaiki typo "Kapubaten" dan typo lain (temuan #12)
+### TDC-013 · Facility
+- [ ] Hero foto + "Our Facility" + teks pembuka
+- [ ] 3 kolom: Mansion, 700 sqm park, Bone-Shaped Pools, masing-masing 2 foto bertumpuk
 
-**Done kalau:** form franchise benar-benar terkirim ke email (sudah dites).
+**Done kalau:** lolos Definition of Done.
 
-### TDC-014 · Blog + 4 artikel
-- [ ] Halaman daftar blog
-- [ ] 4 artikel dipindahkan
-- [ ] Penulis = "The Dog Club team", tanpa email pribadi (temuan #13)
-- [ ] Post "Hello world!" **tidak** dibawa (temuan #12)
+### TDC-014 · Locations
+- [ ] Hero drone (video atau foto) dengan 4 label lokasi
+- [ ] 4 kartu: foto, nama, alamat, tombol WhatsApp, link Google Maps
+- [ ] The Dog Hotel Berawa: tandai "Boarding only"
 
-**Done kalau:** 4 artikel tampil rapi, tidak ada email pribadi di mana pun.
+**Done kalau:** setiap lokasi bisa dihubungi dan dibuka di Maps dalam 1 klik.
 
-### TDC-015 · Halaman legal + 404
-- [ ] Privacy Policy
-- [ ] Terms of Service: hapus teks Shopify, email kontak = woof@thedogclub.id (temuan #12)
-- [ ] Refund & Shipping Policy (hanya kalau masih perlu, lihat TDC-003)
-- [ ] Halaman 404
+### TDC-015 · House Rules
+- [ ] Latar foto + kartu kertas
+- [ ] 5 aturan sebagai teks dari `House Rules.pdf`
 
-**Done kalau:** tidak ada lagi kata "Shopify" atau email `nrshopify347@gmail.com`.
+**Done kalau:** semua teks bisa diseleksi (bukan gambar).
 
-### TDC-016 · Link booking & WhatsApp
-- [ ] Semua tombol "Book" / "Sign up" ke Pawsi (temuan #1)
-- [ ] Layanan by-request (taxi, vet, training, birthday) ke WhatsApp dengan pesan otomatis
-- [ ] Tombol "Join the Club" sesuai keputusan Gingr/Pawsi di TDC-003
-- [ ] Cari ulang di kode: tidak ada lagi `gingrapp` kecuali memang disetujui
-- [ ] Semua halaman selesai: tagih termin 2 IDR 2.250.000 (invoice INV-TDC-2026-002)
+### TDC-016 · Book a Visit
+- [ ] Foto + "Schedule your visit" + teks
+- [ ] Tombol Book a Visit → pilihan 4 cabang (sesuai Contact Admin.pdf)
+- [ ] Tujuan tombol sesuai jawaban TDC-003 (WhatsApp/Pawsi/Gingr)
+- [ ] Link ke FAQ
 
-**Done kalau:** setiap tombol booking sudah diklik manual dan sampai ke tujuan yang benar, dan termin 2 sudah ditagih. SEO & testing mulai setelah termin 2 masuk.
+**Done kalau:** keempat tombol cabang sudah diklik dan sampai ke admin yang benar.
+
+### TDC-017 · Partnership
+- [ ] Judul + 4 foto + teks
+- [ ] Tombol kontak kolaborasi (sesuai TDC-003)
+
+**Done kalau:** lolos Definition of Done.
+
+### TDC-018 · Loyalty Program
+- [ ] Latar foto + kartu Top Up Balance (teks)
+- [ ] Kartu Referral (teks, nominal sesuai TDC-003)
+- [ ] Syarat & ketentuan
+
+**Done kalau:** tidak ada flyer berupa gambar, nominal sudah dikonfirmasi klien.
+
+### TDC-019 · About Us
+- [ ] Hero + "About Us"
+- [ ] 2 paragraf cerita
+- [ ] Video TDC Story (kalau jadi), dimuat setelah diklik
+
+**Done kalau:** lolos Definition of Done, halaman tetap ringan.
+
+### TDC-020 · FAQ
+- [ ] 9 kategori dari FAQ.pdf: Registration/Booking, General, Facilities, Health & Safety, Boarding, Daycare, Grooming, Dog Walking, Training
+- [ ] Accordion yang bisa dipakai keyboard
+- [ ] Nomor kontak di jawaban terakhir diambil dari `site.ts`
+
+**Done kalau:** satu versi FAQ saja, tanpa pertanyaan ganda.
+
+### TDC-021 · Privacy Policy & 404
+- [ ] Privacy Policy dari website lama, email kontak = woof@thedogclub.id
+- [ ] Halaman 404 + tombol ke Home
+- [ ] Tidak ada Terms Shopify atau email `nrshopify347@gmail.com`
+
+**Done kalau:** tidak ada teks Shopify di mana pun.
+
+### TDC-022 · Semua halaman selesai + termin 2
+- [ ] Semua link menu, footer, dan tombol diklik satu per satu
+- [ ] Cari di kode: tidak ada `gingrapp` kecuali memang disetujui
+- [ ] Update `client/progress/data.js`: `pagesBuilt: 11`
+- [ ] Kirim invoice termin 2 IDR 2.250.000 + template "Semua halaman selesai"
+
+**Done kalau:** termin 2 ditagih. SEO & testing mulai setelah termin 2 masuk.
 
 ## Fase 3 — SEO & performa
 
-### TDC-017 · SEO on-page
-- [ ] Meta description unik di setiap halaman (temuan #5)
-- [ ] Title berisi kata kunci, misalnya "Dog Hotel Bali", "Dog Daycare Umalas" (temuan #6)
-- [ ] Cek ulang: tepat 1 H1 per halaman (temuan #7)
+### TDC-023 · SEO on-page
+- [ ] Title & meta description unik per halaman, berisi kata kunci ("Dog Daycare Bali", "Dog Hotel Umalas")
+- [ ] Cek ulang: tepat 1 H1 per halaman
 - [ ] Heading H2/H3 berurutan
-- [ ] Canonical URL & `lang` benar
+- [ ] Canonical URL & `lang="en"`
 
-**Done kalau:** Lighthouse SEO ≥ 90 di homepage dan 1 halaman layanan.
+**Done kalau:** Lighthouse SEO ≥ 90 di Home dan Services.
 
-### TDC-018 · Structured data & link preview
-- [ ] JSON-LD LocalBusiness: nama, alamat, jam buka, telepon (temuan #8)
-- [ ] JSON-LD FAQPage di halaman FAQ (temuan #8)
-- [ ] Open Graph + gambar share untuk setiap halaman (temuan #11)
-- [ ] Tes: Google Rich Results Test tanpa error
-- [ ] Tes: kirim link ke WhatsApp sendiri, preview muncul
+### TDC-024 · Structured data & link preview
+- [ ] JSON-LD LocalBusiness untuk 4 cabang
+- [ ] JSON-LD FAQPage di halaman FAQ
+- [ ] Open Graph + gambar share per halaman
+- [ ] Tes Google Rich Results tanpa error
+- [ ] Tes kirim link ke WhatsApp sendiri, preview muncul
 
-**Done kalau:** kedua tes di atas lolos.
+**Done kalau:** kedua tes lolos.
 
-### TDC-019 · Optimasi gambar & performa
-- [ ] Semua gambar dikompres (WebP/AVIF) dan diberi ukuran yang pas (temuan #9)
-- [ ] Nama file deskriptif, misalnya `dog-daycare-umalas-pool.webp` (temuan #10)
-- [ ] Alt text di setiap gambar (temuan #10)
-- [ ] Font dimuat seperlunya saja (maksimal 2 keluarga font, hanya ketebalan yang dipakai)
-- [ ] Tanpa plugin / script yang tidak dipakai
+### TDC-025 · Performa & gambar
+- [ ] Semua gambar WebP dengan ukuran pas dan alt text
+- [ ] Gambar di bawah layar dimuat belakangan (lazy)
+- [ ] Video tidak menghambat tampilan pertama
 
 **Done kalau:** Lighthouse Performance mobile ≥ 90.
 
-### TDC-020 · Redirect URL lama & sitemap
-- [ ] File `_redirects` Netlify: semua URL lama → URL baru (lihat tabel di `mockup/README.md`)
-- [ ] Termasuk 4 URL artikel blog `/2024/11/29/...`
-- [ ] `/2023/11/01/hello-world/` → `/blog` (temuan #12)
+### TDC-026 · Redirect URL lama & sitemap
+- [ ] `public/_redirects` sesuai tabel PLAN.md bagian 7
+- [ ] Ambil slug lengkap 4 artikel blog dari website live
 - [ ] `sitemap.xml` dan `robots.txt`
 
-**Done kalau:** setiap URL lama dibuka satu per satu dan sampai ke halaman yang benar (bukan 404).
+**Done kalau:** setiap URL lama dibuka satu per satu dan tidak ada yang 404.
 
 ## Fase 4 — QA & review
 
-### TDC-021 · QA internal
-- [ ] Semua halaman terbuka, tidak ada link mati
+### TDC-027 · QA internal
+- [ ] 11 halaman terbuka, tidak ada link mati
 - [ ] Tampilan benar di iPhone, Android, laptop
-- [ ] Harga, jam buka, alamat sama persis dengan data klien
-- [ ] Form franchise & newsletter berfungsi
-- [ ] Tabel "Pemetaan temuan audit" di atas: 14 dari 14 sudah dicentang
-- [ ] Rekam skor PageSpeed/Lighthouse staging (untuk laporan)
+- [ ] Harga, jam buka, alamat, nomor WhatsApp sama dengan jawaban klien
+- [ ] Tabel "Pemetaan temuan audit": 14 dari 14 tercentang
+- [ ] Rekam skor PageSpeed untuk laporan
 
 **Done kalau:** semua poin dicentang.
 
-### TDC-022 · Review klien di staging
-- [ ] Kirim link staging + minta **satu daftar koreksi** dalam 3 hari kerja
+### TDC-028 · Review klien di staging
+- [ ] Kirim link staging + template "Preview siap"
 - [ ] Perbaiki semua koreksi
 - [ ] Klien konfirmasi tertulis "siap launch"
 
-**Done kalau:** konfirmasi tertulis diterima. Koreksi di luar desain yang di-approve = CR.
+**Done kalau:** konfirmasi tertulis diterima. Koreksi di luar desain = CR.
 
-### TDC-023 · Pelunasan
+### TDC-029 · Pelunasan
 - [ ] Tagih pelunasan IDR 1.500.000
 - [ ] Pembayaran masuk
 
@@ -284,9 +323,9 @@ Tanyakan ke klien, catat jawabannya tertulis:
 
 ## Fase 5 — Launch
 
-### TDC-024 · Launch & pindah domain
+### TDC-030 · Launch & pindah domain
 Kerjakan di hari kerja, pagi hari, jangan Jumat sore.
-- [ ] Merge `develop` → `main`, cek URL production Netlify
+- [ ] Merge `develop` → `main`, tag `v1.0.0`, cek URL production Netlify
 - [ ] Tambah domain `thedogclub.id` & `www.thedogclub.id` di Netlify
 - [ ] DomaiNesia: ganti **hanya** A record & CNAME `www`
 - [ ] ⚠️ **Jangan sentuh** MX (email Google) dan TXT google-site-verification
@@ -296,22 +335,22 @@ Kerjakan di hari kerja, pagi hari, jangan Jumat sore.
 
 **Done kalau:** website baru terbuka di thedogclub.id dengan HTTPS, dan email klien tetap berfungsi.
 
-### TDC-025 · Search Console & laporan launch
+### TDC-031 · Search Console & laporan launch
 - [ ] Submit `sitemap.xml` di Search Console
 - [ ] Cek tidak ada error crawl
-- [ ] Kirim laporan launch ke klien: skor PageSpeed/Lighthouse sebelum vs sesudah, 14 temuan audit sudah diperbaiki
+- [ ] Laporan ke klien: skor sebelum vs sesudah, 14 temuan audit sudah diperbaiki
 - [ ] Ingatkan klien: jangan matikan hosting WordPress lama sebelum 1 minggu stabil
 
 **Done kalau:** laporan terkirim ke klien.
 
 ## Fase 6 — Garansi
 
-### TDC-026 · Garansi 30 hari & penutupan
+### TDC-032 · Garansi 30 hari & penutupan
 - [ ] Hari +7: cek website & Search Console, kabari klien hosting lama boleh dihentikan
 - [ ] Perbaiki bug dari pekerjaan sendiri (gratis)
-- [ ] Permintaan baru di luar bug → tawarkan update konten (IDR 150.000/permintaan), maintenance (IDR 1.000.000/bulan), atau upgrade ke Recommended
+- [ ] Permintaan baru → tawarkan update konten (IDR 150.000/permintaan), maintenance (IDR 1.000.000/bulan), atau upgrade ke Recommended
 - [ ] Hari +30: laporan singkat (halaman terindeks, impressions & klik pertama)
-- [ ] Serahkan semua akses (Netlify, GitHub, Search Console) atas nama klien
+- [ ] Transfer repo `thedogclub-website` ke GitHub klien, serahkan akses Netlify & Search Console
 - [ ] Pesan penutup + tawaran maintenance
 
 **Done kalau:** semua akses sudah diserahkan dan laporan +30 hari terkirim.

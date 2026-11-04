@@ -2,7 +2,7 @@
 
 Panduan kerja dari DP sampai website live. Setiap fase punya **gerbang**: fase berikutnya baru mulai kalau syarat gerbangnya terpenuhi.
 
-Jadwal aktual: mulai 2 Nov 2026, target live 23 Nov 2026. Kerja harian lewat [tracker.html](tracker.html) (build: `python3 docs/build_tracker.py`). Update client lewat `mockup/progress/data.js`.
+Jadwal aktual: mulai 2 Nov 2026, target live 23 Nov 2026. Rencana halaman, teknologi, dan aturan commit: [PLAN.md](PLAN.md). Kerja harian lewat [tracker.html](tracker.html) (build: `python3 docs/build_tracker.py`). Update client lewat `client/progress/data.js`.
 
 ## Ringkasan
 
@@ -31,7 +31,7 @@ feature/xxx  ──PR──▶  develop  ──merge (setelah klien approve)─�
 | Preview | `feature/*` (via Pull Request) | Link otomatis dari Netlify per PR | Kamu |
 | Staging | `develop` | `develop--<nama-site>.netlify.app` | Klien (untuk review) |
 | Production | `main` | `thedogclub.id` | Publik |
-| Mockup | `main`, folder `mockup/` | GitHub Pages | Klien (sebelum proyek) |
+| Dokumen klien | repo ini, folder `client/` | GitHub Pages | Klien (quotation, invoice, progress) |
 
 **Aturan:**
 - Jangan pernah push langsung ke `main`. Semua lewat `develop` dulu.
@@ -51,7 +51,7 @@ feature/xxx  ──PR──▶  develop  ──merge (setelah klien approve)─�
 
 ## Fase 0 — Kickoff
 
-Mulai setelah DP masuk. Kirim invoice: `mockup/invoice/`.
+Mulai setelah DP masuk. Kirim invoice: `client/invoice/`.
 
 Minta dari klien (sudah tercantum di invoice):
 - [ ] Logo file asli (AI/SVG/PDF/PNG transparan besar)
@@ -65,9 +65,9 @@ Kalau brand kit belum lengkap dalam 2 hari kerja, timeline mundur. Bilang ke kli
 
 ## Fase 1 — Desain (finalisasi desain)
 
-Tujuan: menyesuaikan mockup dengan brand mereka, lalu **mengunci desain** sebelum build.
+Tujuan: menerjemahkan desain Canva klien ke website (termasuk versi mobile, header, dan footer yang tidak ada di Canva), lalu **mengunci desain** sebelum build.
 
-**Yang direview klien:** homepage + 1 halaman layanan (misal Dog Daycare), versi desktop dan mobile. Halaman lain mengikuti pola yang sama, jadi cukup dua ini yang di-approve.
+**Yang direview klien:** Home + header + footer, versi desktop dan mobile. Halaman lain mengikuti Canva dan gaya yang sama.
 
 **Alur revisi:**
 1. Kirim desain v1 (link staging atau mockup).
@@ -97,7 +97,7 @@ Tujuan: menyesuaikan mockup dengan brand mereka, lalu **mengunci desain** sebelu
 - Kerjakan per halaman di branch `feature/*`, merge ke `develop`.
 - Kirim update ke klien **tiap Jumat**: link staging + apa saja yang sudah jadi + apa yang dikerjakan minggu depan.
 - Input konten asli (harga, jadwal, FAQ) dari data yang klien kirim.
-- Setup redirect URL lama → baru (lihat tabel di `mockup/README.md`).
+- Setup redirect URL lama → baru (lihat tabel di PLAN.md bagian 7).
 
 ## Fase 3 — Review & QA
 

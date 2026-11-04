@@ -11,7 +11,7 @@ Dasar: desain Canva dari klien (`design/WEBSITE MOCKUP.pdf`, 12 layar) dan aset 
 | # | Halaman | URL | Layar Canva | Isi |
 | --- | --- | --- | --- | --- |
 | 1 | Home | `/` | 1, 2 | Hero foto penuh "Happiness Center for Doggies" + tombol Join the Club + daftar layanan. Galeri 4 foto bertumpuk. |
-| 2 | Services | `/services/` | 3 | Judul + 6 kartu (Boarding, Daycare, Walking, Pet Taxi, Grooming, Dog's Birthday). **Usulan:** tambah daftar harga dari pricelist sebagai teks. |
+| 2 | Services | section di Home `/#services` | 3 | **Bukan halaman sendiri** (keputusan 4 Nov): section di bawah galeri Home, menu Service scroll ke sini. Judul + 6 kartu (Boarding, Daycare, Walking, Pet Taxi, Grooming, Dog's Birthday). **Usulan:** tambah daftar harga dari pricelist sebagai teks. |
 | 3 | Facility | `/facility/` | 4, 5 | Hero foto + teks pembuka. 3 kolom: Mansion, 700 sqm park, Bone-Shaped Pools, masing-masing 2 foto bertumpuk. |
 | 4 | Locations | `/locations/` | 6, 7 | Hero drone dengan 4 label lokasi. 4 kartu: foto, nama, alamat, tombol kontak. |
 | 5 | House Rules | `/house-rules/` | 8 | Latar foto blur + kartu kertas berisi 5 aturan (teks, bukan gambar) + section singkat Booking & refunds. |
@@ -248,8 +248,8 @@ Target live ke klien tetap **Senin 23 Nov**. Jadwal di bawah sengaja lebih cepat
 
 | URL lama | URL baru |
 | --- | --- |
-| `/services/`, `/dog-daycare/`, `/luxury-dog-hotel/`, `/dog-spa-massage-grooming/`, `/dog-training/`, `/dog-walking/`, `/dog-birthday-party/`, `/pet-taxi/`, `/in-house-vet/`, `/our-schedule/` | `/services/` |
-| `/pricing/` | `/services/#prices` |
+| `/services/`, `/dog-daycare/`, `/luxury-dog-hotel/`, `/dog-spa-massage-grooming/`, `/dog-training/`, `/dog-walking/`, `/dog-birthday-party/`, `/pet-taxi/`, `/in-house-vet/`, `/our-schedule/` | `/#services` |
+| `/pricing/` | `/#services` (atau section harga kalau disetujui) |
 | `/join-the-club/` | `/book-a-visit/` |
 | `/umalas/` | `/locations/` |
 | `/own-a-franchise/` | `/partnership/` |

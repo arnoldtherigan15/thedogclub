@@ -1,9 +1,9 @@
-name: Deploy mockup to GitHub Pages
+name: Deploy client documents to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths: ["mockup/**", ".github/workflows/pages.yml"]
+    paths: ["client/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -23,20 +23,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Build pages
-        run: python3 mockup/build.py
       - uses: actions/configure-pages@v5
-      # Only publish client-facing pages. The full 27-page mockup stays in the repo but is hidden
-      # until the design is approved: to publish it again, set "path: mockup" below.
+      # client/ holds the documents shared with The Dog Club (quotation, invoice, audit, onboarding, progress).
+      # The website itself is built in its own repository.
       - name: Select published pages
         run: |
-          mkdir _site
-          cp -r mockup/design mockup/quotation mockup/invoice mockup/seo-audit mockup/onboarding mockup/progress mockup/assets _site/
-          rm _site/design/build_design.py
-          echo '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=design/"><title>The Dog Club</title><a href="design/">The Dog Club design samples</a>' > _site/index.html
+          cp -r client _site
+          echo '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=progress/"><title>The Dog Club</title><a href="progress/">The Dog Club project progress</a>' > _site/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

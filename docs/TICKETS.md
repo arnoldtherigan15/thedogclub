@@ -94,15 +94,17 @@ Setiap temuan di [laporan audit](../client/seo-audit/index.html) harus tertutup 
 ### TDC-003 · Klarifikasi konten
 Pertanyaan lengkap ada di PLAN.md bagian 2. Kirim lewat template "Pertanyaan desain", catat jawaban tertulis.
 - [ ] Jam buka Senin
-- [ ] Nomor WhatsApp Berawa & Ungasan yang benar
+- [x] Nomor WhatsApp Berawa & Ungasan yang benar
 - [ ] Nominal referral (100K, atau 50K/200K)
-- [ ] Tujuan tombol Join the Club & Book a Visit (WhatsApp, Pawsi, Gingr)
+- [x] Tujuan tombol Join the Club & Book a Visit (WhatsApp, Pawsi, Gingr)
 - [ ] Retail, Training, Homecare: tambah kartu atau hapus dari daftar
 - [ ] Kontak Partnership
 - [ ] Harga tampil di website atau tidak
 - [ ] Blog lama boleh dihapus
 - [ ] Video TDC Story: YouTube/Vimeo atau foto saja
 - [ ] Perbaikan teks kecil disetujui (Bone-Shaped Pools, dll.)
+- [ ] Link form referral Friends of The Dog Club
+- [ ] Teks refund & terms singkat untuk House Rules
 
 **Done kalau:** semua terjawab tertulis dan `src/content/` bisa diisi tanpa tebakan.
 
@@ -204,20 +206,21 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 ### TDC-014 · Locations
 - [ ] Hero drone (video atau foto) dengan 4 label lokasi
 - [ ] 4 kartu: foto, nama, alamat, tombol WhatsApp, link Google Maps
-- [ ] The Dog Hotel Berawa: tandai "Boarding only"
+- [ ] The Dog Hotel Berawa: tandai "Boarding only", tanpa link ke thedoghotel.id
 
 **Done kalau:** setiap lokasi bisa dihubungi dan dibuka di Maps dalam 1 klik.
 
 ### TDC-015 · House Rules
 - [ ] Latar foto + kartu kertas
 - [ ] 5 aturan sebagai teks dari `House Rules.pdf`
+- [ ] Section singkat Booking & refunds (teks dari TDC-003)
 
 **Done kalau:** semua teks bisa diseleksi (bukan gambar).
 
 ### TDC-016 · Book a Visit
 - [ ] Foto + "Schedule your visit" + teks
 - [ ] Tombol Book a Visit → pilihan 4 cabang (sesuai Contact Admin.pdf)
-- [ ] Tujuan tombol sesuai jawaban TDC-003 (WhatsApp/Pawsi/Gingr)
+- [ ] Setiap tombol cabang ke WhatsApp admin (nomor di PLAN.md bagian 2)
 - [ ] Link ke FAQ
 
 **Done kalau:** keempat tombol cabang sudah diklik dan sampai ke admin yang benar.
@@ -232,6 +235,7 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 - [ ] Latar foto + kartu Top Up Balance (teks)
 - [ ] Kartu Referral (teks, nominal sesuai TDC-003)
 - [ ] Syarat & ketentuan
+- [ ] Section Friends of The Dog Club, tombol ke form referral
 
 **Done kalau:** tidak ada flyer berupa gambar, nominal sudah dikonfirmasi klien.
 

@@ -14,10 +14,10 @@ Dasar: desain Canva dari klien (`design/WEBSITE MOCKUP.pdf`, 12 layar) dan aset 
 | 2 | Services | `/services/` | 3 | Judul + 6 kartu (Boarding, Daycare, Walking, Pet Taxi, Grooming, Dog's Birthday). **Usulan:** tambah daftar harga dari pricelist sebagai teks. |
 | 3 | Facility | `/facility/` | 4, 5 | Hero foto + teks pembuka. 3 kolom: Mansion, 700 sqm park, Bone-Shaped Pools, masing-masing 2 foto bertumpuk. |
 | 4 | Locations | `/locations/` | 6, 7 | Hero drone dengan 4 label lokasi. 4 kartu: foto, nama, alamat, tombol kontak. |
-| 5 | House Rules | `/house-rules/` | 8 | Latar foto blur + kartu kertas berisi 5 aturan (teks, bukan gambar). |
-| 6 | Book a Visit | `/book-a-visit/` | 9 + `Contact Admin.pdf` | Foto + "Schedule your visit" + tombol yang membuka pilihan 4 cabang (WhatsApp). |
+| 5 | House Rules | `/house-rules/` | 8 | Latar foto blur + kartu kertas berisi 5 aturan (teks, bukan gambar) + section singkat Booking & refunds. |
+| 6 | Book a Visit | `/book-a-visit/` | 9 + `Contact Admin.pdf` | Foto + "Schedule your visit" + tombol yang membuka pilihan 4 admin cabang (WhatsApp). |
 | 7 | Partnership | `/partnership/` | 10 | Judul + 4 foto + teks + tombol kontak. |
-| 8 | Loyalty Program | `/loyalty-program/` | 11 | Latar foto + 2 kartu: Top Up Balance dan Referral (teks, bukan gambar flyer). |
+| 8 | Loyalty Program | `/loyalty-program/` | 11 | Latar foto + kartu Top Up Balance + section **Friends of The Dog Club** (referral, tombol ke form). Teks, bukan gambar flyer. |
 | 9 | About Us | `/about-us/` | 12 | Hero + 2 paragraf cerita Kevin. Video TDC Story (opsional). |
 | 10 | FAQ | `/faq/` | — (aset `7. FAQ`) | 9 kategori dari FAQ.pdf, model accordion. Gaya mengikuti House Rules. Link di footer & Book a Visit. |
 | 11 | Privacy Policy | `/privacy-policy/` | — | Dari website lama, dirapikan. Link di footer. |
@@ -47,23 +47,36 @@ Dasar: desain Canva dari klien (`design/WEBSITE MOCKUP.pdf`, 12 layar) dan aset 
 - Home hampir tanpa teks (temuan audit #4 terulang). Usulkan 1 paragraf pembuka singkat di bawah galeri saat review Home.
 - Tidak ada halaman per layanan, jadi pencarian seperti "dog daycare Umalas" bergantung pada halaman Services + FAQ + title/meta yang kuat.
 
-## 2. Pertanyaan untuk klien
+## 2. Jawaban klien & pertanyaan yang masih terbuka
 
-Data saling bertentangan di file mereka sendiri:
-1. **Jam buka Senin:** pricelist menulis Senin–Minggu 9am–6pm, tapi ada juga "Monday 10am–4pm". Mana yang benar?
-2. **Nomor Berawa:** FAQ +62 812-3781-6931, pricelist +62 813-1155-109.
-3. **Nomor Ungasan:** FAQ & flyer +62 812-4645-3589, pricelist +62 813-3834-459.
-4. **Hadiah referral:** flyer Ungasan IDR 100K, dokumen Loyalty IDR 50K (teman) / 200K (pengajak).
+### Sudah dijawab (4 Nov)
+| Topik | Jawaban |
+| --- | --- |
+| Tombol Book a Visit | Membuka pilihan 4 admin cabang (seperti `Contact Admin.pdf`), masing-masing ke WhatsApp. Bukan form kunjungan |
+| WhatsApp admin | Umalas `628113940055`, Berawa `6281237816931`, Seseh `628133918425`, Ungasan `628133834459` |
+| Pendaftaran / Join the Club | Customer portal Pawsi: https://book.pawsi.id/thedogclubbali |
+| Ungasan | Jl. Toya Ning I No.313, Ungasan, Kec. Kuta Sel., Kabupaten Badung, Bali 80361. Jam 9 AM–6 PM. Layanan: Boarding, Daycare, Grooming, Pet Taxi, Retail, Training |
+| Seseh | Sudah buka sejak Mei 2026 |
+| Berawa | thedoghotel.id akan ditutup, jadi kartu Berawa tidak link ke sana |
+| Refund & Terms | Masih perlu, disederhanakan di halaman House Rules |
+| Referral | Section baru **Friends of The Dog Club** di Loyalty Program, tombolnya ke form pendaftaran referral |
 
-Belum ada datanya:
+Akibatnya:
+- Nomor Ungasan di website = `+62 813-3834-459`. FAQ dan flyer referral menulis `+62 812-4645-3589`; tanyakan apakah itu nomor lain (misalnya contact person referral).
+- House Rules dapat section tambahan "Booking & refunds" versi singkat.
+- Loyalty Program dapat section "Friends of The Dog Club".
 
-5. Alamat + link Google Maps 4 lokasi (Canva masih tertulis "Address").
-6. Tombol **Join the Club** & **Book a Visit** menuju ke mana: WhatsApp per cabang, Pawsi, atau Gingr?
-7. Hero menyebut Retail, Training, Homecare, tapi halaman Services cuma 6 kartu. Tambah kartu (foto + 1 kalimat), atau hapus dari daftar?
-8. Partnership: kontak lewat WhatsApp atau email apa?
-9. Harga ditampilkan di website (disarankan, sebagai teks)?
-10. 4 artikel blog lama tidak ada di desain. Boleh dihapus (diarahkan ke Home)?
-11. Video TDC Story (2,1 GB): diunggah ke YouTube/Vimeo mereka, atau cukup foto?
+### Masih terbuka
+1. **Jam buka Senin:** pricelist menulis Senin–Minggu 9am–6pm, tapi ada juga "Monday 10am–4pm". Berlaku di semua cabang?
+2. **Alamat + Google Maps:** Umalas (website lama: Jl. Umalas 1 No. 1700, Kerobokan Kelod — masih benar?), Berawa, Seseh, dan link Maps keempat cabang.
+3. **Friends of The Dog Club:** link form referral, dan nominalnya (IDR 100K, atau 50K teman / 200K pengajak).
+4. **Teks refund & terms singkat:** klien kirim sendiri, atau kami susun dari FAQ (tidak ada refund untuk check-out lebih awal, sisa saldo jadi store credit) lalu klien setujui?
+5. Hero menyebut Retail, Training, Homecare, tapi halaman Services cuma 6 kartu. Tambah kartu (foto + 1 kalimat), atau hapus dari daftar?
+6. Partnership: kontak lewat WhatsApp atau email apa?
+7. Harga ditampilkan di website (disarankan, sebagai teks)?
+8. 4 artikel blog lama tidak ada di desain. Boleh dihapus (diarahkan ke Home)?
+9. Video TDC Story (2,1 GB): diunggah ke YouTube/Vimeo mereka, atau cukup foto?
+10. Perbaikan teks kecil di bagian 1 boleh diterapkan?
 
 ## 3. Teknologi
 

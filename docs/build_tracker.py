@@ -71,18 +71,17 @@ Panduan langkah per langkahnya ada di sini:
 Update berikutnya saya kirim Jumat ini."""),
     ("Pertanyaan desain", f"""Halo Kak Erry, terima kasih untuk desain dan semua filenya, sudah lengkap saya terima. Saya mulai mengerjakan versi website-nya.
 
-Ada beberapa hal yang perlu dikonfirmasi supaya isinya tepat:
-1. Jam buka Senin: 9am–6pm, atau 10am–4pm?
-2. Nomor WhatsApp Berawa: +62 812-3781-6931 atau +62 813-1155-109?
-3. Nomor WhatsApp Ungasan: +62 812-4645-3589 atau +62 813-3834-459?
-4. Referral: IDR 100K, atau 50K untuk teman / 200K untuk yang mengajak?
-5. Alamat + link Google Maps untuk 4 lokasi
-6. Tombol Join the Club & Book a Visit diarahkan ke WhatsApp cabang, Pawsi, atau Gingr?
-7. Retail, Training, Homecare ada di daftar layanan tapi belum ada kartunya. Mau ditambah, atau dihapus dari daftar?
-8. Partnership: kontaknya lewat WhatsApp atau email apa?
-9. Harga boleh ditampilkan di website (sebagai teks)?
-10. 4 artikel blog lama tidak ada di desain. Boleh dihapus?
-11. Video TDC Story: diunggah ke YouTube/Vimeo, atau cukup foto?
+Terima kasih juga untuk jawaban dan catatannya, sudah saya masukkan. Tinggal beberapa hal lagi supaya isinya tepat:
+1. Jam buka Senin: 9am–6pm, atau 10am–4pm? Berlaku untuk semua cabang?
+2. Alamat Umalas masih Jl. Umalas 1 No. 1700? Mohon alamat Berawa & Seseh, plus link Google Maps keempat cabang
+3. Friends of The Dog Club: link form referral-nya apa, dan nominalnya IDR 100K, atau 50K untuk teman / 200K untuk yang mengajak?
+4. Nomor +62 812-4645-3589 di FAQ & flyer referral itu nomor siapa? Admin Ungasan di website saya pakai +62 813-3834-459
+5. Refund & terms versi singkat: mau kirim teksnya, atau saya susun dari FAQ lalu Kakak cek?
+6. Retail, Training, Homecare ada di daftar layanan tapi belum ada kartunya. Mau ditambah, atau dihapus dari daftar?
+7. Partnership: kontaknya lewat WhatsApp atau email apa?
+8. Harga boleh ditampilkan di website (sebagai teks)?
+9. 4 artikel blog lama tidak ada di desain. Boleh dihapus?
+10. Video TDC Story: diunggah ke YouTube/Vimeo, atau cukup foto?
 
 Daftar ini juga ada di {PROGRESS_URL}"""),
     ("Reminder bahan", f"""Halo Kak Erry, sekadar mengingatkan, yang masih saya tunggu:

@@ -47,16 +47,16 @@ window.PROJECT = {
     { title: 'Confirm details that differ between your files', due: '2026-11-05', status: 'todo',
       text: 'Your files show different values for these. Which ones are correct?',
       points: [
-        'Monday opening hours: 9am–6pm or 10am–4pm',
-        'Berawa WhatsApp: +62 812-3781-6931 or +62 813-1155-109',
-        'Ungasan WhatsApp: +62 812-4645-3589 or +62 813-3834-459',
+        'Monday opening hours: 9am–6pm or 10am–4pm, and does it apply to all branches?',
         'Referral reward: IDR 100K, or 50K for the new customer and 200K for the referrer',
+        'Who uses +62 812-4645-3589 (shown on the FAQ and referral flyer)? The website uses +62 813-3834-459 for the Ungasan admin',
       ] },
     { title: 'Answer a few questions about the design', due: '2026-11-05', status: 'todo',
       text: 'A WhatsApp reply is fine.',
       points: [
-        'Address and Google Maps link for each of the 4 locations',
-        'Where the Join the Club and Book a Visit buttons should go: branch WhatsApp, Pawsi or Gingr',
+        'Addresses for Umalas (still Jl. Umalas 1 No. 1700?), Berawa and Seseh, plus a Google Maps link for each of the 4 branches',
+        'Link to the referral registration form for Friends of The Dog Club',
+        'Short refund and terms text for House Rules: would you like to send it, or shall we draft it from your FAQ for you to check?',
         'Retail, Training and Homecare are in the service list but have no card yet. Add cards, or remove them from the list?',
         'Contact for partnership enquiries',
         'May we show your prices on the website, as text?',
@@ -96,7 +96,7 @@ window.PROJECT = {
   // Newest first. Add one every Friday and at each milestone.
   updates: [
     { date: '2026-11-04', title: 'Your design is in',
-      done: ['Received your Canva design, logo, photos, price list, FAQ and house rules', 'Page list set: 11 pages based on your design'],
+      done: ['Received your Canva design, logo, photos, price list, FAQ and house rules', 'Received your answers on Ungasan, Seseh, Berawa, Pawsi registration and the Book a Visit contacts', 'Page list set: 11 pages based on your design, with Friends of The Dog Club and a short refund section added'],
       next: ['Build the homepage, header and footer on desktop and mobile for your approval'],
       need: ['Answers to the questions under "Needed from you next"'] },
     { date: '2026-11-02', title: 'Project started',

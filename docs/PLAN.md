@@ -14,8 +14,8 @@ Dasar: desain Canva dari klien (`design/WEBSITE MOCKUP.pdf`, 12 layar) dan aset 
 | 2 | Services | section di Home `/#services` | 3 | **Bukan halaman sendiri** (keputusan 4 Nov): section di bawah galeri Home, menu Service scroll ke sini. Judul + 6 kartu (Boarding, Daycare, Walking, Pet Taxi, Grooming, Dog's Birthday). **Usulan:** tambah daftar harga dari pricelist sebagai teks. |
 | 3 | Facility | section di Home `/#facility` | 4, 5 | **Section di Home** (4 Nov), di bawah Services. Foto penuh + judul & teks kanan, lalu Mansion, 700 sqm park, Bone-Shaped Pools dengan foto bertumpuk. |
 | 4 | Locations | section di Home `/#locations` | 6, 7 | **Section di Home** (4 Nov), di bawah Facility. Video drone (12 detik, ±2 MB) + logo + 4 label cabang, lalu 4 kartu: foto, nama, Address (Google Maps), Contact Us (WhatsApp admin). |
-| 5 | House Rules | `/house-rules/` | 8 | Latar foto blur + kartu kertas berisi 5 aturan (teks, bukan gambar) + section singkat Booking & refunds. |
-| 6 | Book a Visit | `/book-a-visit/` | 9 + `Contact Admin.pdf` | Foto + "Schedule your visit" + tombol yang membuka pilihan 4 admin cabang (WhatsApp). |
+| 5 | House Rules | section di Home `/#house-rules` | 8 | **Section di Home** (4 Nov). Kartu kertas di atas foto blur; 5 aturan + Booking & Refunds (draf dari FAQ, menunggu persetujuan klien) sebagai baris buka-tutup. |
+| 6 | Book a Visit | section di Home `/#book-a-visit` | 9 + `Contact Admin.pdf` | **Section di Home** (4 Nov). Foto + Schedule your visit + tombol yang membuka pop-up 4 admin cabang (WhatsApp), meniru Contact Admin.pdf. |
 | 7 | Partnership | `/partnership/` | 10 | Judul + 4 foto + teks + tombol kontak. |
 | 8 | Loyalty Program | `/loyalty-program/` | 11 | Latar foto + kartu Top Up Balance + section **Friends of The Dog Club** (referral, tombol ke form). Teks, bukan gambar flyer. |
 | 9 | About Us | `/about-us/` | 12 | Hero + 2 paragraf cerita Kevin. Video TDC Story (opsional). |

@@ -334,6 +334,7 @@ Kerjakan di hari kerja, pagi hari, jangan Jumat sore.
 - [ ] DomaiNesia: ganti **hanya** A record & CNAME `www`
 - [ ] ⚠️ **Jangan sentuh** MX (email Google) dan TXT google-site-verification
 - [ ] SSL aktif di kedua alamat
+- [ ] Netlify **Deploys > Trigger deploy** untuk `main` setelah domain ditambahkan, lalu cek `view-source:https://thedogclub.id` tidak ada lagi `noindex` (production hanya boleh diindeks di thedogclub.id)
 - [ ] Kirim email test ke woof@thedogclub.id, pastikan masuk
 - [ ] Kabari klien: website live
 

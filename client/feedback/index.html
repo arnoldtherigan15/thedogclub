@@ -168,9 +168,15 @@
             </ul>
 
             <p class="text-sm font-semibold text-forest mb-3">Preview: tap a rule to open it</p>
-            <div class="mock relative overflow-hidden rounded-2xl px-4 py-10 sm:px-10 sm:py-14">
-                <img src="img/park-pool.webp" alt="" class="absolute inset-0 h-full w-full scale-110 object-cover blur-[6px]">
-                <div class="absolute inset-0 bg-black/10"></div>
+            <!-- The photo is one screen tall and sticks while the card scrolls, so opening a rule never resizes it.
+                 overflow-clip (not overflow-hidden) keeps the sticky photo working. -->
+            <div class="mock relative overflow-clip rounded-2xl px-4 py-10 sm:px-10 sm:py-14">
+                <div class="absolute inset-0" aria-hidden="true">
+                    <div class="sticky top-0 h-screen overflow-hidden">
+                        <img src="img/park-pool.webp" alt="" class="absolute inset-0 h-full w-full scale-110 object-cover blur-[6px]">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                    </div>
+                </div>
                 <div class="paper relative mx-auto max-w-xl px-6 py-10 text-[#3b3b3b] shadow-[0_30px_80px_rgba(0,0,0,0.25)] sm:px-12 sm:py-12">
                     <img src="img/logo-black.png" alt="" width="480" height="431" class="mx-auto h-10 w-auto opacity-80">
                     <p class="mt-4 text-center text-2xl font-bold uppercase tracking-[0.08em]">House Rules</p>
@@ -189,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-xs text-softGray mt-3">Preview. On the website the card sits in the homepage with the same header as your design.</p>
+            <p class="text-xs text-softGray mt-3">Preview. The background is a stand-in photo of the park: the photo used in your design has not been shared with us yet. On the website the card sits in the homepage with the same header as your design.</p>
 
             <div class="mt-6 bg-beige/50 border border-beigeDark rounded-2xl p-5 text-sm text-forest/85">
                 <p class="font-semibold text-forest mb-2">What we need from you</p>

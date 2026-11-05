@@ -23,6 +23,11 @@
         .sev-high { background: #F6D9D2; color: #8A2E1C; }
         .sev-med { background: #F7E7C1; color: #7A5410; }
         .sev-low { background: #E4DDD0; color: #4A4A4A; }
+        .st { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 9999px; white-space: nowrap; margin-left: auto; }
+        .st-fixed { background: #1A2E26; color: #F9F6F0; }
+        .st-progress { background: #DCE8F5; color: #1F4E79; }
+        .st-planned { background: #EFEAE1; color: #707070; }
+        .st-waiting { background: #F7E7C1; color: #7A5410; }
     </style>
 </head>
 <body class="antialiased">
@@ -99,6 +104,38 @@
             <p class="text-xs text-softGray mt-4">Search results typically take 4–12 weeks to reflect a new site. Speed, reliability and booking links improve on launch day.</p>
         </section>
 
+        <!-- Status on the new website -->
+        <section id="status" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Status on the new website</h2>
+            <p class="text-forest/70 mb-6">Updated 5 November 2026, checked on the preview at <a href="https://develop--thedogclub-staging.netlify.app" target="_blank" rel="noopener" class="underline">develop--thedogclub-staging.netlify.app</a>. Each finding below also shows its status.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 text-center">
+                <div class="bg-forest text-cream rounded-2xl p-4"><p class="font-editorial text-3xl font-bold">6</p><p class="text-xs mt-1">Fixed</p></div>
+                <div class="bg-[#DCE8F5] text-[#1F4E79] rounded-2xl p-4"><p class="font-editorial text-3xl font-bold">3</p><p class="text-xs mt-1">In progress</p></div>
+                <div class="bg-beige text-softGray rounded-2xl p-4"><p class="font-editorial text-3xl font-bold">3</p><p class="text-xs mt-1">Planned (SEO &amp; testing)</p></div>
+                <div class="bg-[#F7E7C1] text-[#7A5410] rounded-2xl p-4"><p class="font-editorial text-3xl font-bold">2</p><p class="text-xs mt-1">Waiting for your answer</p></div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <tbody class="text-forest/85">
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">1</td><td class="py-2 pr-3">Sign-up buttons don&#39;t lead to Pawsi</td><td class="py-2 text-right"><span class="st st-fixed">Fixed</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">2</td><td class="py-2 pr-3">Locations can't be opened</td><td class="py-2 text-right"><span class="st st-fixed">Fixed</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">3</td><td class="py-2 pr-3">Prices and schedules are images</td><td class="py-2 text-right"><span class="st st-waiting">Waiting for you</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">4</td><td class="py-2 pr-3">The homepage says almost nothing</td><td class="py-2 text-right"><span class="st st-fixed">Fixed</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">5</td><td class="py-2 pr-3">No meta descriptions (0 of 25 pages)</td><td class="py-2 text-right"><span class="st st-progress">In progress</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">6</td><td class="py-2 pr-3">Weak page titles</td><td class="py-2 text-right"><span class="st st-progress">In progress</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">7</td><td class="py-2 pr-3">2–4 main headings (H1) per page</td><td class="py-2 text-right"><span class="st st-fixed">Fixed</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">8</td><td class="py-2 pr-3">No structured data</td><td class="py-2 text-right"><span class="st st-planned">Planned</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">9</td><td class="py-2 pr-3">Heavy, slow pages</td><td class="py-2 text-right"><span class="st st-planned">Planned</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">10</td><td class="py-2 pr-3">Images have no alt text or names</td><td class="py-2 text-right"><span class="st st-fixed">Fixed</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">11</td><td class="py-2 pr-3">No preview when shared on WhatsApp or Facebook</td><td class="py-2 text-right"><span class="st st-planned">Planned</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">12</td><td class="py-2 pr-3">Outdated and duplicate content</td><td class="py-2 text-right"><span class="st st-progress">In progress</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">13</td><td class="py-2 pr-3">Personal email exposed</td><td class="py-2 text-right"><span class="st st-waiting">Waiting for you</span></td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-2 pr-3 font-semibold text-forest">14</td><td class="py-2 pr-3">An empty slider on the homepage</td><td class="py-2 text-right"><span class="st st-fixed">Fixed</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
         <!-- Findings -->
         <section class="py-10 border-b border-beigeDark">
             <h2 class="font-editorial text-3xl font-bold text-forest mb-2">Findings</h2>
@@ -107,92 +144,106 @@
             <div class="space-y-4">
                 <!-- High -->
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">1. Sign-up buttons don&#39;t lead to Pawsi</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">1. Sign-up buttons don&#39;t lead to Pawsi</h3><span class="st st-fixed">Fixed</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the "Sign up" button on the homepage and the "Join the Club" buttons on the Pricing and Schedule pages link to the Gingr portal, and there is no link to Pawsi anywhere on the site, even though bookings are made on Pawsi. Visitors ready to book have to find their own way there.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> every booking button goes to Pawsi; service requests go to WhatsApp with a pre-filled message.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> More of the people who decide to book actually complete a booking, without having to search for where to book.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> “Join the Club” goes to the Pawsi registration portal. No links to Gingr remain.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">2. Locations can't be opened</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">2. Locations can't be opened</h3><span class="st st-fixed">Fixed</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the four location tiles on the homepage (Umalas, Ungasan, The Dog Hotel Berawa, Seseh) are screenshots, not buttons. Ungasan and Seseh have no link at all, and Umalas can only be reached through the logo. The menu's "Home" goes to the Umalas page while the logo goes to the homepage, so visitors land on different pages for the same click.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> one clear "Our locations" section with a card per location, each with its address, map and booking link, and a consistent menu.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Customers find the location nearest to them in one tap, and Google can show each location for searches in its own area.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Every branch has its own card: the address opens Google Maps and “Contact Us” opens the branch admin on WhatsApp.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">3. Prices and schedules are images</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">3. Prices and schedules are images</h3><span class="st st-waiting">Waiting for you</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> Google can't read text inside images, so searches like "dog daycare price Bali" can't match your pages. Images are also hard to read and zoom on a phone.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> all prices and hours are real text, on each service page and one combined pricing page.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Your prices can show up in Google for price searches, and customers can check them quickly on their phone without asking on WhatsApp.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Prices will be added as text once you confirm they can be shown (question Q-04 in the spreadsheet).</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">4. The homepage says almost nothing</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-high">High</span><h3 class="font-bold text-forest">4. The homepage says almost nothing</h3><span class="st st-fixed">Fixed</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the homepage is mostly images with a heading "Welcome to THE DOG CLUB". Google has very little to understand what you offer or where you are.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> clear copy about your services, Umalas location, prices, FAQs and a map.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Google understands that you're a dog park, hotel and spa in Umalas, so you can start showing up for those searches.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Every homepage section is real text, not an image.</p>
                 </article>
 
                 <!-- Medium -->
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">5. No meta descriptions (0 of 25 pages)</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">5. No meta descriptions (0 of 25 pages)</h3><span class="st st-progress">In progress</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> this is the short text under your link on Google. Without it, Google picks random text, which usually gets fewer clicks.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> a written description for every page.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Your Google listing shows a clear, inviting summary under each link, which earns more clicks for the same position.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> A description for the site is in place. Descriptions are finalised in SEO &amp; testing.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">6. Weak page titles</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">6. Weak page titles</h3><span class="st st-progress">In progress</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the homepage title is only "The Dog Club". Titles are one of the strongest ranking signals, and this one has no keywords such as dog hotel, daycare or Bali.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> e.g. "The Dog Club Bali — Dog Park, Hotel &amp; Spa in Umalas".</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Each page can show up for the right search: "dog hotel Bali", "dog grooming Umalas", "dog daycare Canggu area".</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> A clear page title is in place. Titles are finalised in SEO &amp; testing.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">7. 2–4 main headings (H1) per page</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">7. 2–4 main headings (H1) per page</h3><span class="st st-fixed">Fixed</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> every page has a hidden "Welcome to THE DOG CLUB" main heading from the menu, and the Umalas page has four. Each page should have one main heading that says what it's about; several competing headings blur the topic.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> exactly one descriptive H1 per page.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Every page has one clear topic, so Google knows which page to show for which search.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> The page has exactly one main heading (H1).</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">8. No structured data</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">8. No structured data</h3><span class="st st-planned">Planned</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> structured data tells Google in a machine-readable way that you're a local business, with your address, hours and phone. None of the 25 pages has it.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> LocalBusiness data (address, hours, contact) and FAQ data.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Your address, opening hours and phone number can appear directly in search results, and Google can link your website to your Maps listing.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Added in SEO &amp; testing: business details for all four branches, and the FAQ.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">9. Heavy, slow pages</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">9. Heavy, slow pages</h3><span class="st st-planned">Planned</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the homepage loads about 15 JavaScript and 19 CSS files, four font families in 18 weights each, and the same Instagram stylesheet twice. Google ranks slow mobile sites lower, and visitors leave.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> no plugins, compressed images, Lighthouse target of 90+ on mobile.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Pages open quickly on mobile data, fewer visitors give up while waiting, and Google stops penalising the site for speed.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Photos are already compressed (WebP) and videos only load when needed. Speed is measured in SEO &amp; testing.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">10. Images have no alt text or names</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">10. Images have no alt text or names</h3><span class="st st-fixed">Fixed</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> none of the 15 images on the homepage has alt text, and file names like "Screenshot-2026-02-23-at-14.32.59.png" say nothing. Your photos can't appear in Google Images, and screen readers can't describe them.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> descriptive alt text and file names for every photo.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Your photos of the park, pools and happy dogs can bring visitors from Google Images, and the site works for people using screen readers.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Every photo has a description (alt text) and a descriptive file name.</p>
                 </article>
 
                 <!-- Low -->
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">11. No preview when shared on WhatsApp or Facebook</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">11. No preview when shared on WhatsApp or Facebook</h3><span class="st st-planned">Planned</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> there are no Open Graph tags, so shared links show no image or proper title. Most of your sharing likely happens on WhatsApp and Instagram.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> a title, description and image for every shared link.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Links shared on WhatsApp, Instagram and Facebook show a photo and a proper title, so more people tap them.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Added in SEO &amp; testing, then tested by sharing the link on WhatsApp.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">12. Outdated and duplicate content</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">12. Outdated and duplicate content</h3><span class="st st-progress">In progress</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the footer still says © 2024 and "Kapubaten" (typo), the Terms of Service are a Shopify template with the wrong email, WordPress's sample "Hello world!" post was still online, and the FAQ appears in two different versions. This looks neglected to both Google and visitors.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> one up-to-date version of every page; the sample post removed.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> The site looks cared for and trustworthy, and Google no longer sees duplicate or empty pages.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> The Shopify terms, the “Hello world” post and the duplicate FAQ are not carried over; the copyright year updates itself. Checked again before launch.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">13. Personal email exposed</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">13. Personal email exposed</h3><span class="st st-waiting">Waiting for you</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the blog author's personal email is shown on every article and in a page address, which invites spam.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> articles credited to "The Dog Club team".</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> No more spam to a personal inbox, and articles look professional.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Goes away when the old blog articles are removed (question Q-13 in the spreadsheet).</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
-                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">14. An empty slider on the homepage</h3></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-low">Low</span><h3 class="font-bold text-forest">14. An empty slider on the homepage</h3><span class="st st-fixed">Fixed</span></div>
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the slider at the bottom of the homepage has no content, so it shows as an empty space with dots.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> every section on the page has real content, and nothing is left empty.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> The homepage looks finished and cared for, from the first visit.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> No empty slider. The top of the homepage shows three of your photos in turn.</p>
                 </article>
             </div>
 

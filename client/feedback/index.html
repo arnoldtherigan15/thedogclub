@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Design Feedback — The Dog Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/tailwind-config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site.css">
+    <style>
+        @media print { .no-print { display: none !important; } body { background: #fff; } section { break-inside: avoid; } details { display: block; } }
+        /* The mockups use the website's own font and colours (Open Sans, olive #37402f). */
+        .mock { font-family: 'Open Sans', sans-serif; }
+        .paper {
+            background-color: #f3f2ef;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .rule summary { list-style: none; }
+        .rule summary::-webkit-details-marker { display: none; }
+        .rule[open] .vbar { transform: translateX(-50%) rotate(90deg); }
+        .gap { background: rgba(228, 176, 71, 0.35); padding: 0 4px; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="no-print bg-forest text-cream text-xs sm:text-sm py-2 px-4 text-center">
+        <a href="../progress/" class="underline hover:text-sunshine">Project progress</a>
+        <span class="mx-2 text-cream/40">|</span>
+        <button onclick="window.print()" class="underline hover:text-sunshine">Save as PDF</button>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+
+        <header class="pb-8 border-b border-beigeDark">
+            <span class="text-xs font-bold uppercase tracking-widest text-sunshine">Design feedback &middot; 5 November 2026</span>
+            <h1 class="font-editorial text-4xl sm:text-5xl font-bold text-forest leading-tight mt-2">Notes on your Canva design</h1>
+            <p class="text-forest/75 mt-4 leading-relaxed">Thank you for the design and all the files. We are building the website from it now. While doing so we found a few points we'd like to check with you. A short WhatsApp reply per point is enough.</p>
+
+            <ol class="mt-6 space-y-2 text-sm text-forest/85">
+                <li><a href="#footer" class="underline">1. A footer for the bottom of the page</a> <span class="text-softGray">&middot; not in the design yet</span></li>
+                <li><a href="#differences" class="underline">2. Details that differ between House Rules and FAQ</a> <span class="text-softGray">&middot; which version is correct?</span></li>
+                <li><a href="#house-rules" class="underline">3. House Rules as text instead of an image</a> <span class="text-softGray">&middot; proposal with a preview</span></li>
+                <li><a href="#images" class="underline">4. Other content that is still an image</a> <span class="text-softGray">&middot; proposal</span></li>
+            </ol>
+        </header>
+
+        <!-- 1 Footer -->
+        <section id="footer" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Point 1</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">A footer for the bottom of the page</h2>
+            <p class="text-forest/75 mb-6 leading-relaxed">The Canva design has no footer, the strip at the very bottom of every page. Visitors look there for the address, opening hours and how to reach you, and Google uses it to confirm your business details. This is our proposal, in your colours and font:</p>
+
+            <div class="mock rounded-2xl overflow-hidden shadow-lg bg-[#37402f] text-white px-6 sm:px-10 py-10">
+                <div class="flex flex-col sm:flex-row gap-10 sm:gap-8">
+                    <div class="sm:w-1/3">
+                        <img src="img/logo-white.png" alt="The Dog Club" width="480" height="431" class="h-14 w-auto">
+                        <p class="mt-4 text-sm tracking-wide text-white/80">Happiness Center for Doggies</p>
+                        <p class="mt-6 text-xs uppercase tracking-[0.18em] text-white/60">Opening hours</p>
+                        <p class="mt-2 text-sm">Every day, 9 AM &ndash; 6 PM <span class="gap">Monday?</span></p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-6 sm:w-2/3 text-sm">
+                        <div>
+                            <p class="font-semibold">The Dog Club Umalas</p>
+                            <p class="mt-1 text-white/70 text-xs leading-relaxed"><span class="gap">Address</span></p>
+                            <p class="mt-1 text-xs underline underline-offset-4">WhatsApp</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">The Dog Club Ungasan</p>
+                            <p class="mt-1 text-white/70 text-xs leading-relaxed">Jl. Toya Ning I No.313, Ungasan</p>
+                            <p class="mt-1 text-xs underline underline-offset-4">WhatsApp</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">The Dog Club Seseh</p>
+                            <p class="mt-1 text-white/70 text-xs leading-relaxed"><span class="gap">Address</span></p>
+                            <p class="mt-1 text-xs underline underline-offset-4">WhatsApp</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">The Dog Hotel Berawa</p>
+                            <p class="mt-1 text-white/70 text-xs leading-relaxed"><span class="gap">Address</span> &middot; boarding only</p>
+                            <p class="mt-1 text-xs underline underline-offset-4">WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 pt-6 border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs tracking-wide text-white/70">
+                    <p>&copy; 2026 The Dog Club Bali</p>
+                    <p class="flex flex-wrap gap-x-5 gap-y-2">
+                        <span class="underline underline-offset-4">Join the Club</span>
+                        <span class="underline underline-offset-4">FAQ</span>
+                        <span class="underline underline-offset-4">Privacy Policy</span>
+                        <span><i class="fa-brands fa-instagram mr-1"></i>@thedogclub.bali</span>
+                        <span>woof@thedogclub.id</span>
+                    </p>
+                </div>
+            </div>
+            <p class="text-xs text-softGray mt-3">Preview. The highlighted parts are the details we still need. Every WhatsApp link opens the branch admin you sent us.</p>
+
+            <div class="mt-6 bg-beige/50 border border-beigeDark rounded-2xl p-5 text-sm text-forest/85">
+                <p class="font-semibold text-forest mb-2">What we need from you</p>
+                <ul class="list-disc ml-5 space-y-1">
+                    <li>Is this footer OK, or would you like anything added or removed?</li>
+                    <li>Addresses for Umalas, Seseh and Berawa, and a Google Maps link for all four branches.</li>
+                    <li>Opening hours: your price list says Monday&ndash;Sunday 9 AM&ndash;6 PM, but another note says Monday 10 AM&ndash;4 PM. Which is correct, and is it the same for every branch?</li>
+                    <li>Are <strong>@thedogclub.bali</strong> and <strong>woof@thedogclub.id</strong> the right Instagram and email to show?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2 Differences -->
+        <section id="differences" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Point 2</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Details that differ between House Rules and FAQ</h2>
+            <p class="text-forest/75 mb-6 leading-relaxed">Both documents will be on the website, so customers will see both. A few rules are worded differently, which could confuse a new customer. Which version should we use?</p>
+
+            <div class="space-y-4">
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-semibold text-forest">Vaccinations</p>
+                    <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">House Rules</p>"<strong>DHPP/DHPPL</strong>, Rabies, and Bordetella &hellip; visits are permitted <strong>at least 7 days after their most recent vaccination</strong>."</div>
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">FAQ</p>"Up-to-date <strong>DHPPL</strong>, Rabies, and Bordetella." No mention of the 7-day wait.</div>
+                    </div>
+                    <p class="mt-3 text-sm text-forest/80"><strong>Question:</strong> DHPP/DHPPL or DHPPL? And should the FAQ also mention the 7-day wait?</p>
+                </div>
+
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-semibold text-forest">Tick &amp; flea prevention</p>
+                    <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">House Rules</p>"Dogs must receive a tick and flea preventive treatment <strong>within 24 hours before check-in</strong>."</div>
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">FAQ</p>"We require your dog's flea and tick prevention to be <strong>up to date</strong> before daycare or boarding."</div>
+                    </div>
+                    <p class="mt-3 text-sm text-forest/80"><strong>Question:</strong> is it a treatment within 24 hours of check-in, or prevention that is up to date?</p>
+                </div>
+
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-semibold text-forest">Spayed &amp; neutered</p>
+                    <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">House Rules</p>"Dogs aged 6 months and older <strong>must be spayed or neutered</strong> to access our shared park areas."</div>
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">FAQ</p>"How old does my dog need to be?" lists age and vaccinations only. Spaying or neutering is not mentioned.</div>
+                    </div>
+                    <p class="mt-3 text-sm text-forest/80"><strong>Question:</strong> should we add this requirement to that FAQ answer?</p>
+                </div>
+
+                <div class="bg-cream border border-beigeDark rounded-2xl p-5">
+                    <p class="font-semibold text-forest">Ungasan phone number</p>
+                    <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">FAQ &amp; referral flyer</p>+62 812-4645-3589</div>
+                        <div class="bg-white/70 rounded-xl p-3"><p class="text-xs uppercase tracking-wider text-softGray mb-1">Contact Admin links you sent</p>+62 813-3834-459</div>
+                    </div>
+                    <p class="mt-3 text-sm text-forest/80"><strong>Question:</strong> which number should customers use for Ungasan? We currently use +62 813-3834-459 everywhere on the website.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 House Rules -->
+        <section id="house-rules" class="py-10 border-b border-beigeDark scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Point 3</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">House Rules as text instead of an image</h2>
+            <p class="text-forest/75 mb-4 leading-relaxed">In the design, the House Rules are a picture of your PDF. We suggest keeping the same look, the paper card over a photo, but writing the rules as real text on the website:</p>
+            <ul class="grid sm:grid-cols-2 gap-3 text-sm text-forest/85 mb-8">
+                <li class="flex gap-3 bg-cream border border-beigeDark rounded-xl p-4"><i class="fa-solid fa-mobile-screen text-sunshine mt-0.5"></i><span><strong>Easy to read on phones.</strong> Text in a picture shrinks with the picture, so visitors have to zoom in.</span></li>
+                <li class="flex gap-3 bg-cream border border-beigeDark rounded-xl p-4"><i class="fa-brands fa-google text-sunshine mt-0.5"></i><span><strong>Found on Google.</strong> People search for things like vaccination rules. Google cannot read text inside a picture.</span></li>
+                <li class="flex gap-3 bg-cream border border-beigeDark rounded-xl p-4"><i class="fa-solid fa-pen text-sunshine mt-0.5"></i><span><strong>Quick to update.</strong> Changing one sentence no longer means editing in Canva and exporting a new image.</span></li>
+                <li class="flex gap-3 bg-cream border border-beigeDark rounded-xl p-4"><i class="fa-solid fa-compress text-sunshine mt-0.5"></i><span><strong>Shorter page.</strong> Each rule opens with a tap, so the card stays compact on the homepage.</span></li>
+            </ul>
+
+            <p class="text-sm font-semibold text-forest mb-3">Preview: tap a rule to open it</p>
+            <div class="mock relative overflow-hidden rounded-2xl px-4 py-10 sm:px-10 sm:py-14">
+                <img src="img/park-pool.webp" alt="" class="absolute inset-0 h-full w-full scale-110 object-cover blur-[6px]">
+                <div class="absolute inset-0 bg-black/10"></div>
+                <div class="paper relative mx-auto max-w-xl px-6 py-10 text-[#3b3b3b] shadow-[0_30px_80px_rgba(0,0,0,0.25)] sm:px-12 sm:py-12">
+                    <img src="img/logo-black.png" alt="" width="480" height="431" class="mx-auto h-10 w-auto opacity-80">
+                    <p class="mt-4 text-center text-2xl font-bold uppercase tracking-[0.08em]">House Rules</p>
+                    <p class="mt-6 text-sm leading-7 tracking-[0.03em]">At The Dog Club, we're all about creating a safe, happy, and respectful space where dogs can play, learn, and make new friends. Thank you for helping us keep our community fun for everyone.</p>
+                    <ul class="mt-6 border-t border-black/10 text-sm">
+                        <li class="border-b border-black/10"><details class="rule"><summary class="flex cursor-pointer items-center justify-between gap-6 py-4 text-base font-bold">Healthy Dogs Only<span class="relative h-3 w-3 shrink-0"><span class="absolute left-0 top-1/2 h-[1.5px] w-3 -translate-y-1/2 bg-current"></span><span class="vbar absolute left-1/2 top-0 h-3 w-[1.5px] -translate-x-1/2 bg-current transition-transform"></span></span></summary><p class="pb-5 pr-6 leading-7">Please only bring your dog if they're feeling well. Dogs showing signs of illness, injury, or contagious conditions should stay home until they're fully recovered.</p></details></li>
+                        <li class="border-b border-black/10"><details class="rule" open><summary class="flex cursor-pointer items-center justify-between gap-6 py-4 text-base font-bold">Vaccinations Required<span class="relative h-3 w-3 shrink-0"><span class="absolute left-0 top-1/2 h-[1.5px] w-3 -translate-y-1/2 bg-current"></span><span class="vbar absolute left-1/2 top-0 h-3 w-[1.5px] -translate-x-1/2 bg-current transition-transform"></span></span></summary><p class="pb-5 pr-6 leading-7">All dogs must be up to date with their <strong class="italic">DHPP/DHPPL, Rabies, and Bordetella</strong> vaccinations before visiting The Dog Club. For your dog's safety, visits are permitted <strong class="italic">at least 7 days after their most recent vaccination.</strong></p></details></li>
+                        <li class="border-b border-black/10"><details class="rule"><summary class="flex cursor-pointer items-center justify-between gap-6 py-4 text-base font-bold">Spayed &amp; Neutered<span class="relative h-3 w-3 shrink-0"><span class="absolute left-0 top-1/2 h-[1.5px] w-3 -translate-y-1/2 bg-current"></span><span class="vbar absolute left-1/2 top-0 h-3 w-[1.5px] -translate-x-1/2 bg-current transition-transform"></span></span></summary><p class="pb-5 pr-6 leading-7">Dogs aged 6 months and older must be spayed or neutered to access our shared park areas. Female dogs in heat are not permitted. If your dog unexpectedly comes into heat during her stay, we'll do our best to keep her safe by separating her from other dogs. While we'll take every reasonable precaution, The Dog Club cannot be held responsible for any consequences resulting from an unexpected heat cycle.</p></details></li>
+                        <li class="border-b border-black/10"><details class="rule"><summary class="flex cursor-pointer items-center justify-between gap-6 py-4 text-base font-bold">Tick &amp; Flea Prevention<span class="relative h-3 w-3 shrink-0"><span class="absolute left-0 top-1/2 h-[1.5px] w-3 -translate-y-1/2 bg-current"></span><span class="vbar absolute left-1/2 top-0 h-3 w-[1.5px] -translate-x-1/2 bg-current transition-transform"></span></span></summary><p class="pb-5 pr-6 leading-7">To help keep all dogs safe and our facilities pest-free, dogs must receive a tick and flea preventive treatment <strong class="italic">within 24 hours before check-in.</strong> Dogs found with ticks or fleas upon arrival may be refused entry until they have been treated.</p></details></li>
+                        <li class="border-b border-black/10"><details class="rule"><summary class="flex cursor-pointer items-center justify-between gap-6 py-4 text-base font-bold">Respect Every Dog<span class="relative h-3 w-3 shrink-0"><span class="absolute left-0 top-1/2 h-[1.5px] w-3 -translate-y-1/2 bg-current"></span><span class="vbar absolute left-1/2 top-0 h-3 w-[1.5px] -translate-x-1/2 bg-current transition-transform"></span></span></summary><p class="pb-5 pr-6 leading-7">Every dog has a different play style. If our team feels a dog needs a break, a different play group, or to leave the play area, we kindly ask that you follow our guidance. Our decisions are always made with the safety and wellbeing of all dogs in mind. As dog play is naturally social and unpredictable, owners remain responsible for any injuries or damages caused by their own dog.</p></details></li>
+                        <li class="border-b border-black/10"><details class="rule"><summary class="flex cursor-pointer items-center justify-between gap-6 py-4 text-base font-bold"><span>Booking &amp; Refunds <span class="ml-2 align-middle rounded-full bg-[#E4B047] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#1A2E26]">Draft</span></span><span class="relative h-3 w-3 shrink-0"><span class="absolute left-0 top-1/2 h-[1.5px] w-3 -translate-y-1/2 bg-current"></span><span class="vbar absolute left-1/2 top-0 h-3 w-[1.5px] -translate-x-1/2 bg-current transition-transform"></span></span></summary><div class="space-y-3 pb-5 pr-6 leading-7"><p>Registration is required before any booking can be made. New dogs complete an evaluation before joining daycare or boarding, and a boarding stay is <strong class="italic">only confirmed once you receive confirmation from our team.</strong></p><p>No refunds are issued for early check-outs. Any unused balance is converted into store credit, which can be used for future services.</p></div></details></li>
+                    </ul>
+                    <div class="mt-8 text-center text-sm font-semibold italic leading-7">
+                        <p>Thank you for helping us create a fun, safe, and welcoming environment for every dog and every visit.</p>
+                        <p class="mt-4">See you at The Club</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-softGray mt-3">Preview. On the website the card sits in the homepage with the same header as your design.</p>
+
+            <div class="mt-6 bg-beige/50 border border-beigeDark rounded-2xl p-5 text-sm text-forest/85">
+                <p class="font-semibold text-forest mb-2">What we need from you</p>
+                <ul class="list-disc ml-5 space-y-1">
+                    <li>Are you happy with the rules as text, opening with a tap?</li>
+                    <li><strong>Booking &amp; Refunds</strong> is the short refund and terms section you asked for. We wrote it using only sentences from your FAQ. Is it correct, or would you like to send your own wording?</li>
+                    <li>The photo behind the card in your design (dogs in front of the HOTEL sign) is not in the shared folder. Could you send it? Until then we use a photo of the park.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4 Other images -->
+        <section id="images" class="py-10 scroll-mt-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-sunshine">Point 4</p>
+            <h2 class="font-editorial text-3xl font-bold text-forest mt-1 mb-4">Other content that is still an image</h2>
+            <p class="text-forest/75 mb-6 leading-relaxed">For the same reasons as the House Rules, we suggest turning these into real text, keeping the look of your design:</p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">Content</th><th class="py-2 pr-4">Now</th><th class="py-2">Proposal</th></tr></thead>
+                    <tbody class="text-forest/85 align-top">
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Loyalty Program</td><td class="py-3 pr-4">Two flyer images: Advance Top Up Balance and the referral flyer</td><td class="py-3">Same paper cards as the House Rules, with the top-up tiers, terms and referral rewards as text. Includes the new <strong>Friends of The Dog Club</strong> section with a button to your referral form.</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">FAQ</td><td class="py-3 pr-4">PDF and image pages</td><td class="py-3">A FAQ page with the questions grouped by topic (Booking, Boarding, Daycare, Grooming and more), each opening with a tap, and linked from the footer.</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Price list</td><td class="py-3 pr-4">PDF / image</td><td class="py-3">If you'd like prices on the website: a simple price table under Our Services. Updating a price then takes one line instead of a new image.</td></tr>
+                        <tr><td class="py-3 pr-4 font-semibold text-forest">Contact Admin card</td><td class="py-3 pr-4">Image</td><td class="py-3"><span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-forest text-cream">Done</span> Already built as real buttons: the Book a Visit button opens your four branch admins on WhatsApp.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 bg-beige/50 border border-beigeDark rounded-2xl p-5 text-sm text-forest/85">
+                <p class="font-semibold text-forest mb-2">What we need from you</p>
+                <ul class="list-disc ml-5 space-y-1">
+                    <li>OK to turn the Loyalty Program and FAQ into text?</li>
+                    <li>Referral reward: the flyer says <strong>IDR 100K</strong>, the Loyalty Program sheet says <strong>IDR 50K</strong> for the new customer and <strong>IDR 200K</strong> for the referrer. Which is current? And the link to your referral form.</li>
+                    <li>Should prices be shown on the website?</li>
+                </ul>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-forest/80">Thank you! Reply to any of these whenever it suits you.</p>
+                <a href="https://wa.me/6281214574782?text=Hi%20Arnold%2C%20about%20the%20design%20feedback%3A" target="_blank" rel="noopener noreferrer"
+                   class="no-print mt-5 bg-forest hover:bg-forestLight text-cream px-6 py-3 rounded-full font-semibold inline-flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Reply on WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

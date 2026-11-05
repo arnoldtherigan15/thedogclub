@@ -49,7 +49,7 @@ window.PROJECT = {
       text: 'Logo, fonts, colour codes and photos for every page.' },
     { title: 'Answer the design questions', due: '2026-11-05', status: 'done',
       text: 'Addresses, opening hours, FAQ, footer, loyalty design and the referral form. Thank you.' },
-    { title: 'Payment 2: IDR 2,250,000', due: '2026-11-12', status: 'todo', link: '../invoice-2/', linkText: 'View invoice',
+    { title: 'Payment 2: IDR 2,250,000', due: '2026-11-09', status: 'todo', link: '../invoice-2/', linkText: 'View invoice',
       text: 'All pages are built, so payment 2 is now due. SEO and testing start once it is received.' },
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },

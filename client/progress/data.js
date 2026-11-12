@@ -6,11 +6,11 @@
 // status for payments: 'paid' | 'due' | 'upcoming'
 // health:             'on-track' | 'waiting' | 'delayed'
 window.PROJECT = {
-  updated: '2026-11-05',
+  updated: '2026-11-12',
   start: '2026-11-02',
   target: '2026-11-23',
   health: 'on-track',
-  healthNote: 'All 11 sections are built and live on the preview link, ahead of schedule. Next: your feedback and payment 2, then SEO and testing.',
+  healthNote: 'Payment 2 received, thank you. Most of your feedback is done and the site is now in English and Indonesian. A few items wait for your answers in the spreadsheet. Next: SEO and testing.',
   pagesBuilt: 11,
   pagesTotal: 11,
   // Fixed on the new site and checked: Pawsi sign-up (1), clickable locations (2), homepage text (4),
@@ -27,7 +27,7 @@ window.PROJECT = {
       text: 'All 11 sections are built on the preview link with your real content: Services, Facility, Locations, House Rules, FAQ, Book a Visit, Partnership, Loyalty Program, About Us and the footer.',
       gate: 'Payment 2, once all pages are built' },
     { name: 'Your feedback', from: '2026-11-05', to: '2026-11-13', status: 'active',
-      text: 'You check the preview on phone and laptop and add your feedback in the shared spreadsheet. We work through it as it comes in.' },
+      text: 'You check the preview on phone and laptop and add your feedback in the shared spreadsheet. 19 of 28 feedback items are done; the rest wait for your answers or files.' },
     { name: 'SEO & testing', from: '2026-11-16', to: '2026-11-17', status: 'todo',
       text: 'Search optimisation, speed, old-link redirects, and checks on phone and laptop.' },
     { name: 'Final review', from: '2026-11-17', to: '2026-11-19', status: 'todo',
@@ -49,12 +49,12 @@ window.PROJECT = {
       text: 'Logo, fonts, colour codes and photos for every page.' },
     { title: 'Answer the design questions', due: '2026-11-05', status: 'done',
       text: 'Addresses, opening hours, FAQ, footer, loyalty design and the referral form. Thank you.' },
-    { title: 'Payment 2: IDR 2,250,000', due: '2026-11-09', status: 'todo', link: '../invoice-2/', linkText: 'View invoice',
-      text: 'All pages are built, so payment 2 is now due. SEO and testing start once it is received.' },
+    { title: 'Payment 2: IDR 2,250,000', due: '2026-11-09', status: 'done', link: '../invoice-2/', linkText: 'View invoice',
+      text: 'Received, thank you.' },
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Answer the open questions in the spreadsheet', due: '2026-11-13', status: 'todo',
-      text: 'The "Open questions" tab lists what is still needed, for example the referral rewards, TikTok link and Booking & Refunds text.' },
+      text: 'The "Open questions" tab lists what is still needed: the new questions Q-27 to Q-30 (updated Canva pages, Mission, Vision & Values text, Facility video), Q-13 and the referral rewards.' },
     { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
       text: 'This is where your website code will live, in your name.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -73,12 +73,21 @@ window.PROJECT = {
 
   payments: [
     { name: 'Payment 1: down payment', when: 'Project start', amount: 'IDR 3,750,000', status: 'paid' },
-    { name: 'Payment 2: progress', when: 'All pages built, before SEO & testing', amount: 'IDR 2,250,000', status: 'due' },
+    { name: 'Payment 2: progress', when: 'All pages built, before SEO & testing', amount: 'IDR 2,250,000', status: 'paid' },
     { name: 'Payment 3: final', when: 'Before go-live', amount: 'IDR 1,500,000', status: 'upcoming' },
   ],
 
   // Newest first. Add one every Friday and at each milestone.
   updates: [
+    { date: '2026-11-12', title: 'Payment 2 received, feedback in progress',
+      done: [
+        'Payment 2 received, thank you',
+        '19 of 28 feedback items done: buttons, header, gallery, service cards, facility photos, locations, House Rules highlights, About Us photos, and your new Partnership and Loyalty photos',
+        'The website is now in English and Indonesian, with an EN / ID switch',
+        'Floating WhatsApp button on phones, and Join the Club always within reach',
+      ],
+      next: ['The remaining feedback once your answers and files arrive', 'SEO and testing'],
+      need: ['Answers to the new questions Q-27 to Q-30, and Q-13', 'The updated Canva pages and the Facility video'] },
     { date: '2026-11-05', title: 'All sections built',
       done: [
         'All 11 sections built from your Canva design, on desktop and phone',

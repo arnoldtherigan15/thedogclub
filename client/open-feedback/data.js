@@ -37,7 +37,7 @@ window.OPEN_ITEMS = {
       img: 'img/house-rules-page.jpg', imgAlt: 'The House Rules page in the Canva design, with dogs in front of the HOTEL sign' },
     { group: 'files', status: 'open', ref: 'Feedback #5 · Q-05', where: 'Photo → 1. Service',
       title: 'Retail, Training and Homecare cards',
-      text: 'One photo and one sentence for each, so the service cards match the list of services.' },
+      text: 'We found Retail.png and Training.jpg in the Drive already: please confirm they are the photos to use. Still needed: a Homecare photo, and one sentence for each of the three cards.' },
     { group: 'files', status: 'open', optional: true, ref: 'Feedback #6', where: 'Photo → 3. Facility → Mansion',
       title: 'Sharper Mansion photos',
       text: 'The two we have are small (1086 px wide) and look soft on large screens.' },
@@ -63,9 +63,9 @@ window.OPEN_ITEMS = {
       text: 'When it is uploaded, send the link and the video plays from YouTube, which is lighter on phones.' },
 
     // Choices
-    { group: 'decide', status: 'open', ref: 'Feedback #5',
+    { group: 'decide', status: 'open', ref: 'Feedback #5 · Q-30',
       title: 'What should each service card link to?',
-      text: 'A) a Book button that opens the branch WhatsApp or Pawsi registration, or B) a page with more detail for each service.' },
+      text: 'Your Canva has no button or link on the service cards yet. A) a "Book" button that opens the branch WhatsApp or Pawsi registration, or B) a "Learn more" link to its own page with more detail about that service.' },
     { group: 'decide', status: 'open', ref: 'Q-28',
       title: 'Is the place for Vision, Mission & Values OK?',
       text: 'They sit right after the About Us text, without their own link in the menu, because the header has no room for a ninth link.' },

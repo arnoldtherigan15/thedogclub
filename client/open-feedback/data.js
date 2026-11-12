@@ -66,6 +66,23 @@ window.OPEN_ITEMS = {
     { group: 'decide', status: 'open', ref: 'Feedback #5 · Q-30',
       title: 'What should each service card link to?',
       text: 'Your Canva has no button or link on the service cards yet. A) a "Book" button that opens the branch WhatsApp or Pawsi registration, or B) a "Learn more" link to its own page with more detail about that service.' },
+    // Design changes made from the feedback that differ from the Canva design: shown side by side to confirm.
+    { group: 'confirm', status: 'open', ref: 'Feedback #6 · Q-31',
+      title: 'Our Facility: photos side by side',
+      quote: 'In each card the small second photo overlaps the first and looks accidental … maybe can do better?',
+      text: 'Your Canva still shows the small photo overlapping the big one. On the website the two photos now sit side by side at the same height. Happy with this, or would you prefer it like the Canva?',
+      compare: [
+        { src: 'img/facility-canva.jpg', caption: 'In your Canva' },
+        { src: 'img/facility-website.jpg', caption: 'On the website now' },
+      ] },
+    { group: 'confirm', status: 'open', ref: 'Feedback #4 · Q-31',
+      title: 'Our Services: title and text together',
+      quote: 'The title is top right and the description bottom left, please align them the same way.',
+      text: 'Your Canva still shows the title at the top right. On the website the title and description now sit together at the bottom left of each card. Happy with this?',
+      compare: [
+        { src: 'img/services-canva.jpg', caption: 'In your Canva' },
+        { src: 'img/services-website.jpg', caption: 'On the website now' },
+      ] },
     { group: 'decide', status: 'open', ref: 'Q-28',
       title: 'Is the place for Vision, Mission & Values OK?',
       text: 'They sit right after the About Us text, without their own link in the menu, because the header has no room for a ninth link.' },

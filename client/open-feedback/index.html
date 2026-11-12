@@ -67,6 +67,12 @@
             <div data-list="decide" class="mt-6 space-y-4"></div>
         </section>
 
+        <section id="confirm" class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest">Design changes to confirm</h2>
+            <p class="text-forest/70 text-sm mt-2">We changed these sections because of your feedback, so they now look different from your Canva design. Please confirm in the spreadsheet (Open questions tab, Q-31) that you are happy with them.</p>
+            <div data-list="confirm" class="mt-6 space-y-4"></div>
+        </section>
+
         <section id="received" class="py-10 hidden">
             <h2 class="font-editorial text-2xl font-bold text-forest">Received, thank you</h2>
             <ul data-list="done" class="mt-4 space-y-2 text-sm text-forest/70"></ul>
@@ -97,7 +103,7 @@
             document.getElementById('link-preview').href = d.links.preview;
             document.getElementById('link-feedback').href = d.links.feedbackTab;
 
-            for (const group of ['files', 'info', 'decide']) {
+            for (const group of ['files', 'info', 'decide', 'confirm']) {
                 const list = document.querySelector(`[data-list="${group}"]`);
                 const items = open.filter((i) => i.group === group).sort((a, b) => !!a.optional - !!b.optional);
                 if (!items.length) {
@@ -112,7 +118,9 @@
                                 ${i.optional ? '<span class="text-[11px] font-semibold text-forest/70 border border-beigeDark px-2.5 py-0.5 rounded-full">Nice to have</span>' : '<span class="text-[11px] font-bold uppercase tracking-wider text-forest bg-sunshine/30 px-2.5 py-0.5 rounded-full">Needed</span>'}
                             </div>
                             <h3 class="font-bold text-forest text-lg mt-3 leading-snug">${esc(i.title)}</h3>
+                            ${i.quote ? `<blockquote class="mt-2 border-l-2 border-sunshine pl-3 text-sm italic text-forest/70">Your feedback: &ldquo;${esc(i.quote)}&rdquo;</blockquote>` : ''}
                             <p class="text-sm text-forest/80 mt-2 leading-relaxed">${esc(i.text)}</p>
+                            ${i.compare ? `<div class="mt-4 grid gap-3 sm:grid-cols-2">${i.compare.map((c) => `<figure><img src="${esc(c.src)}" alt="${esc(i.title + ': ' + c.caption)}" loading="lazy" class="w-full rounded-xl border border-beigeDark"><figcaption class="text-[11px] font-semibold uppercase tracking-wider text-softGray mt-1.5">${esc(c.caption)}</figcaption></figure>`).join('')}</div>` : ''}
                             ${i.where ? `<p class="text-sm text-forest mt-3"><i class="fa-regular fa-folder-open text-sunshine mr-1.5"></i>Drive: <strong>${esc(i.where)}</strong></p>` : ''}
                         </div>
                         ${i.img ? `<figure class="mt-4 sm:mt-0"><img src="${esc(i.img)}" alt="${esc(i.imgAlt || '')}" loading="lazy" class="w-full rounded-xl border border-beigeDark object-cover"><figcaption class="text-[11px] text-softGray mt-1.5">In your design</figcaption></figure>` : ''}

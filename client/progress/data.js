@@ -54,7 +54,7 @@ window.PROJECT = {
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'The "Open questions" tab lists what is still needed: the new questions Q-27 to Q-30 (two photos for Vision & Values, where that section sits, the Facility video and the service card buttons), Q-13 and the referral rewards.' },
+      text: 'The "Open questions" tab lists what is still needed: the new questions Q-27 to Q-31 (two photos for Vision & Values, where that section sits, the Facility video and the service card buttons), Q-13 and the referral rewards.' },
     { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
       text: 'This is where your website code will live, in your name.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -87,7 +87,7 @@ window.PROJECT = {
         'Floating WhatsApp button on phones, and Join the Club always within reach',
       ],
       next: ['The remaining feedback once your answers and files arrive', 'SEO and testing'],
-      need: ['Answers to the new questions Q-27 to Q-30, and Q-13', 'Two photos for Vision & Values and the Facility video'] },
+      need: ['Answers to the new questions Q-27 to Q-31, and Q-13', 'Two photos for Vision & Values and the Facility video'] },
     { date: '2026-11-05', title: 'All sections built',
       done: [
         'All 11 sections built from your Canva design, on desktop and phone',

@@ -53,7 +53,7 @@ window.PROJECT = {
       text: 'Received, thank you.' },
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
-    { title: 'Answer the open questions in the spreadsheet', due: '2026-11-13', status: 'todo',
+    { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
       text: 'The "Open questions" tab lists what is still needed: the new questions Q-27 to Q-29 (two photos for Vision & Values, where that section sits, and the Facility video), Q-13 and the referral rewards.' },
     { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
       text: 'This is where your website code will live, in your name.' },

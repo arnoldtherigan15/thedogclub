@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>What We Still Need — The Dog Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/tailwind-config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site.css">
+    <style>
+        @media print { .no-print { display: none !important; } body { background: #fff; } article { break-inside: avoid; } }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="no-print bg-forest text-cream text-xs sm:text-sm py-2 px-4 text-center">
+        <a href="../progress/" class="underline hover:text-sunshine">Project progress</a>
+        <span class="mx-2 text-cream/40">|</span>
+        <a href="../invoice/" class="underline hover:text-sunshine">Invoices</a>
+        <span class="mx-2 text-cream/40">|</span>
+        <button onclick="window.print()" class="underline hover:text-sunshine">Save as PDF</button>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+
+        <header class="pb-8 border-b border-beigeDark">
+            <span class="text-xs font-bold uppercase tracking-widest text-sunshine">What we still need</span>
+            <h1 class="font-editorial text-4xl sm:text-5xl font-bold text-forest leading-tight mt-2">Open items from your feedback</h1>
+            <p class="text-forest/75 mt-3 leading-relaxed">Everything still missing for the website, in one list: photos to upload, text to send, and a few choices. It follows the shared spreadsheet, so nothing gets lost there.</p>
+            <p id="updated" class="text-xs text-softGray mt-2"></p>
+
+            <div class="mt-8 bg-forest text-cream rounded-2xl p-6">
+                <div class="grid grid-cols-3 gap-4 text-center sm:text-left">
+                    <div><p class="text-xs text-cream/60">Needed before launch</p><p id="count-needed" class="font-editorial text-3xl font-bold mt-1"></p></div>
+                    <div><p class="text-xs text-cream/60">Nice to have</p><p id="count-optional" class="font-editorial text-3xl font-bold mt-1"></p></div>
+                    <div><p class="text-xs text-cream/60">Feedback done</p><p id="count-done" class="font-editorial text-3xl font-bold mt-1"></p></div>
+                </div>
+                <p id="deadline" class="mt-5 text-sm text-cream/85 leading-relaxed"></p>
+                <div class="no-print mt-5 flex flex-wrap gap-3">
+                    <a id="link-sheet" target="_blank" rel="noopener" class="bg-sunshine hover:bg-sunshineHover text-forest px-5 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-2"><i class="fa-solid fa-table"></i> Open the spreadsheet</a>
+                    <a id="link-drive" target="_blank" rel="noopener" class="border border-cream/40 hover:bg-cream/10 px-5 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-2"><i class="fa-brands fa-google-drive"></i> Upload to the Drive folder</a>
+                    <a id="link-preview" target="_blank" rel="noopener" class="border border-cream/40 hover:bg-cream/10 px-5 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-2"><i class="fa-solid fa-display"></i> See the preview</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="files" class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest">Photos and video</h2>
+            <p class="text-forest/70 text-sm mt-2">Upload them to the shared Drive folder, in the folder named on each item. The thumbnails show the photo from your Canva design.</p>
+            <div data-list="files" class="mt-6 space-y-4"></div>
+        </section>
+
+        <section id="info" class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest">Text and links</h2>
+            <p class="text-forest/70 text-sm mt-2">Type them in the spreadsheet (Open questions tab), or send them on WhatsApp.</p>
+            <div data-list="info" class="mt-6 space-y-4"></div>
+        </section>
+
+        <section id="decide" class="py-10 border-b border-beigeDark">
+            <h2 class="font-editorial text-3xl font-bold text-forest">Choices</h2>
+            <p class="text-forest/70 text-sm mt-2">Answer in the spreadsheet, Open questions tab.</p>
+            <div data-list="decide" class="mt-6 space-y-4"></div>
+        </section>
+
+        <section id="received" class="py-10 hidden">
+            <h2 class="font-editorial text-2xl font-bold text-forest">Received, thank you</h2>
+            <ul data-list="done" class="mt-4 space-y-2 text-sm text-forest/70"></ul>
+        </section>
+
+        <p class="pt-8 text-sm text-forest/70">Everything already done is in the <a id="link-feedback" target="_blank" rel="noopener" class="underline">Design feedback tab</a> of the spreadsheet, with our reply on each row.</p>
+    </main>
+
+    <script src="data.js"></script>
+    <script>
+        (() => {
+            const d = window.OPEN_ITEMS;
+            const day = (iso) => new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+            const longDay = (iso) => new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+            const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+            const open = d.items.filter((i) => i.status !== 'done');
+            const done = d.items.filter((i) => i.status === 'done');
+
+            document.getElementById('updated').textContent = 'Updated ' + longDay(d.updated);
+            document.getElementById('count-needed').textContent = open.filter((i) => !i.optional).length;
+            document.getElementById('count-optional').textContent = open.filter((i) => i.optional).length;
+            document.getElementById('count-done').textContent = d.feedbackDone + '/' + d.feedbackTotal;
+            document.getElementById('deadline').textContent =
+                'Please send the "needed" items by ' + longDay(d.answerBy) + ', so everything is in before SEO and testing start on ' + longDay(d.seoStart) + '. Nice-to-have items can follow later.';
+            document.getElementById('link-sheet').href = d.links.sheet;
+            document.getElementById('link-drive').href = d.links.drive;
+            document.getElementById('link-preview').href = d.links.preview;
+            document.getElementById('link-feedback').href = d.links.feedbackTab;
+
+            for (const group of ['files', 'info', 'decide']) {
+                const list = document.querySelector(`[data-list="${group}"]`);
+                const items = open.filter((i) => i.group === group).sort((a, b) => !!a.optional - !!b.optional);
+                if (!items.length) {
+                    list.innerHTML = '<p class="text-sm text-forest/60">Nothing open here. Thank you!</p>';
+                    continue;
+                }
+                list.innerHTML = items.map((i) => `
+                    <article class="bg-cream border ${i.optional ? 'border-dashed border-beigeDark' : 'border-beigeDark'} rounded-2xl p-5 sm:p-6 ${i.img ? 'sm:grid sm:grid-cols-[1fr_9rem] sm:gap-6' : ''}">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-[11px] font-semibold text-softGray bg-beige px-2.5 py-0.5 rounded-full">${esc(i.ref)}</span>
+                                ${i.optional ? '<span class="text-[11px] font-semibold text-forest/70 border border-beigeDark px-2.5 py-0.5 rounded-full">Nice to have</span>' : '<span class="text-[11px] font-bold uppercase tracking-wider text-forest bg-sunshine/30 px-2.5 py-0.5 rounded-full">Needed</span>'}
+                            </div>
+                            <h3 class="font-bold text-forest text-lg mt-3 leading-snug">${esc(i.title)}</h3>
+                            <p class="text-sm text-forest/80 mt-2 leading-relaxed">${esc(i.text)}</p>
+                            ${i.where ? `<p class="text-sm text-forest mt-3"><i class="fa-regular fa-folder-open text-sunshine mr-1.5"></i>Drive: <strong>${esc(i.where)}</strong></p>` : ''}
+                        </div>
+                        ${i.img ? `<figure class="mt-4 sm:mt-0"><img src="${esc(i.img)}" alt="${esc(i.imgAlt || '')}" loading="lazy" class="w-full rounded-xl border border-beigeDark object-cover"><figcaption class="text-[11px] text-softGray mt-1.5">In your design</figcaption></figure>` : ''}
+                    </article>`).join('');
+            }
+
+            if (done.length) {
+                document.getElementById('received').classList.remove('hidden');
+                document.querySelector('[data-list="done"]').innerHTML = done
+                    .map((i) => `<li><i class="fa-solid fa-check text-sunshine mr-2"></i>${esc(i.title)} <span class="text-softGray">(${esc(i.ref)})</span></li>`)
+                    .join('');
+            }
+        })();
+    </script>
+</body>
+</html>

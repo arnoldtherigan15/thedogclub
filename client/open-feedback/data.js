@@ -9,7 +9,7 @@ window.OPEN_ITEMS = {
   updated: '2026-11-13',
   answerBy: '2026-11-13',
   seoStart: '2026-11-16',
-  feedbackDone: 29,
+  feedbackDone: 35,
   feedbackTotal: 39,
   links: {
     sheet: 'https://docs.google.com/spreadsheets/d/1vneEA3jCe-mwgoh2xG2bGOXtSEw0FLwKkLqOQDk_S4c/edit?gid=1377128290#gid=1377128290',

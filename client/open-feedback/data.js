@@ -33,7 +33,7 @@ window.OPEN_ITEMS = {
       text: 'Received 13 Nov. The Our Facility background is now your walk-through video.' },
     { group: 'files', status: 'done', ref: 'Q-09', where: 'Photo → 4. House Rules',
       title: 'Photo behind the House Rules card',
-      text: 'Received 13 Nov (we moved it from the main Drive folder into Photo → 4. House Rules). It is now behind the House Rules card; the FAQ keeps the park photo.',
+      text: 'Received 13 Nov (we moved it from the main Drive folder into Photo → 4. House Rules). It is now behind the House Rules and FAQ cards.',
       img: 'img/house-rules-page.jpg', imgAlt: 'The House Rules page in the Canva design, with dogs in front of the HOTEL sign' },
     { group: 'files', status: 'open', ref: 'Feedback #5 · Q-05', where: 'Photo → 1. Service',
       title: 'Homecare photo',

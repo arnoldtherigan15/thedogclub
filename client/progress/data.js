@@ -90,7 +90,7 @@ window.PROJECT = {
         'Our Facility background is now your walk-through video',
         'Own a Franchise link in the footer, to your franchise form',
         'Friends of The Dog Club card now shows the rewards: IDR 50K for the new customer, IDR 200K for the referrer',
-        'House Rules background is now your photo of the dogs in front of The Dog Hotel sign',
+        'House Rules and FAQ background is now your photo of the dogs in front of The Dog Hotel sign',
       ],
       next: ['Your new feedback from 13 Nov (#33 to #39)', 'SEO and testing'],
       need: ['The Homecare photo', 'Answer to Q-30'] },

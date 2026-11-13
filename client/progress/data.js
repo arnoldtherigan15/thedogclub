@@ -6,7 +6,7 @@
 // status for payments: 'paid' | 'due' | 'upcoming'
 // health:             'on-track' | 'waiting' | 'delayed'
 window.PROJECT = {
-  updated: '2026-11-12',
+  updated: '2026-11-13',
   start: '2026-11-02',
   target: '2026-11-23',
   health: 'on-track',
@@ -27,7 +27,7 @@ window.PROJECT = {
       text: 'All 11 sections are built on the preview link with your real content: Services, Facility, Locations, House Rules, FAQ, Book a Visit, Partnership, Loyalty Program, About Us and the footer.',
       gate: 'Payment 2, once all pages are built' },
     { name: 'Your feedback', from: '2026-11-05', to: '2026-11-13', status: 'active',
-      text: 'You check the preview on phone and laptop and add your feedback in the shared spreadsheet. 21 of 28 feedback items are done; the rest wait for your answers or files.' },
+      text: 'You check the preview on phone and laptop and add your feedback in the shared spreadsheet. 26 of 32 feedback items are done; the rest wait for your answers or files.' },
     { name: 'SEO & testing', from: '2026-11-16', to: '2026-11-17', status: 'todo',
       text: 'Search optimisation, speed, old-link redirects, and checks on phone and laptop.' },
     { name: 'Final review', from: '2026-11-17', to: '2026-11-19', status: 'todo',
@@ -54,7 +54,7 @@ window.PROJECT = {
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'The "Open questions" tab lists what is still needed: the new questions Q-27 to Q-31 (two photos for Vision & Values, where that section sits, the Facility video and the service card buttons), Q-13 and the referral rewards.' },
+      text: 'The "Open questions" tab lists what is still needed: the new questions Q-29 and Q-30 (the Facility video and the service card buttons), Q-13 and the referral rewards.' },
     { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
       text: 'This is where your website code will live, in your name.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -79,6 +79,16 @@ window.PROJECT = {
 
   // Newest first. Add one every Friday and at each milestone.
   updates: [
+    { date: '2026-11-13', title: 'Your photos and new requests are in',
+      done: [
+        'Your Vision and Values photos are on the site, with Vision & Mission as in your updated Canva',
+        'Career Opportunities button between Vision & Mission and Values',
+        'Join the Club now opens the branch admin contacts on WhatsApp',
+        'Smaller header logo, every service description on two lines, animations on Vision, Mission & Values',
+        'Refund and Cancellation terms replaced with your text, in English and Indonesian',
+      ],
+      next: ['CAREER in the header and the Grow With Us section, once agreed', 'SEO and testing'],
+      need: ['The Facility video, the Homecare photo and the HOTEL photo for House Rules', 'Answers to Q-13 and Q-30'] },
     { date: '2026-11-12', title: 'Payment 2 received, feedback in progress',
       done: [
         'Payment 2 received, thank you',

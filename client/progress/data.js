@@ -89,6 +89,7 @@ window.PROJECT = {
         'Retail, Training and Homecare service cards with your descriptions',
         'Our Facility background is now your walk-through video',
         'Own a Franchise link in the footer, to your franchise form',
+        'Friends of The Dog Club card now shows the rewards: IDR 50K for the new customer, IDR 200K for the referrer',
       ],
       next: ['Your new feedback from 13 Nov (#33 to #39)', 'SEO and testing'],
       need: ['The Homecare photo and the HOTEL photo for House Rules (we could not find it in the Drive yet)', 'Answer to Q-30'] },

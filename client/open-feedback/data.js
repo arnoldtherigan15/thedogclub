@@ -9,7 +9,7 @@ window.OPEN_ITEMS = {
   updated: '2026-11-13',
   answerBy: '2026-11-13',
   seoStart: '2026-11-16',
-  feedbackDone: 35,
+  feedbackDone: 36,
   feedbackTotal: 39,
   links: {
     sheet: 'https://docs.google.com/spreadsheets/d/1vneEA3jCe-mwgoh2xG2bGOXtSEw0FLwKkLqOQDk_S4c/edit?gid=1377128290#gid=1377128290',
@@ -46,9 +46,9 @@ window.OPEN_ITEMS = {
       text: 'One photo per branch, taken from a similar angle and time of day, so the four cards look even.' },
 
     // Text and links
-    { group: 'info', status: 'open', ref: 'Feedback #9',
+    { group: 'info', status: 'done', ref: 'Feedback #9',
       title: 'A few facts for About Us',
-      text: 'For example the year The Dog Club started, the number of branches, or how many dogs you have cared for.' },
+      text: 'Received 13 Nov: since 2019, 4 branches across Bali. They are now below the About Us text (see Q-32 to confirm the look).' },
     { group: 'info', status: 'done', ref: 'Feedback #13 · #36',
       title: 'Form link for investor and franchise enquiries',
       text: 'Received 13 Nov. The footer now has an Own a Franchise link to your franchise form.' },
@@ -67,6 +67,14 @@ window.OPEN_ITEMS = {
       title: 'What should each service card link to?',
       text: 'Your Canva has no button or link on the service cards yet. A) a "Book" button that opens the branch WhatsApp or Pawsi registration, or B) a "Learn more" link to its own page with more detail about that service.' },
     // Design changes made from the feedback that differ from the Canva design: shown side by side to confirm.
+    { group: 'confirm', status: 'open', ref: 'Feedback #9 · Q-32',
+      title: 'About Us: your facts as two large numbers',
+      quote: 'Year founded: since 2019, 4 branches across Bali',
+      text: 'Your Canva has no design for the facts, so this is our proposal: below the About Us text, 2019 (Year founded) and 4 (Branches across Bali) as large numbers that count up once as you scroll to them. Happy with this? If you have more facts, we can add a third.',
+      compare: [
+        { src: 'img/facts-laptop.jpg', caption: 'On a laptop' },
+        { src: 'img/facts-phone.jpg', caption: 'On a phone' },
+      ] },
     { group: 'confirm', status: 'done', ref: 'Feedback #6 · Q-31',
       title: 'Our Facility: photos side by side',
       quote: 'In each card the small second photo overlaps the first and looks accidental … maybe can do better?',

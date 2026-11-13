@@ -91,6 +91,7 @@ window.PROJECT = {
         'Own a Franchise link in the footer, to your franchise form',
         'Friends of The Dog Club card now shows the rewards: IDR 50K for the new customer, IDR 200K for the referrer',
         'House Rules and FAQ background is now your photo of the dogs in front of The Dog Hotel sign',
+        'Every service description now fits on two lines on laptops, Retail included (Q-31)',
         'Your feedback #33 to #39: birthday photo shows the cake, Roofed Park, top-up photo shows the dogs, About Us text justified, Become a Referrer button, shorter Our Facility text',
       ],
       next: ['SEO and testing'],

@@ -69,6 +69,9 @@ window.OPEN_ITEMS = {
       text: 'When it is uploaded, send the link and the video plays from YouTube, which is lighter on phones.' },
 
     // Choices
+    { group: 'decide', status: 'open', ref: 'Q-34',
+      title: 'A ready-made WhatsApp message?',
+      text: 'Contact Us on each branch card (and the branch choice under Join the Club) opens WhatsApp with an empty message. We propose a ready-made message the customer can still edit, with the branch name filled in: "Hi The Dog Club Umalas, I found you on your website and would like to ask about your services." (in Indonesian on the Indonesian site). Yes with this text, yes with your own text, or no message?' },
     { group: 'decide', status: 'done', ref: 'Feedback #5 · Q-30',
       title: 'What should each service card link to?',
       text: 'Answered: no link. The service cards stay as they are, without a button.' },

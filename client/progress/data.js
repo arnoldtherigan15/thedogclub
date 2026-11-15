@@ -6,7 +6,7 @@
 // status for payments: 'paid' | 'due' | 'upcoming'
 // health:             'on-track' | 'waiting' | 'delayed'
 window.PROJECT = {
-  updated: '2026-11-13',
+  updated: '2026-11-15',
   start: '2026-11-02',
   target: '2026-11-23',
   health: 'on-track',
@@ -27,7 +27,7 @@ window.PROJECT = {
       text: 'All 11 sections are built on the preview link with your real content: Services, Facility, Locations, House Rules, FAQ, Book a Visit, Partnership, Loyalty Program, About Us and the footer.',
       gate: 'Payment 2, once all pages are built' },
     { name: 'Your feedback', from: '2026-11-05', to: '2026-11-13', status: 'active',
-      text: 'You check the preview on phone and laptop and add your feedback in the shared spreadsheet. 36 of 39 feedback items are done; the rest wait for your answers or files.' },
+      text: 'You check the preview on phone and laptop and add your feedback in the shared spreadsheet. 41 of 43 feedback items are done; the rest wait for your answers or files.' },
     { name: 'SEO & testing', from: '2026-11-16', to: '2026-11-17', status: 'todo',
       text: 'Search optimisation, speed, old-link redirects, and checks on phone and laptop.' },
     { name: 'Final review', from: '2026-11-17', to: '2026-11-19', status: 'todo',
@@ -54,7 +54,7 @@ window.PROJECT = {
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'The "Open questions" tab lists what is still needed: the new questions Q-29 and Q-30 (the Facility video and the service card buttons), Q-13 and the referral rewards.' },
+      text: 'All the questions are answered, thank you. Only the Homecare photo is still needed before launch; the rest of the list is nice to have.' },
     { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
       text: 'This is where your website code will live, in your name.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -79,6 +79,14 @@ window.PROJECT = {
 
   // Newest first. Add one every Friday and at each milestone.
   updates: [
+    { date: '2026-11-15', title: 'Your feedback #40 to #43 and your answers are in',
+      done: [
+        'Service cards stay without a link or button, as you chose (Q-30)',
+        'About Us text now stretches to the full width, with the facts kept as proposed (Q-32)',
+        'Your feedback #40 to #43: new Pet Taxi photo, "Top up above IDR 5M", Training photo shows the trainer\'s face, Career Opportunities button below Vision & Mission',
+      ],
+      next: ['SEO and testing'],
+      need: ['The Homecare photo'] },
     { date: '2026-11-13', title: 'Your photos and new requests are in',
       done: [
         'Your Vision and Values photos are on the site, with Vision & Mission as in your updated Canva',

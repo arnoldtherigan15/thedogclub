@@ -6,11 +6,11 @@
 // status: 'open' | 'done'
 // optional: true for nice-to-have items that do not hold up the launch
 window.OPEN_ITEMS = {
-  updated: '2026-11-13',
+  updated: '2026-11-15',
   answerBy: '2026-11-13',
   seoStart: '2026-11-16',
-  feedbackDone: 36,
-  feedbackTotal: 39,
+  feedbackDone: 41,
+  feedbackTotal: 43,
   links: {
     sheet: 'https://docs.google.com/spreadsheets/d/1vneEA3jCe-mwgoh2xG2bGOXtSEw0FLwKkLqOQDk_S4c/edit?gid=1377128290#gid=1377128290',
     feedbackTab: 'https://docs.google.com/spreadsheets/d/1vneEA3jCe-mwgoh2xG2bGOXtSEw0FLwKkLqOQDk_S4c/edit?gid=1532930764#gid=1532930764',
@@ -38,6 +38,9 @@ window.OPEN_ITEMS = {
     { group: 'files', status: 'open', ref: 'Feedback #5 · Q-05', where: 'Photo → 1. Service',
       title: 'Homecare photo',
       text: 'The Retail, Training and Homecare cards are on the site with your descriptions, thank you. Only the Homecare photo is still missing (coming soon, you told us); a stand-in is shown until then.' },
+    { group: 'files', status: 'done', ref: 'Feedback #40', where: 'Photo → 1. Service',
+      title: 'New Pet Taxi photo',
+      text: 'Received (IMG_4257.jpg in the main Drive folder). It is now on the Pet Taxi card.' },
     { group: 'files', status: 'open', optional: true, ref: 'Feedback #6', where: 'Photo → 3. Facility → Mansion',
       title: 'Sharper Mansion photos',
       text: 'The two we have are small (1086 px wide) and look soft on large screens.' },
@@ -63,11 +66,11 @@ window.OPEN_ITEMS = {
       text: 'When it is uploaded, send the link and the video plays from YouTube, which is lighter on phones.' },
 
     // Choices
-    { group: 'decide', status: 'open', ref: 'Feedback #5 · Q-30',
+    { group: 'decide', status: 'done', ref: 'Feedback #5 · Q-30',
       title: 'What should each service card link to?',
-      text: 'Your Canva has no button or link on the service cards yet. A) a "Book" button that opens the branch WhatsApp or Pawsi registration, or B) a "Learn more" link to its own page with more detail about that service.' },
+      text: 'Answered: no link. The service cards stay as they are, without a button.' },
     // Design changes made from the feedback that differ from the Canva design: shown side by side to confirm.
-    { group: 'confirm', status: 'open', ref: 'Feedback #9 · Q-32',
+    { group: 'confirm', status: 'done', ref: 'Feedback #9 · Q-32',
       title: 'About Us: your facts as two large numbers',
       quote: 'Year founded: since 2019, 4 branches across Bali',
       text: 'Your Canva has no design for the facts, so this is our proposal: below the About Us text, 2019 (Year founded) and 4 (Branches across Bali) as large numbers that count up once as you scroll to them. Happy with this? If you have more facts, we can add a third.',

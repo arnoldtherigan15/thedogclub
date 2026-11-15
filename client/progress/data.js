@@ -54,7 +54,7 @@ window.PROJECT = {
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'All the questions are answered, thank you. Only the Homecare photo is still needed before launch; the rest of the list is nice to have.' },
+      text: 'Thank you for all your answers. Two photos are still needed before launch: the Homecare photo, and the Pet Taxi photo in high quality (Q-33). The rest of the list is nice to have.' },
     { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
       text: 'This is where your website code will live, in your name.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -86,7 +86,7 @@ window.PROJECT = {
         'Your feedback #40 to #43: new Pet Taxi photo, "Top up above IDR 5M", Training photo shows the trainer\'s face, Career Opportunities button below Vision & Mission',
       ],
       next: ['SEO and testing'],
-      need: ['The Homecare photo'] },
+      need: ['The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)'] },
     { date: '2026-11-13', title: 'Your photos and new requests are in',
       done: [
         'Your Vision and Values photos are on the site, with Vision & Mission as in your updated Canva',

@@ -32,7 +32,7 @@ Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien
 | TDC-018 | Loyalty Program | 2 Build | 0,25 hari | 008, 003 | TODO |
 | TDC-019 | About Us | 2 Build | 0,25 hari | 008, 009 | TODO |
 | TDC-020 | FAQ | 2 Build | 0,5 hari | 008 | TODO |
-| TDC-021 | Privacy Policy & 404 | 2 Build | 0,25 hari | 008 | TODO |
+| TDC-021 | Privacy Policy & 404 | 2 Build | 0,25 hari | 008 | DONE |
 | TDC-022 | Semua halaman selesai + termin 2 | 2 Build | 0,25 hari | 011–021 | TODO |
 | TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | TODO |
@@ -254,9 +254,9 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 **Done kalau:** satu versi FAQ saja, tanpa pertanyaan ganda.
 
 ### TDC-021 · Privacy Policy & 404
-- [ ] Privacy Policy dari website lama, email kontak = woof@thedogclub.id
-- [ ] Halaman 404 + tombol ke Home
-- [ ] Tidak ada Terms Shopify atau email `nrshopify347@gmail.com`
+- [x] Privacy Policy dari website lama, email kontak = woof@thedogclub.id
+- [x] Halaman 404 + tombol ke Home
+- [x] Tidak ada Terms Shopify atau email `nrshopify347@gmail.com`
 
 **Done kalau:** tidak ada teks Shopify di mana pun.
 
@@ -279,9 +279,9 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 **Done kalau:** Lighthouse SEO ≥ 90 di Home dan Services.
 
 ### TDC-024 · Structured data & link preview
-- [ ] JSON-LD LocalBusiness untuk 4 cabang
-- [ ] JSON-LD FAQPage di halaman FAQ
-- [ ] Open Graph + gambar share per halaman
+- [x] JSON-LD LocalBusiness untuk 4 cabang
+- [x] JSON-LD FAQPage di halaman FAQ
+- [x] Open Graph + gambar share per halaman
 - [ ] Tes Google Rich Results tanpa error
 - [ ] Tes kirim link ke WhatsApp sendiri, preview muncul
 

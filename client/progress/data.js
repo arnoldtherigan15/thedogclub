@@ -88,9 +88,11 @@ window.PROJECT = {
         'SEO: every old page address (35 in total) now leads to the matching section of the new site, so links in Google keep working after launch',
         'SEO: new Google title and description in English and Indonesian; Google\'s own check scores the SEO basics 100 out of 100. Details on the SEO audit page',
         'Speed: Google\'s speed check now scores the site 92 to 100 out of 100 on a phone (it was 76 to 78) and 100 on a laptop',
+        'Your business details (four branches, hours, WhatsApp, Maps) are now in the format Google reads, and shared links show a photo, title and description',
+        'Privacy Policy page with the text from your current website, linked at the bottom of every page (Q-12)',
       ],
-      next: ['Business details for Google and a photo preview when the link is shared on WhatsApp', 'Final testing'],
-      need: ['The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)', 'Your choice on a ready-made WhatsApp message (Q-34)'] },
+      next: ['Final testing'],
+      need: ['Your answer on a few outdated details in the Privacy Policy (Q-35)', 'The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)', 'Your choice on a ready-made WhatsApp message (Q-34)'] },
     { date: '2026-11-15', title: 'Your feedback #40 to #43 and your answers are in',
       done: [
         'Service cards stay without a link or button, as you chose (Q-30)',

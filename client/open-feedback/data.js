@@ -68,7 +68,7 @@ window.OPEN_ITEMS = {
     // Choices
     { group: 'decide', status: 'open', ref: 'Q-35',
       title: 'Update a few details in your Privacy Policy?',
-      text: 'The new Privacy Policy page (/privacy-policy/ on the preview, linked at the bottom of every page) uses the text from your current website, word for word. Some details look outdated: Gingr instead of Pawsi, a gmail address (once written "gmail,com"), woof@ instead of connect@, two small typos, and a mobile app and shop. Shall we update them, and is English only fine? Details per point in the spreadsheet.' },
+      text: 'The new Privacy Policy page (/privacy-policy/ on the preview, linked at the bottom of every page) uses the text from your current website, word for word. Some details look outdated: Gingr instead of Pawsi, a gmail address (once written "gmail,com"), woof@ instead of connect@, two small typos, and a mobile app and shop. Shall we update them? There is now also an Indonesian version (/id/privacy-policy/), our translation of the same text: please check that it reads well. Details per point in the spreadsheet.' },
     { group: 'decide', status: 'open', ref: 'Q-34',
       title: 'A ready-made WhatsApp message?',
       text: 'Contact Us on each branch card (and the branch choice under Join the Club) opens WhatsApp with an empty message. We propose a ready-made message the customer can still edit, with the branch name filled in: "Hi The Dog Club Umalas, I found you on your website and would like to ask about your services." (in Indonesian on the Indonesian site). Yes with this text, yes with your own text, or no message?' },

@@ -89,10 +89,10 @@ window.PROJECT = {
         'SEO: new Google title and description in English and Indonesian; Google\'s own check scores the SEO basics 100 out of 100. Details on the SEO audit page',
         'Speed: Google\'s speed check now scores the new website 91 to 99 out of 100 on a phone (your current website: 76 to 83) and 100 on a laptop',
         'Your business details (four branches, hours, WhatsApp, Maps) are now in the format Google reads, and shared links show a photo, title and description',
-        'Privacy Policy page with the text from your current website, linked at the bottom of every page (Q-12)',
+        'Privacy Policy page with the text from your current website, in English and Indonesian, linked at the bottom of every page (Q-12)',
       ],
       next: ['Final testing'],
-      need: ['Your answer on a few outdated details in the Privacy Policy (Q-35)', 'The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)', 'Your choice on a ready-made WhatsApp message (Q-34)'] },
+      need: ['Your answer on a few outdated details in the Privacy Policy, and a check of the Indonesian version (Q-35)', 'The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)', 'Your choice on a ready-made WhatsApp message (Q-34)'] },
     { date: '2026-11-15', title: 'Your feedback #40 to #43 and your answers are in',
       done: [
         'Service cards stay without a link or button, as you chose (Q-30)',

@@ -82,7 +82,7 @@ window.PROJECT = {
     { date: '2026-11-16', title: 'The website moved to your own accounts',
       done: [
         'The website code now lives in The Dog Club\'s own GitHub organisation, and the website is hosted on Cloudflare in your account (ai@thedogclub.id), on the free plan',
-        'New preview address: thedogclub-website.thedogclub.workers.dev (the old Netlify link no longer updates)',
+        'New preview address: thedogclub-website.thedogclub.workers.dev',
         'Phone fixes: no stuck blur on the branch cards, House Rules and FAQ photo fills the screen, no box around the × in the pop-ups',
         'Sharper Vision and Values photos on large screens, and the running services line no longer runs out on wide screens',
       ],
@@ -127,7 +127,7 @@ window.PROJECT = {
       done: [
         'All 11 sections built from your Canva design, on desktop and phone',
         'Addresses, opening hours, FAQ, footer and Loyalty Program (option B) added from your answers',
-        'Preview online at develop--thedogclub-staging.netlify.app, hidden from Google',
+        'Preview online, hidden from Google',
       ],
       next: ['Work through your feedback', 'SEO and testing once payment 2 is received'],
       need: ['Payment 2', 'Your feedback and answers in the shared spreadsheet'] },

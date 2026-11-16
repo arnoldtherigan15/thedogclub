@@ -328,15 +328,17 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 ## Fase 5 — Launch
 
 ### TDC-030 · Launch & pindah domain
-Kerjakan di hari kerja, pagi hari, jangan Jumat sore.
-- [ ] Merge `develop` → `main`, tag `v1.0.0`, cek URL production Netlify
-- [ ] Tambah domain `thedogclub.id` & `www.thedogclub.id` di Netlify
-- [ ] DomaiNesia: ganti **hanya** A record & CNAME `www`
-- [ ] ⚠️ **Jangan sentuh** MX (email Google) dan TXT google-site-verification
+Kerjakan di hari kerja, pagi hari, jangan Jumat sore. Butuh akses DomaiNesia.
+- [ ] Cloudflare: tambah zone `thedogclub.id`, cek semua record lama tersalin (A, `www`, MX, TXT/SPF, google-site-verification); record web lama "DNS only"
+- [ ] ⚠️ **Jangan hapus** MX (email Google) dan TXT google-site-verification
+- [ ] DomaiNesia: matikan DNSSEC, lalu ganti nameserver ke Cloudflare; tunggu zone "Active"
+- [ ] Merge `develop` → `main` (hanya setelah Arnold bilang "deploy"), tag `v1.0.0`
+- [ ] Worker `thedogclub-website`: production branch → `main`; tambah custom domain `thedogclub.id` dan `www.thedogclub.id` (redirect `www` → `thedogclub.id` lewat Redirect Rule)
 - [ ] SSL aktif di kedua alamat
-- [ ] Netlify **Deploys > Trigger deploy** untuk `main` setelah domain ditambahkan, lalu cek `view-source:https://thedogclub.id` tidak ada lagi `noindex` (production hanya boleh diindeks di thedogclub.id)
+- [ ] Worker → Settings → Build → Variables: tambah `SITE_INDEXING` = `on`, lalu Retry build `main`. Cek `view-source:https://thedogclub.id` tidak ada lagi `noindex`, dan `https://thedogclub.id/robots.txt` berisi `Allow: /` dan Sitemap. Jangan tambah variabel ini sebelum domain mengarah ke Worker
+- [ ] Cek redirect URL lama di domain asli (`thedogclub.id/pricing/` dll., script di TDC-026)
 - [ ] Kirim email test ke woof@thedogclub.id, pastikan masuk
-- [ ] Kabari klien: website live
+- [ ] Kabari klien: website live; hosting lama dipertahankan ≥ 1 minggu
 
 **Done kalau:** website baru terbuka di thedogclub.id dengan HTTPS, dan email klien tetap berfungsi.
 

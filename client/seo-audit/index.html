@@ -133,6 +133,63 @@
                     </tbody>
                 </table>
             </div>
+        
+            <!-- Lighthouse scores, measured 16 Nov 2026. Reports in design/lighthouse-2026-11-16 (not published). -->
+            <div class="mt-10">
+                <h3 class="font-editorial text-2xl font-bold text-forest mb-2">Google&#39;s own check: Lighthouse</h3>
+                <p class="text-sm text-forest/80 mb-3">Lighthouse is Google&#39;s free tool that scores a website from 0 to 100 on four things. We measured your current website (www.thedogclub.id) and the new website&#39;s preview on 16 November 2026, both as a phone on a slow mobile connection (Google&#39;s standard test) and as a laptop. Green means 90 to 100.</p>
+                <ul class="text-sm text-forest/80 space-y-1 mb-6 list-disc ml-5">
+                    <li><strong class="text-forest">Performance:</strong> how quickly the page appears and responds.</li>
+                    <li><strong class="text-forest">Accessibility:</strong> whether everyone can use it, including people who use a screen reader.</li>
+                    <li><strong class="text-forest">Best Practices:</strong> security and up-to-date web standards.</li>
+                    <li><strong class="text-forest">SEO:</strong> whether Google can find, read and understand the page.</li>
+                </ul>
+
+                <p class="text-xs uppercase tracking-wider text-softGray font-semibold mb-2">On a phone</p>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <figure class="bg-white border border-beigeDark rounded-2xl p-4">
+                        <img src="img/old-phone-scores.png" alt="Lighthouse on a phone, current website: Performance 83, Accessibility 93, Best Practices 96, SEO 85" class="w-full h-auto" loading="lazy">
+                        <figcaption class="text-sm text-forest/80 mt-2"><strong class="text-forest">Current website</strong></figcaption>
+                    </figure>
+                    <figure class="bg-white border border-forest rounded-2xl p-4">
+                        <img src="img/new-phone-scores.png" alt="Lighthouse on a phone, new website: Performance 92, Accessibility 100, Best Practices 100, SEO 69 on the preview" class="w-full h-auto" loading="lazy">
+                        <figcaption class="text-sm text-forest/80 mt-2"><strong class="text-forest">New website</strong> (preview; SEO explained below)</figcaption>
+                    </figure>
+                </div>
+
+                <p class="text-xs uppercase tracking-wider text-softGray font-semibold mb-2">On a laptop</p>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <figure class="bg-white border border-beigeDark rounded-2xl p-4">
+                        <img src="img/old-laptop-scores.png" alt="Lighthouse on a laptop, current website: Performance 78, Accessibility 93, Best Practices 96, SEO 85" class="w-full h-auto" loading="lazy">
+                        <figcaption class="text-sm text-forest/80 mt-2"><strong class="text-forest">Current website</strong></figcaption>
+                    </figure>
+                    <figure class="bg-white border border-forest rounded-2xl p-4">
+                        <img src="img/new-laptop-scores.png" alt="Lighthouse on a laptop, new website: Performance 100, Accessibility 100, Best Practices 100, SEO 69 on the preview" class="w-full h-auto" loading="lazy">
+                        <figcaption class="text-sm text-forest/80 mt-2"><strong class="text-forest">New website</strong> (preview; SEO explained below)</figcaption>
+                    </figure>
+                </div>
+
+                <div class="bg-sunshine/10 rounded-2xl p-5 mb-6">
+                    <p class="text-sm text-forest font-bold mb-1"><i class="fa-solid fa-circle-info text-sunshine mr-1"></i> Why SEO shows 69 on the new website</p>
+                    <p class="text-sm text-forest/80">The preview is hidden from Google on purpose, so it does not compete with your current website before launch. Lighthouse counts that as a problem. The same website with the launch setting switched on scores 100, in English and in Indonesian. On launch day the setting goes on and we measure again on thedogclub.id.</p>
+                    <figure class="bg-white border border-beigeDark rounded-2xl p-4 mt-4 md:max-w-[50%]">
+                        <img src="img/live-seo-scores.png" alt="Lighthouse with the launch setting on: Performance 90, Accessibility 100, Best Practices 100, SEO 100" class="w-full h-auto" loading="lazy">
+                        <figcaption class="text-sm text-forest/80 mt-2"><strong class="text-forest">New website with the launch setting on</strong> (tested on our computer)</figcaption>
+                    </figure>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">What a visitor waits for</th><th class="py-2 pr-4">Current website</th><th class="py-2">New website</th></tr></thead>
+                        <tbody class="text-forest/85">
+                            <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Something appears on a phone</td><td class="py-3 pr-4">3.4 s</td><td class="py-3 font-semibold text-forest">1.2 s</td></tr>
+                            <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">First screen fully drawn on a phone</td><td class="py-3 pr-4">4.5 s</td><td class="py-3 font-semibold text-forest">1.6 s</td></tr>
+                            <tr><td class="py-3 pr-4 font-semibold text-forest">First screen fully drawn on a laptop</td><td class="py-3 pr-4">2.7 s</td><td class="py-3 font-semibold text-forest">0.6 s</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-softGray mt-3">Scores move a few points between runs. Over several runs on a phone, the current website scored 76 to 83 and the new one 91 to 99; we show the current website&#39;s best run next to the new website&#39;s lowest.</p>
+            </div>
         </section>
 
         <!-- Findings -->
@@ -205,7 +262,7 @@
                     <p class="text-sm text-forest/80"><strong>What we found:</strong> the homepage loads about 15 JavaScript and 19 CSS files, four font families in 18 weights each, and the same Instagram stylesheet twice. Google ranks slow mobile sites lower, and visitors leave.</p>
                     <p class="text-sm text-forest mt-2"><i class="fa-solid fa-check text-sunshine mr-1"></i> <strong>What we'll fix:</strong> no plugins, compressed images, Lighthouse target of 90+ on mobile.</p>
                     <p class="text-sm text-forest mt-2 bg-sunshine/10 rounded-lg px-3 py-2"><i class="fa-solid fa-arrow-trend-up text-sunshine mr-1"></i> <strong>Impact you'll feel:</strong> Pages open quickly on mobile data, fewer visitors give up while waiting, and Google stops penalising the site for speed.</p>
-                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Google’s speed check (Lighthouse) on the preview: 92 to 100 out of 100 on a phone, 100 on a laptop; the first screen appears in about a second. Photos are compressed (WebP) and sized for each screen, anything further down the page or inside a pop-up loads only when it is needed, and returning visitors’ browsers keep the files instead of downloading them again.</p>
+                    <p class="text-sm mt-3 pt-3 border-t border-beigeDark text-forest/80"><strong class="text-forest">Status on the new website:</strong> Google’s speed check (Lighthouse) on the preview: 91 to 99 out of 100 on a phone (your current website: 76 to 83), 100 on a laptop; the first screen appears in about a second. Photos are compressed (WebP) and sized for each screen, anything further down the page or inside a pop-up loads only when it is needed, and returning visitors’ browsers keep the files instead of downloading them again.</p>
                 </article>
                 <article class="bg-cream border border-beigeDark rounded-2xl p-6">
                     <div class="flex flex-wrap items-center gap-3 mb-2"><span class="sev sev-med">Medium</span><h3 class="font-bold text-forest">10. Images have no alt text or names</h3><span class="st st-fixed">Fixed</span></div>
@@ -260,8 +317,8 @@
                 <table class="w-full text-sm">
                     <thead><tr class="text-left text-xs uppercase tracking-wider text-softGray border-b border-beigeDark"><th class="py-2 pr-4">Measure</th><th class="py-2 pr-4">Now</th><th class="py-2 pr-4">Target</th><th class="py-2">How we check</th></tr></thead>
                     <tbody class="text-forest/85">
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Mobile performance</td><td class="py-3 pr-4">Measured before launch (new site on the preview: 92–100)</td><td class="py-3 pr-4">90+</td><td class="py-3">Google PageSpeed Insights</td></tr>
-                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">SEO score</td><td class="py-3 pr-4">Measured before launch</td><td class="py-3 pr-4">90+</td><td class="py-3">Google Lighthouse</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Mobile performance</td><td class="py-3 pr-4">76–83 (new website on the preview: 91–99)</td><td class="py-3 pr-4">90+</td><td class="py-3">Google PageSpeed Insights</td></tr>
+                        <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">SEO score</td><td class="py-3 pr-4">85 (new website with the launch setting: 100)</td><td class="py-3 pr-4">90+</td><td class="py-3">Google Lighthouse</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Meta descriptions</td><td class="py-3 pr-4">0 / 25 pages</td><td class="py-3 pr-4">All pages</td><td class="py-3">Page check</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Main heading (H1)</td><td class="py-3 pr-4">2–4 per page</td><td class="py-3 pr-4">1 per page</td><td class="py-3">Page check</td></tr>
                         <tr class="border-b border-beigeDark"><td class="py-3 pr-4 font-semibold text-forest">Image alt text</td><td class="py-3 pr-4">0 / 15 (homepage)</td><td class="py-3 pr-4">All images</td><td class="py-3">Lighthouse</td></tr>

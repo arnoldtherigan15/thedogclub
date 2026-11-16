@@ -36,7 +36,7 @@ Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien
 | TDC-022 | Semua halaman selesai + termin 2 | 2 Build | 0,25 hari | 011–021 | TODO |
 | TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | TODO |
-| TDC-025 | Performa & gambar | 3 SEO | 0,5 hari | 022 | TODO |
+| TDC-025 | Performa & gambar | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-026 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-027 | QA internal | 4 QA | 0,5 hari | 023–026 | TODO |
 | TDC-028 | Review klien di staging | 4 QA | 3 hari | 027 | TODO |
@@ -288,9 +288,9 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 **Done kalau:** kedua tes lolos.
 
 ### TDC-025 · Performa & gambar
-- [ ] Semua gambar WebP dengan ukuran pas dan alt text
-- [ ] Gambar di bawah layar dimuat belakangan (lazy)
-- [ ] Video tidak menghambat tampilan pertama
+- [x] Semua gambar WebP dengan ukuran pas dan alt text
+- [x] Gambar di bawah layar dimuat belakangan (lazy)
+- [x] Video tidak menghambat tampilan pertama
 
 **Done kalau:** Lighthouse Performance mobile ≥ 90.
 

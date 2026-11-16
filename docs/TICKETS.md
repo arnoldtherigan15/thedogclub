@@ -34,7 +34,7 @@ Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien
 | TDC-020 | FAQ | 2 Build | 0,5 hari | 008 | TODO |
 | TDC-021 | Privacy Policy & 404 | 2 Build | 0,25 hari | 008 | TODO |
 | TDC-022 | Semua halaman selesai + termin 2 | 2 Build | 0,25 hari | 011–021 | TODO |
-| TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | TODO |
+| TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | TODO |
 | TDC-025 | Performa & gambar | 3 SEO | 0,5 hari | 022 | TODO |
 | TDC-026 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 022 | DONE |
@@ -271,10 +271,10 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 ## Fase 3 — SEO & performa
 
 ### TDC-023 · SEO on-page
-- [ ] Title & meta description unik per halaman, berisi kata kunci ("Dog Daycare Bali", "Dog Hotel Umalas")
-- [ ] Cek ulang: tepat 1 H1 per halaman
-- [ ] Heading H2/H3 berurutan
-- [ ] Canonical URL & `lang="en"`
+- [x] Title & meta description unik per halaman, berisi kata kunci ("Dog Daycare Bali", "Dog Hotel Umalas")
+- [x] Cek ulang: tepat 1 H1 per halaman
+- [x] Heading H2/H3 berurutan
+- [x] Canonical URL & `lang="en"`
 
 **Done kalau:** Lighthouse SEO ≥ 90 di Home dan Services.
 

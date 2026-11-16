@@ -6,7 +6,7 @@
 // status for payments: 'paid' | 'due' | 'upcoming'
 // health:             'on-track' | 'waiting' | 'delayed'
 window.PROJECT = {
-  updated: '2026-11-15',
+  updated: '2026-11-16',
   start: '2026-11-02',
   target: '2026-11-23',
   health: 'on-track',
@@ -52,17 +52,17 @@ window.PROJECT = {
     { title: 'Payment 2: IDR 2,250,000', due: '2026-11-09', status: 'done', link: '../invoice-2/', linkText: 'View invoice',
       text: 'Received, thank you.' },
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
-      text: 'Open the preview at develop--thedogclub-staging.netlify.app on phone and laptop, then add one row per change in the "Design feedback" tab.' },
+      text: 'Open the preview at thedogclub-website.thedogclub.workers.dev on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
       text: 'Thank you for all your answers. Still needed before launch: the Homecare photo, the Pet Taxi photo in high quality (Q-33), and your choice on a ready-made WhatsApp message (Q-34). The rest of the list is nice to have.' },
-    { title: 'Create a GitHub account', due: '2026-11-13', status: 'todo', link: '../onboarding/#github', linkText: 'Step-by-step guide',
-      text: 'This is where your website code will live, in your name.' },
+    { title: 'A GitHub account for the website code', due: '2026-11-13', status: 'done',
+      text: 'Done: the code now lives in The Dog Club\'s own GitHub organisation, set up with ai@thedogclub.id. Nothing needed from you.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
       text: 'Helps protect your Google ranking during the move and gives us a before-and-after report.' },
     { title: 'Final check of every section', due: '2026-11-19', status: 'todo',
       text: 'One last look at content and details, with any final corrections in the spreadsheet.' },
-    { title: 'Create a Netlify account', due: '2026-11-20', status: 'todo', link: '../onboarding/#netlify', linkText: 'Step-by-step guide',
-      text: 'Free hosting for the new website, with no monthly fee.' },
+    { title: 'A hosting account for the website', due: '2026-11-20', status: 'done',
+      text: 'Done: the website is hosted on Cloudflare, in The Dog Club\'s own account (ai@thedogclub.id), on the free plan with no monthly fee. Nothing needed from you.' },
     { title: 'Confirm go-live and make payment 3: IDR 1,500,000', due: '2026-11-20', status: 'todo',
       text: 'The website goes live after the final payment is received.' },
     { title: 'Be ready for a 15-minute call with your DomaiNesia login', due: '2026-11-23', status: 'todo', link: '../onboarding/#domain', linkText: 'What happens',
@@ -79,6 +79,15 @@ window.PROJECT = {
 
   // Newest first. Add one every Friday and at each milestone.
   updates: [
+    { date: '2026-11-16', title: 'The website moved to your own accounts',
+      done: [
+        'The website code now lives in The Dog Club\'s own GitHub organisation, and the website is hosted on Cloudflare in your account (ai@thedogclub.id), on the free plan',
+        'New preview address: thedogclub-website.thedogclub.workers.dev (the old Netlify link no longer updates)',
+        'Phone fixes: no stuck blur on the branch cards, House Rules and FAQ photo fills the screen, no box around the × in the pop-ups',
+        'Sharper Vision and Values photos on large screens, and the running services line no longer runs out on wide screens',
+      ],
+      next: ['SEO and testing'],
+      need: ['The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)', 'Your choice on a ready-made WhatsApp message (Q-34)'] },
     { date: '2026-11-15', title: 'Your feedback #40 to #43 and your answers are in',
       done: [
         'Service cards stay without a link or button, as you chose (Q-30)',

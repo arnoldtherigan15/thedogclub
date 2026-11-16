@@ -6,7 +6,7 @@
 // status: 'open' | 'done'
 // optional: true for nice-to-have items that do not hold up the launch
 window.OPEN_ITEMS = {
-  updated: '2026-11-15',
+  updated: '2026-11-16',
   answerBy: '2026-11-13',
   seoStart: '2026-11-16',
   feedbackDone: 41,
@@ -15,7 +15,7 @@ window.OPEN_ITEMS = {
     sheet: 'https://docs.google.com/spreadsheets/d/1vneEA3jCe-mwgoh2xG2bGOXtSEw0FLwKkLqOQDk_S4c/edit?gid=1377128290#gid=1377128290',
     feedbackTab: 'https://docs.google.com/spreadsheets/d/1vneEA3jCe-mwgoh2xG2bGOXtSEw0FLwKkLqOQDk_S4c/edit?gid=1532930764#gid=1532930764',
     drive: 'https://drive.google.com/drive/folders/1G4COd-3CbxeS89gRgbDcsVot63bnGb4a',
-    preview: 'https://develop--thedogclub-staging.netlify.app',
+    preview: 'https://thedogclub-website.thedogclub.workers.dev',
   },
 
   items: [

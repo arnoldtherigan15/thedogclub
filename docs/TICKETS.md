@@ -37,7 +37,7 @@ Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien
 | TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | TODO |
 | TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | TODO |
 | TDC-025 | Performa & gambar | 3 SEO | 0,5 hari | 022 | TODO |
-| TDC-026 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 022 | TODO |
+| TDC-026 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-027 | QA internal | 4 QA | 0,5 hari | 023–026 | TODO |
 | TDC-028 | Review klien di staging | 4 QA | 3 hari | 027 | TODO |
 | TDC-029 | Pelunasan | 4 QA | — | 028 | TODO |
@@ -295,9 +295,9 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 **Done kalau:** Lighthouse Performance mobile ≥ 90.
 
 ### TDC-026 · Redirect URL lama & sitemap
-- [ ] `public/_redirects` sesuai tabel PLAN.md bagian 7
-- [ ] Ambil slug lengkap 4 artikel blog dari website live
-- [ ] `sitemap.xml` dan `robots.txt`
+- [x] `public/_redirects` sesuai tabel PLAN.md bagian 7
+- [x] Ambil slug lengkap 4 artikel blog dari website live
+- [x] `sitemap.xml` dan `robots.txt`
 
 **Done kalau:** setiap URL lama dibuka satu per satu dan tidak ada yang 404.
 

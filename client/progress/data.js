@@ -6,7 +6,7 @@
 // status for payments: 'paid' | 'due' | 'upcoming'
 // health:             'on-track' | 'waiting' | 'delayed'
 window.PROJECT = {
-  updated: '2026-11-16',
+  updated: '2026-11-17',
   start: '2026-11-02',
   target: '2026-11-23',
   health: 'on-track',
@@ -52,7 +52,7 @@ window.PROJECT = {
     { title: 'Payment 2: IDR 2,250,000', due: '2026-11-09', status: 'done', link: '../invoice-2/', linkText: 'View invoice',
       text: 'Received, thank you.' },
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
-      text: 'Open the preview at thedogclub-website.thedogclub.workers.dev on phone and laptop, then add one row per change in the "Design feedback" tab.' },
+      text: 'Open the preview at dev.thedogclub.id on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
       text: 'Thank you for all your answers. Still needed before launch: the Homecare photo, the Pet Taxi photo in high quality (Q-33), and your choice on a ready-made WhatsApp message (Q-34). The rest of the list is nice to have.' },
     { title: 'A GitHub account for the website code', due: '2026-11-13', status: 'done',
@@ -79,6 +79,14 @@ window.PROJECT = {
 
   // Newest first. Add one every Friday and at each milestone.
   updates: [
+    { date: '2026-11-17', title: 'The preview is now on your own domain',
+      done: [
+        'New preview address: dev.thedogclub.id (the old workers.dev address no longer works). It stays hidden from Google',
+        'Your domain\'s settings moved to your Cloudflare account, copied exactly: your current website and your @thedogclub.id email work as before',
+        'On launch day, thedogclub.id switches to the new website within minutes',
+      ],
+      next: ['Final testing'],
+      need: ['Your answer on a few outdated details in the Privacy Policy, and a check of the Indonesian version (Q-35)', 'The Homecare photo', 'The Pet Taxi photo in high quality, not a screenshot (Q-33)', 'Your choice on a ready-made WhatsApp message (Q-34)'] },
     { date: '2026-11-16', title: 'The website moved to your own accounts',
       done: [
         'The website code now lives in The Dog Club\'s own GitHub organisation, and the website is hosted on Cloudflare in your account (ai@thedogclub.id), on the free plan',

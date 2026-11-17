@@ -67,8 +67,8 @@ window.OPEN_ITEMS = {
 
     // Choices
     { group: 'decide', status: 'open', ref: 'Q-36',
-      title: 'Two last points in your Privacy Policy',
-      text: 'Your answers to Q-35 are in, thank you. Two points are still open: keep thedogclubid@gmail.com in Your Rights or change it to connect@thedogclub.id, and keep the "mobile application" and "shop" wording or name the Pawsi customer portal. Details in the spreadsheet.' },
+      title: 'One last point in your Privacy Policy',
+      text: 'Your answers to Q-35 are in, thank you. One point is still open: keep thedogclubid@gmail.com in Your Rights, or change it to connect@thedogclub.id like the contact details? Details in the spreadsheet.' },
     { group: 'decide', status: 'done', ref: 'Q-35',
       title: 'Update a few details in your Privacy Policy?',
       text: 'The new Privacy Policy page (/privacy-policy/ on the preview, linked at the bottom of every page) uses the text from your current website, word for word. Some details look outdated: Gingr instead of Pawsi, a gmail address (once written "gmail,com"), woof@ instead of connect@, two small typos, and a mobile app and shop. Shall we update them? There is now also an Indonesian version (/id/privacy-policy/), our translation of the same text: please check that it reads well. Done 17 Nov in English and Indonesian: Pawsi instead of Gingr, the typos fixed, and PT The Dog Paradise, the Berawa address and connect@thedogclub.id in the contact details, without a phone number.' },

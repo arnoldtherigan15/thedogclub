@@ -54,7 +54,7 @@ window.PROJECT = {
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at dev.thedogclub.id on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'Thank you for all your answers. Still needed before launch: your answer on two last points in the Privacy Policy (Q-36). The rest of the list is nice to have.' },
+      text: 'Thank you for all your answers. Still needed before launch: your answer on one last point in the Privacy Policy (Q-36). The rest of the list is nice to have.' },
     { title: 'A GitHub account for the website code', due: '2026-11-13', status: 'done',
       text: 'Done: the code now lives in The Dog Club\'s own GitHub organisation, set up with ai@thedogclub.id. Nothing needed from you.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -89,7 +89,7 @@ window.PROJECT = {
         'Privacy Policy updated with your answers: Pawsi, typos fixed, PT The Dog Paradise, Berawa address, connect@thedogclub.id, no phone number (Q-35)',
       ],
       next: ['Final testing'],
-      need: ['Your answer on two last points in the Privacy Policy (Q-36)'] },
+      need: ['Your answer on one last point in the Privacy Policy: which email for Your Rights (Q-36)'] },
     { date: '2026-11-16', title: 'The website moved to your own accounts',
       done: [
         'The website code now lives in The Dog Club\'s own GitHub organisation, and the website is hosted on Cloudflare in your account (ai@thedogclub.id), on the free plan',

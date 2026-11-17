@@ -66,6 +66,9 @@ window.OPEN_ITEMS = {
       text: 'When it is uploaded, send the link and the video plays from YouTube, which is lighter on phones.' },
 
     // Choices
+    { group: 'confirm', status: 'open', ref: 'Feedback #44 · Q-37',
+      title: 'Indonesian menu: is the wording right?',
+      text: 'On the Indonesian site the menu at the top, the phone menu and the footer now use Indonesian names: Layanan, Fasilitas, Lokasi, Tata Tertib, Kunjungi Kami, Kemitraan, Program Loyalitas, Tentang Kami and Jam buka. The section titles on the page stay in English. Reply "OK" in the spreadsheet, or write the names you prefer.' },
     { group: 'decide', status: 'open', ref: 'Q-36',
       title: 'One last point in your Privacy Policy',
       text: 'Your answers to Q-35 are in, thank you. One point is still open: keep thedogclubid@gmail.com in Your Rights, or change it to connect@thedogclub.id like the contact details? Details in the spreadsheet.' },

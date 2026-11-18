@@ -66,9 +66,9 @@ window.OPEN_ITEMS = {
       text: 'When it is uploaded, send the link and the video plays from YouTube, which is lighter on phones.' },
 
     // Choices
-    { group: 'decide', status: 'open', ref: 'Q-39',
+    { group: 'decide', status: 'done', ref: 'Q-39',
       title: 'Intro screen: which animation?',
-      text: 'Your Canva design (page 16) stays exactly the same; there are three smooth ways for the words and the logo to appear. 1 dev.thedogclub.id/?intro=rise (fades in and rises a little), 2 dev.thedogclub.id/?intro=reveal (each line slides up into view), 3 dev.thedogclub.id/?intro=focus (the letters close in from wide apart). Reply 1, 2 or 3 in the spreadsheet; until then the website uses 1.' },
+      text: 'Done 18 Nov with 3 (focus), as you chose: the letters close in from wide apart as they fade in. The logo on the intro is 20% smaller, as you asked.' },
     { group: 'decide', status: 'done', ref: 'Q-38',
       title: 'Intro screen',
       text: 'Done 18 Nov with your own design from the Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est since 2019 and the logo, each appearing smoothly, then the website. It plays when the homepage is opened or reloaded, not when switching language or pages, and a tap skips it.' },

@@ -63,18 +63,18 @@ window.PROJECT = {
       text: 'One last look at content and details, with any final corrections in the spreadsheet.' },
     { title: 'A hosting account for the website', due: '2026-11-20', status: 'done',
       text: 'Done: the website is hosted on Cloudflare, in The Dog Club\'s own account (ai@thedogclub.id), on the free plan with no monthly fee. Nothing needed from you.' },
-    { title: 'Confirm go-live and make payment 3: IDR 1,500,000', due: '2026-11-20', status: 'todo',
+    { title: 'Confirm go-live and make payment 3: IDR 1,500,000', due: '2026-11-20', status: 'todo', link: '../invoice-3/', linkText: 'View invoice',
       text: 'The website goes live after the final payment is received.' },
-    { title: 'Be ready for a 15-minute call with your DomaiNesia login', due: '2026-11-23', status: 'todo', link: '../onboarding/#domain', linkText: 'What happens',
-      text: 'On the morning of go-live, someone logs in to my.domainesia.com and shares their screen while we switch the domain.' },
-    { title: 'Keep the old website hosting active', due: '2026-11-30', status: 'todo',
-      text: 'Please do not cancel it until we confirm the new website has been stable for at least one week.' },
+    { title: 'Access to the domain at DomaiNesia', due: '2026-11-17', status: 'done', link: '../onboarding/#domain', linkText: 'What happens',
+      text: 'Done 17 Nov, thank you. The domain settings are now in your Cloudflare account, so no call is needed on launch day.' },
+    { title: 'Old website hosting: no need to renew', due: '2026-11-27', status: 'done',
+      text: 'The old WordPress hosting ends on 27 Nov and does not need renewing: the new website does not use it. We keep a backup of the old website before then.' },
   ],
 
   payments: [
     { name: 'Payment 1: down payment', when: 'Project start', amount: 'IDR 3,750,000', status: 'paid' },
     { name: 'Payment 2: progress', when: 'All pages built, before SEO & testing', amount: 'IDR 2,250,000', status: 'paid' },
-    { name: 'Payment 3: final', when: 'Before go-live', amount: 'IDR 1,500,000', status: 'upcoming' },
+    { name: 'Payment 3: final', when: 'Before go-live', amount: 'IDR 1,500,000', status: 'due' },
   ],
 
   // Newest first. Add one every Friday and at each milestone.

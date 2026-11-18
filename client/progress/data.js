@@ -13,10 +13,10 @@ window.PROJECT = {
   healthNote: 'Payment 2 received, thank you. Most of your feedback is done and the site is now in English and Indonesian. A few items wait for your answers in the spreadsheet. Next: SEO and testing.',
   pagesBuilt: 11,
   pagesTotal: 11,
-  // Fixed on the new site and checked: Pawsi sign-up (1), clickable locations (2), homepage text (4),
-  // one H1 per page (7), alt text (10), no empty slider (14). The rest are covered in SEO & testing.
-  auditFixed: 6,
-  auditTotal: 14,
+  // All 13 findings of the SEO audit are fixed on the new site (client/seo-audit/#status). The old finding about
+  // prices and schedules as images was removed on 18 Nov: the new site has no price or schedule pages (Q-04).
+  auditFixed: 13,
+  auditTotal: 13,
 
   phases: [
     { name: 'Kickoff & your design', from: '2026-11-02', to: '2026-11-04', status: 'done',

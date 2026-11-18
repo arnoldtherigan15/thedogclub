@@ -71,7 +71,7 @@ window.OPEN_ITEMS = {
       text: 'Done 18 Nov with 3 (focus), as you chose: the letters close in from wide apart as they fade in. The logo on the intro is 20% smaller, as you asked.' },
     { group: 'decide', status: 'done', ref: 'Q-38',
       title: 'Intro screen',
-      text: 'Done 18 Nov with your own design from the Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est since 2019 and the logo, each appearing smoothly, then the website. It plays when the homepage is opened or reloaded, not when switching language or pages, and a tap skips it.' },
+      text: 'Done 18 Nov with your own design from the Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est. since 2019 and the logo, each appearing smoothly, then the website. It plays when the homepage is opened or reloaded, not when switching language or pages, and a tap skips it.' },
     { group: 'confirm', status: 'done', ref: 'Feedback #44 · Q-37',
       title: 'Indonesian menu: is the wording right?',
       text: 'On the Indonesian site the menu at the top, the phone menu and the footer now use Indonesian names: Layanan, Fasilitas, Lokasi, Tata Tertib, Kunjungi Kami, Kemitraan, Program Loyalitas, Tentang Kami and Jam buka. The section titles on the page stay in English. Confirmed 18 Nov; the tagline stays in English, as you said.' },

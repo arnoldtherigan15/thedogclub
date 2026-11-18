@@ -81,7 +81,7 @@ window.PROJECT = {
   updates: [
     { date: '2026-11-18', title: 'Intro screen on the preview',
       done: [
-        'Intro screen from your Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est since 2019 and the logo, each appearing smoothly, about 3 seconds. It plays when the homepage is opened or reloaded and a tap skips it (Q-38)',
+        'Intro screen from your Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est. since 2019 and the logo, each appearing smoothly, about 3 seconds. It plays when the homepage is opened or reloaded and a tap skips it (Q-38)',
         'Privacy Policy: Your Rights now names connect@thedogclub.id (Q-36)',
         'Indonesian menu names confirmed, tagline stays in English (Q-37)',
         'Intro animation as you chose: the letters close in as they fade in, and a 20% smaller logo (Q-39)',

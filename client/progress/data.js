@@ -53,8 +53,8 @@ window.PROJECT = {
       text: 'Received, thank you.' },
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at dev.thedogclub.id on phone and laptop, then add one row per change in the "Design feedback" tab.' },
-    { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'Thank you for all your answers. Still needed before launch: your choice of version for the intro screen (Q-38). The rest of the list is nice to have.' },
+    { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'done', link: '../open-feedback/', linkText: 'See the full list',
+      text: 'Thank you for all your answers. Thank you, everything we need from you is in. Next: final testing before launch. The rest of the list is nice to have.' },
     { title: 'A GitHub account for the website code', due: '2026-11-13', status: 'done',
       text: 'Done: the code now lives in The Dog Club\'s own GitHub organisation, set up with ai@thedogclub.id. Nothing needed from you.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -81,12 +81,12 @@ window.PROJECT = {
   updates: [
     { date: '2026-11-18', title: 'Intro screen on the preview',
       done: [
-        'Intro screen, as you asked: a black screen with the one-line logo, then "Welcome to the Club" written by hand, about 3 seconds. It plays when the homepage is opened or reloaded, a tap skips it, and the website stays as fast as before (Google\'s speed check: 95 to 100 on a phone)',
+        'Intro screen from your Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est since 2019 and the logo, each appearing smoothly, about 3 seconds. It plays when the homepage is opened or reloaded and a tap skips it (Q-38)',
         'Privacy Policy: Your Rights now names connect@thedogclub.id (Q-36)',
         'Indonesian menu names confirmed, tagline stays in English (Q-37)',
       ],
       next: ['Final testing'],
-      need: ['Your choice of version for the intro: A, B, C, or D with photos (Q-38)'] },
+      need: [] },
     { date: '2026-11-17', title: 'The preview is now on your own domain',
       done: [
         'New preview address: dev.thedogclub.id (the old workers.dev address no longer works). It stays hidden from Google',

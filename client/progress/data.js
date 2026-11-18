@@ -54,7 +54,7 @@ window.PROJECT = {
     { title: 'Add your feedback in the shared spreadsheet', due: '2026-11-13', status: 'todo',
       text: 'Open the preview at dev.thedogclub.id on phone and laptop, then add one row per change in the "Design feedback" tab.' },
     { title: 'Send the open items: photos, text and a few choices', due: '2026-11-13', status: 'todo', link: '../open-feedback/', linkText: 'See the full list',
-      text: 'Thank you for all your answers. Still needed before launch: your choice of handwriting style for the intro screen (Q-38). The rest of the list is nice to have.' },
+      text: 'Thank you for all your answers. Still needed before launch: your choice of version for the intro screen (Q-38). The rest of the list is nice to have.' },
     { title: 'A GitHub account for the website code', due: '2026-11-13', status: 'done',
       text: 'Done: the code now lives in The Dog Club\'s own GitHub organisation, set up with ai@thedogclub.id. Nothing needed from you.' },
     { title: 'Give access to Google Search Console', due: '2026-11-13', status: 'todo', optional: true, link: '../onboarding/#search-console', linkText: 'Step-by-step guide',
@@ -86,7 +86,7 @@ window.PROJECT = {
         'Indonesian menu names confirmed, tagline stays in English (Q-37)',
       ],
       next: ['Final testing'],
-      need: ['Your choice of handwriting style for the intro: A, B or C (Q-38)'] },
+      need: ['Your choice of version for the intro: A, B, C, or D with photos (Q-38)'] },
     { date: '2026-11-17', title: 'The preview is now on your own domain',
       done: [
         'New preview address: dev.thedogclub.id (the old workers.dev address no longer works). It stays hidden from Google',

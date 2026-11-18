@@ -67,8 +67,8 @@ window.OPEN_ITEMS = {
 
     // Choices
     { group: 'decide', status: 'open', ref: 'Q-38',
-      title: 'Intro screen: which handwriting style?',
-      text: 'The intro you asked for is on the preview: a black screen with the one-line logo, then "Welcome to the Club" written by hand, about 3 seconds. It plays when the homepage is opened or reloaded, not when switching language or pages, and a tap skips it. Compare the three styles: A dev.thedogclub.id/?intro=sacramento, B dev.thedogclub.id/?intro=dancing, C dev.thedogclub.id/?intro=vibes. Reply A, B or C in the spreadsheet; until then the website uses A.' },
+      title: 'Intro screen: which version?',
+      text: 'The intro you asked for is on the preview: a black screen with the one-line logo, then "Welcome to the Club" written by hand, about 3 seconds. It plays when the homepage is opened or reloaded, not when switching language or pages, and a tap skips it. Compare the versions: A dev.thedogclub.id/?intro=sacramento, B dev.thedogclub.id/?intro=dancing, C dev.thedogclub.id/?intro=vibes, and D dev.thedogclub.id/?intro=photos, with four photos first like the dogppl website. Reply A, B, C or D in the spreadsheet; until then the website uses A.' },
     { group: 'confirm', status: 'done', ref: 'Feedback #44 · Q-37',
       title: 'Indonesian menu: is the wording right?',
       text: 'On the Indonesian site the menu at the top, the phone menu and the footer now use Indonesian names: Layanan, Fasilitas, Lokasi, Tata Tertib, Kunjungi Kami, Kemitraan, Program Loyalitas, Tentang Kami and Jam buka. The section titles on the page stay in English. Confirmed 18 Nov; the tagline stays in English, as you said.' },

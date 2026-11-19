@@ -35,7 +35,7 @@ Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien
 | TDC-021 | Privacy Policy & 404 | 2 Build | 0,25 hari | 008 | DONE |
 | TDC-022 | Semua halaman selesai + termin 2 | 2 Build | 0,25 hari | 011–021 | TODO |
 | TDC-023 | SEO on-page | 3 SEO | 0,5 hari | 022 | DONE |
-| TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | TODO |
+| TDC-024 | Structured data & link preview | 3 SEO | 0,5 hari | 023 | DONE |
 | TDC-025 | Performa & gambar | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-026 | Redirect URL lama & sitemap | 3 SEO | 0,5 hari | 022 | DONE |
 | TDC-027 | QA internal | 4 QA | 0,5 hari | 023–026 | TODO |
@@ -282,7 +282,7 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 - [x] JSON-LD LocalBusiness untuk 4 cabang
 - [x] JSON-LD FAQPage di halaman FAQ
 - [x] Open Graph + gambar share per halaman
-- [ ] Tes Google Rich Results tanpa error
+- [x] Tes Google Rich Results tanpa error (19 Nov 2026, di thedogclub.id: 9 item valid, 4 Local business + 5 Organization; peringatan non-kritis hanya untuk priceRange dan geo yang memang tidak diisi)
 - [x] Tes kirim link ke WhatsApp sendiri, preview muncul (19 Nov 2026, di thedogclub.id: foto, judul dan deskripsi)
 
 **Done kalau:** kedua tes lolos.

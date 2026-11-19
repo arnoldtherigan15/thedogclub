@@ -283,7 +283,7 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 - [x] JSON-LD FAQPage di halaman FAQ
 - [x] Open Graph + gambar share per halaman
 - [ ] Tes Google Rich Results tanpa error
-- [ ] Tes kirim link ke WhatsApp sendiri, preview muncul
+- [x] Tes kirim link ke WhatsApp sendiri, preview muncul (19 Nov 2026, di thedogclub.id: foto, judul dan deskripsi)
 
 **Done kalau:** kedua tes lolos.
 

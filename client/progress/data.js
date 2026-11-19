@@ -6,11 +6,11 @@
 // status for payments: 'paid' | 'due' | 'upcoming'
 // health:             'on-track' | 'waiting' | 'delayed'
 window.PROJECT = {
-  updated: '2026-11-18',
+  updated: '2026-11-19',
   start: '2026-11-02',
-  target: '2026-11-23',
+  target: '2026-11-19',
   health: 'on-track',
-  healthNote: 'The website is finished: your feedback, the intro screen and all SEO work are done, and you confirmed it is ready. Next: final testing, payment 3, then go-live on thedogclub.id.',
+  healthNote: 'Your new website is live on thedogclub.id since 19 November, with Google indexing switched on. Your email works as before. The 30-day warranty has started.',
   pagesBuilt: 11,
   pagesTotal: 11,
   // All 13 findings of the SEO audit are fixed on the new site (client/seo-audit/#status). The old finding about
@@ -28,17 +28,17 @@ window.PROJECT = {
       gate: 'Payment 2, once all pages are built' },
     { name: 'Your feedback', from: '2026-11-05', to: '2026-11-18', status: 'done',
       text: 'You checked the preview on phone and laptop and added your feedback in the shared spreadsheet. 47 of 49 feedback items are done; the other two (a product list and new branch photos) are optional, for later.' },
-    { name: 'SEO & testing', from: '2026-11-16', to: '2026-11-19', status: 'active',
-      text: 'SEO is done: all 13 points of the audit, speed, old-link redirects and Google Search Console. Final testing on phone and laptop before go-live.' },
+    { name: 'SEO & testing', from: '2026-11-16', to: '2026-11-19', status: 'done',
+      text: 'SEO is done: all 13 points of the audit, speed, old-link redirects and Google Search Console. Final testing on phone and laptop passed before go-live.' },
     { name: 'Final review', from: '2026-11-17', to: '2026-11-18', status: 'done',
       text: 'You checked every section and confirmed the website is ready, thank you.',
       gate: 'One list of corrections' },
     { name: 'Fixes & final payment', from: '2026-11-18', to: '2026-11-20', status: 'active',
       text: 'Your corrections are in. Payment 3 is due before go-live (invoice INV-TDC-2026-003).',
       gate: 'Written go-live confirmation and payment 3' },
-    { name: 'Go live', from: '2026-11-23', to: '2026-11-23', status: 'todo',
-      text: 'The new website goes live on thedogclub.id. Your @thedogclub.id email is not affected.' },
-    { name: '30-day warranty', from: '2026-11-23', to: '2026-12-23', status: 'todo',
+    { name: 'Go live', from: '2026-11-19', to: '2026-11-19', status: 'done',
+      text: 'The new website is live on thedogclub.id (www.thedogclub.id leads there too), with Google indexing on and the sitemap sent to Google Search Console. Your @thedogclub.id email is not affected.' },
+    { name: '30-day warranty', from: '2026-11-19', to: '2026-12-19', status: 'active',
       text: 'Any bug in our work is fixed free of charge. Search Console is monitored and a short report follows.' },
   ],
 
@@ -79,6 +79,15 @@ window.PROJECT = {
 
   // Newest first. Add one every Friday and at each milestone.
   updates: [
+    { date: '2026-11-19', title: 'Your new website is live',
+      done: [
+        'The new website is live on thedogclub.id; www.thedogclub.id and http:// addresses lead there too',
+        'All 54 old page addresses lead to the matching part of the new site, so links in Google keep working',
+        'Google can now find the site: indexing is on and the sitemap is sent to Google Search Console',
+        'Your @thedogclub.id email settings were not touched and keep working',
+      ],
+      next: ['30-day warranty: we watch Google Search Console and fix any bug free of charge'],
+      need: ['Please send a test email to woof@ and connect@thedogclub.id and tell us if it arrives', 'Payment 3 if not yet sent (invoice INV-TDC-2026-003)'] },
     { date: '2026-11-18', title: 'Intro screen on the preview',
       done: [
         'Intro screen from your Canva mockup (page 16): the dark grey background, WELCOME TO THE CLUB, est. since 2019 and the logo, each appearing smoothly, about 3 seconds. It plays when the homepage is opened or reloaded and a tap skips it (Q-38)',

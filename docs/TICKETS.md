@@ -41,7 +41,7 @@ Daftar tiket dari DP sampai garansi selesai, berdasarkan desain Canva dari klien
 | TDC-027 | QA internal | 4 QA | 0,5 hari | 023–026 | TODO |
 | TDC-028 | Review klien di staging | 4 QA | 3 hari | 027 | TODO |
 | TDC-029 | Pelunasan | 4 QA | — | 028 | TODO |
-| TDC-030 | Launch & pindah domain | 5 Launch | 0,5 hari | 029 | TODO |
+| TDC-030 | Launch & pindah domain | 5 Launch | 0,5 hari | 029 | DONE |
 | TDC-031 | Search Console & laporan launch | 5 Launch | 0,5 hari | 030 | TODO |
 | TDC-032 | Garansi 30 hari & penutupan | 6 Garansi | 30 hari | 030 | TODO |
 
@@ -329,16 +329,18 @@ Yang direview: Home + header + footer, desktop & mobile, di link preview.
 
 ### TDC-030 · Launch & pindah domain
 Kerjakan di hari kerja, pagi hari, jangan Jumat sore. Butuh akses DomaiNesia.
-- [ ] Cloudflare: tambah zone `thedogclub.id`, cek semua record lama tersalin (A, `www`, MX, TXT/SPF, google-site-verification); record web lama "DNS only"
-- [ ] ⚠️ **Jangan hapus** MX (email Google) dan TXT google-site-verification
-- [ ] DomaiNesia: matikan DNSSEC, lalu ganti nameserver ke Cloudflare; tunggu zone "Active"
-- [ ] Merge `develop` → `main` (hanya setelah Arnold bilang "deploy"), tag `v1.0.0`
-- [ ] Worker `thedogclub-website`: production branch → `main`; tambah custom domain `thedogclub.id` dan `www.thedogclub.id` (redirect `www` → `thedogclub.id` lewat Redirect Rule)
-- [ ] SSL aktif di kedua alamat
-- [ ] Worker → Settings → Build → Variables: tambah `SITE_INDEXING` = `on`, lalu Retry build `main`. Cek `view-source:https://thedogclub.id` tidak ada lagi `noindex`, dan `https://thedogclub.id/robots.txt` berisi `Allow: /` dan Sitemap. Jangan tambah variabel ini sebelum domain mengarah ke Worker
-- [ ] Cek redirect URL lama di domain asli (`thedogclub.id/pricing/` dll., script di TDC-026)
-- [ ] Kirim email test ke woof@thedogclub.id, pastikan masuk
-- [ ] Kabari klien: website live; hosting lama dipertahankan ≥ 1 minggu
+- [x] Cloudflare: tambah zone `thedogclub.id`, cek semua record lama tersalin (A, `www`, MX, TXT/SPF, google-site-verification); record web lama "DNS only"
+- [x] ⚠️ **Jangan hapus** MX (email Google) dan TXT google-site-verification
+- [x] DomaiNesia: matikan DNSSEC, lalu ganti nameserver ke Cloudflare; tunggu zone "Active"
+- [x] Merge `develop` → `main` (hanya setelah Arnold bilang "deploy"), tag `v1.0.0`
+- [x] Worker `thedogclub-website`: production branch → `main`; tambah custom domain `thedogclub.id` dan `www.thedogclub.id` (redirect `www` → `thedogclub.id` lewat Redirect Rule)
+- [x] SSL aktif di kedua alamat
+- [x] Worker → Settings → Build → Variables: tambah `SITE_INDEXING` = `on`, lalu Retry build `main`. Cek `view-source:https://thedogclub.id` tidak ada lagi `noindex`, dan `https://thedogclub.id/robots.txt` berisi `Allow: /` dan Sitemap. Jangan tambah variabel ini sebelum domain mengarah ke Worker
+- [x] Cek redirect URL lama di domain asli (`thedogclub.id/pricing/` dll., script di TDC-026)
+- [x] Kirim email test ke woof@thedogclub.id, pastikan masuk
+- [x] Kabari klien: website live; hosting lama dipertahankan ≥ 1 minggu
+
+**Selesai 19 Nov 2026:** live di thedogclub.id; www dan http:// dialihkan ke https://thedogclub.id; 54/54 link lama benar; MX/DKIM/DMARC utuh; dev.thedogclub.id dilepas (Worker dev terpisah menyusul); hosting lama habis 27 Nov, tidak diperpanjang.
 
 **Done kalau:** website baru terbuka di thedogclub.id dengan HTTPS, dan email klien tetap berfungsi.
 

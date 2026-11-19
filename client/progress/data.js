@@ -85,6 +85,7 @@ window.PROJECT = {
         'All 54 old page addresses lead to the matching part of the new site, so links in Google keep working',
         'Google can now find the site: indexing is on and the sitemap is sent to Google Search Console',
         'Your @thedogclub.id email settings were not touched and keep working',
+        'Launch report with screenshots of every check: arnoldtherigan15.github.io/thedogclub/launch-report/',
       ],
       next: ['30-day warranty: we watch Google Search Console and fix any bug free of charge'],
       need: ['Please send a test email to woof@ and connect@thedogclub.id and tell us if it arrives', 'Payment 3 if not yet sent (invoice INV-TDC-2026-003)'] },

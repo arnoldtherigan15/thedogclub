@@ -16,6 +16,7 @@ Project documents for The Dog Club Bali's website redesign (freelance project by
 | `client/progress/` | Project progress. Content in `data.js` (phases, needs, payments, dated updates) |
 | `client/open-feedback/` | "What we still need": open items from the feedback. Content in `data.js`; set an item's `status` to `done` when it arrives |
 | `client/invoice/`, `invoice-1/`, `invoice-2/` | Invoice overview and the invoices (payment 1 and 2 paid; payment 3, IDR 1.5M, before go-live) |
+| `client/launch-report/` | Launch report (19 Nov 2026): live checks with screenshots in `img/`, Lighthouse old vs new, ownership, next steps |
 | `client/quotation/`, `seo-audit/`, `onboarding/`, `feedback/` | Signed quotation, audit with fix status, account guides, early design proposals |
 | `docs/` | Internal: `PLAN.md`, `TICKETS.md` (TDC-0xx), `WORKFLOW.md`, `tracker.html` (rebuild with `python3 docs/build_tracker.py`) |
 | `design/` | Raw client files, git-ignored (3+ GB): Canva exports (`canva-12-nov/` is the latest), `assets/Photo/…` mirrors the client's Google Drive folders |

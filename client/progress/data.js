@@ -68,7 +68,7 @@ window.PROJECT = {
     { title: 'Access to the domain at DomaiNesia', due: '2026-11-17', status: 'done', link: '../onboarding/#domain', linkText: 'What happens',
       text: 'Done 17 Nov, thank you. The domain settings are now in your Cloudflare account, so no call is needed on launch day.' },
     { title: 'Old website hosting: no need to renew', due: '2026-11-27', status: 'done',
-      text: 'The old WordPress hosting ends on 27 Nov and does not need renewing: the new website does not use it. We keep a backup of the old website before then.' },
+      text: 'The old WordPress hosting ends on 27 Nov and does not need renewing: the new website does not use it. The old website was backed up on 19 Nov, on GitHub and in your Google Drive.' },
   ],
 
   payments: [
